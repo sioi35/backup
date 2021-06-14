@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            인접 형제 선택자, Adjacent Sibling Selector
+            - 바로 위의 형제를 조건으로 검색
+            - 형제 + 선택자 {}
+            - 동생은 조건으로 사용 불가
+            - 자식 선택자와 유사
+        */
+        /* div + p { color: red; } */
+        /* p + p { color : blue; } */
+        /* span + div + p { color: orange; } */
+
+        /* p + div + p { color : blue; } */
+
+        /* 
+            형제 선택자, Sibling Selector
+            - 형제를 조건으로 검색
+            - 형제 ~ 선택자 {}
+            - 조건인 형제와 대상인 선택자 사이에 또 다른 중간 형제가 와도 좋다.
+            - 자손 선택자와 유사
+        */
+        /* span ~ p { color: orange; } */
+
+        /* p ~ p { color: blue; } */
+
+        /* p + div + p { color : blue; } */
+
+        /*  
+            자식/자손, 형제/인접형제
+            - 부모 조건(O)
+            - (윗)형제 조건(O)
+            - 자식 조건(X)
+            - (아랫)형제 조건(X)
+        */
+
+    </style>
+</head>
+<body>
+    <!-- ex07_selector.html -->
+    <!--
+        1. 태그 선택자
+        2. ID 선택자
+        3. class 선택자
+        4. 그룹 선택자
+        5. 자식 선택자
+        6. 자손 선택자
+        7. 인접 형제 선택자
+        8. 형제 선택자
+    -->
+
+    <p>p 태그</p>
+    <div>div 태그</div>
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <span>span 태그</span>
+    <div>div 태그</div>
+    <p>p 태그</p>
+    <p>p 태그</p>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

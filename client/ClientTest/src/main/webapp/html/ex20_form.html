@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_form.html -->
+    <!--  
+        <form> 하위 요소
+        - 입력 컨트롤, 입력 양식 등..
+
+    -->
+    <h1>입력 컨트롤</h1>
+
+    <form method="GET" action="ex20ok.jsp">
+
+        <!-- 
+            <input> 태그
+            - 단독 태그, 인라인 태그
+            - 데이터를 입력받는 태그
+
+            - input.type: 입력 컨트롤의 종류
+            - input.name: 식별자. 가장 오래된 식별자. 서버로 전송할 때 사용. HTML에서만 사용
+            - input.id: 식별자. CSS와 JavaScript에서 사용하는 식별자. HTML에서 아주 가끔 사용
+            - input.class: 식별자 CSS와 JavaScript에서 사용하는 식별자. HTML에서 사용 안함
+            - input.size: 박스의 길이(문자 수 - 부정확)
+            - input.maxlength: 입력 가능한 문자수
+            - input.value: 해당 컨트롤 입력값(미리 정하면 컨트롤의 초기값 역할을 한다.)
+            - input.readonly: 플래그타입. 읽기 전용. 입력 Off + 전원 On -> 서버로 전송 가능
+            - input.disabled: 플래그타입. 비활성화. 입력 Off + 전원 Off -> 서버로 전송 불가능 -> 존재 X
+            - input.title: 풍선 도움말
+            - input.accesskey: 바로가기 키(Alt + 조합키)
+            - input.autocomplete: 자동완성기능(전에 입력했던 텍스트 띄워주기)
+            - input.autofocus: 플래그타입. 자동 포커스(활성화)
+            - input.tabindex: 탭인덱스. tab키를 누를때 포커스 받는 순서
+        -->
+
+        <input type="text" 
+               name="data" 
+               id="name" 
+               class="item" 
+               size="30"
+               maxlength="5"
+               value="홍길동"
+               title="입력하세요."
+               accesskey="s"
+               autocomplete="off"
+        >
+
+        <hr>
+
+        <input type="text" tabindex="1">
+        <input type="text" tabindex="3">
+        <input type="text" tabindex="2">
+
+        <hr>
+        텍스트박스(단일라인): <input type="text">
+
+        <hr>
+        <!-- 
+            단일라인 텍스트 박스와 속성이 동일 
+            암호상자는 value 속성을 사용하지 않는다. > 보안상 기본값은 사용 안한다.
+        -->
+        텍스트박스(암호): <input type="password">
+
+        <hr>
+        <!--  
+            <textarea>
+            - 쌍태그, 인라인 태그
+            - 여러줄을 입력받는 텍스트 박스
+            - 대부분 속성은 <input>와 동일
+            - textarea.cols: 컬럼 수(문자 수)
+            - textarea.rows: 줄 수(문자 수)
+            - value 속성이 없다. > 기본값 지정 불가능 > PCDATA로 지정한다.
+            - <textarea>의 영역은 컨트롤 영역이다. <body> 영역과 성질이 다르다. 모든 공백 문자를 있는 그대로 인식한다.
+            - maxlength 속성이 없다. > 다량 텍스트 입력용
+        -->
+        텍스트박스(다중라인): 
+        <textarea cols="50" rows="5">하나
+둘
+셋</textarea>
+
+        <hr>
+        <!--  
+            체크박스
+            - 논리값 입력
+            - 속성은 몇개 없음
+            - name, id, class, title, readonly, disabled
+            - checked: 플래그형. 컨트롤 체크 상태 제어
+        -->
+        체크박스: <input type="checkbox" checked>
+
+        <hr>
+        <input type="checkbox" id="cb1"><label for="cb1">약관에 동의합니다.</label>
+
+        <hr>
+
+        <label for="txt1">이름: </label> <input type="text" id="txt1">
+        
+        <hr>
+
+        <label>
+            <input type="checkbox"> 약관에 동의합니다.
+        </label>
+        
+        <hr>
+
+        <!--  
+            라디오 버튼
+            - 그룹 지정 -> name 속성 사용
+        -->
+        <input type="radio" name="rb"> 동의함
+        <input type="radio" name="rb" checked> 동의안함
+
+        <hr>
+        <input type="radio" name="rb2"> 남자
+        <input type="radio" name="rb2" checked> 여자
+        <input type="radio" name="rb2"> 기타
+
+        <hr>
+        <input type="checkbox"> 햄버거
+        <input type="checkbox"> 콜라
+        <input type="checkbox"> 감자튀김
+        <input type="checkbox"> 샐러드
+
+        <!--  
+            체크박스: 다중 선택
+            라디오버튼: 단일 선택
+        -->
+
+        <hr>
+        <!--  
+            셀렉트 박스, Combo Box, DropDownList 등..
+            - 단일 선택(라디오 버튼)
+            - 다중 선택(체크 박스)
+        -->
+        <select size="10">
+            <option>강아지</option>
+            <option selected>고양이</option>
+            <option>병아리</option>
+        </select>
+        
+        <hr>
+        <select multiple size="10">
+            <option>강아지</option>
+            <option selected>고양이</option>
+            <option>병아리</option>
+        </select>
+
+        <hr>
+        <select>
+            <option>색상을 선택하시오.</option>
+            <option>빨강</option>
+            <option>노랑</option>
+            <option>파랑</option>
+        </select>
+        
+        <hr>
+        <select>
+            <option disabled selected>색상을 선택하시오.</option>
+            <option>빨강</option>
+            <option>노랑</option>
+            <option>파랑</option>
+        </select>
+        
+        <hr>
+        <select>
+            <optgroup label="필수 색상">
+                <option>빨강</option>
+                <option>노랑</option>
+                <option>파랑</option>
+            </optgroup>
+            <optgroup label="선택 색상">
+                <option>주황</option>
+                <option>보라</option>
+                <option>연두</option>
+            </optgroup>
+        </select>
+
+        <hr>
+        <!--  
+            파일 업로드
+        -->
+        파일 선택: <input type="file">
+
+        <hr>
+        <!--  
+            히든 태그
+            - 개발자용
+            - 눈에 안보이는 텍스트 박스
+            - 고객 화면에는 보이지 않지만, 서버로 전송해야 하는 데이터
+        -->
+        히든 태그: <input type="hidden">
+
+        <hr>
+        <!--  
+            버튼류
+        -->
+        전송 버튼: <input type="submit" value="데이터를 전송합니다.">
+        <br>
+        취소 버튼: <input type="reset" value="취소 버튼">
+        <br>
+        이미지 버튼: <input type="image" src="images/catty01.png">
+        <br>
+        일반 버튼: <input type="button" value="일반 버튼" onclick="alert('눌렀나??');">
+        <br>
+        일반 버튼: <input type="button" value="일반 버튼" onclick="location.href='http://google.com';">
+        <br>
+        일반 버튼: <input type="button" value="일반 버튼" onclick="document.body.style.backgroundColor='yellow';">
+        <br>
+        디자인 버튼:
+        <button>일반버튼</button>
+        <button type="submit">전송버튼</button>
+        <button type="reset">리셋버튼</button>
+
+        <br>
+        <!-- 버튼에다가 "이미지 + 텍스트" -->
+        <button><img src="images/bullet01.png">글쓰기</button>
+
+    </form>
+
+    <br><br><br><br><br><br>
+</body>
+</html>

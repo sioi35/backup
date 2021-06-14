@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txtSearch{
+            /* background-color: yellow */
+            /* background-image: url(images/catty04.png) */
+
+            background-image: url(images/hangame.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        /* 의사 클래스 */
+        #txtSearch:focus{
+            /* background-color: yellow; */
+            background-image: url();
+        }
+
+        #btnSearch{
+            background-image: url(images/bullet02.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+        }
+
+        /* 인디케이터 구현 */
+        .data{
+            background-color: white;
+        }
+
+        .data:focus{
+            /* background-color: gold; */
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex11_background.html -->
+    
+    <h1>검색 사이트</h1>
+
+    <form>
+        <input type="text" id="txtSearch" size="30">
+        <input type="submit" id="btnSearch" value="   검색하기">
+        <button><img src="images/bullet02.png">검색하기</button>
+    </form>
+
+    <h1>데이터 입력하기</h1>
+
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+    <div><label>데이터: </label><input type="text" class="data"></div>
+
+
+
+</body>
+</html>

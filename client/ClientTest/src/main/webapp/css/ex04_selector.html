@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 
+            *
+            - 모든 태그
+
+
+
+            ID 선택자 
+            - 태그명#ID {}
+            - #ID {} -> *#ID{}
+
+        */
+        h2#title { color: red; }
+        
+        /* h2#adv {color: blue} */
+        #adv { color: blue; }
+
+
+        /* 
+            class 선택자 
+            - 태그명.클래스명{}
+            - .클래스명{} -> *
+        */
+        /* p.content { color: goldenrod; } */
+        .content { color: goldenrod; }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex04_selector.html -->
+    <!--  
+        CSS 선택자
+        - 태그 선택자 < ID 선택자 < class 선택자
+
+        1. 태그 선택자
+
+        2. ID 선택자
+            - 원하는 태그에 개발자가 id속성을 정의한다. > CSS에서 그 id를 검색해서 태그를 찾는 방식
+            - ID: 영문자 + 숫자 + 특수문자(_, -), 한글(X), 공백(X), 특수문자(X)
+            - ID: identity, 현재 문서내에서 유일해야 한다.
+            - 원하는 태그를 검색하기 용이 + id를 작성하는 추가 비용 발생
+
+
+        3. class 선택자
+            - 원하는 태그에 개발자가 class속성을 정의한다. > CSS에서 그 class를 검색해서 태그를 찾는 방식
+            - class: 영문자 + 숫자 + 특수문자(_, -), 한글(X), 공백(X), 특수문자(X)
+            - 문서내에 여러개 존재해도 된다.
+            - 원하는 태그를 검색하기 용이 + class를 작성하는 추가 비용 발생
+            
+        ----------------------------------------------------
+
+        나머지 선택자
+        - 1~3 조합
+        - 1~3 약간의 기능 추가
+
+
+    -->
+
+    <h2 id="title">회사 소개</h2>
+
+    <p class="content">회사에 대한 소개입니다.회사에 대한 소개입니다.회사에 대한 소개입니다.회사에 대한 소개입니다.회사에 대한 소개입니다.회사에 대한 소개입니다.</p>
+
+    <hr>
+
+    <h2 id="adv">사내 광고</h2>
+    <p class="content">광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.</p>
+    
+    <hr>
+
+    <h2>외부 광고</h2>
+    <p>광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.광고 내용입니다.</p>
+
+    <hr>
+
+    <div id="area">영역입니다.</div>
+    <div class="content">영역입니다.</div>
+    <div>영역입니다.</div>
+
+
+</body>
+</html>

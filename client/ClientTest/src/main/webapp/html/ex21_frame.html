@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex21_frame.html -->
+    <!--  
+        프레임, Frame
+        1. <frameset> + <frame>
+            - 잘 사용 안함
+
+        2. <iframe>
+            - inner frame, inline frame
+            - 문서의 일부분에 다른 문서를 삽입하는 태그
+            - 쌍태그, 인라인 태그
+
+        프레임 사용 목적
+        1. 코드 재사용(*) -> include -> ajax
+            - 독립된 페이지를 여러 페이지 삽입해서 페이지 일부분으로 사용
+        2. 트래픽 감소(*********) -> ajax
+            - 일부분만 새로 고침을 발생시킨다.
+            - 새로고침이 필요한 부분 이외의 부분은 서버로부터 다시 데이터를 받아 올 필요가 없다.
+    
+    -->
+
+    <h1>iframe</h1>
+
+    <iframe src="ex20_form.html" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
+
+    <h1>iframe</h1>
+    <iframe src="http://yes24.com" width="100%" height="200" frameborder="0" scrolling="no"></iframe>
+
+    <hr>
+
+    <h1>쇼핑몰</h1>
+
+    <table border="1" width="100%" height="500">
+        <tr>
+            <td width="200">
+                <ul>
+                    <li><a href="http://coupang.com" target="iframe1">쿠팡</a></li>
+                    <li><a href="http://11st.co.kr" target="iframe1">11번가</a></li>
+                    <li><a href="http://gmarket.co.kr" target="iframe1">지마켓</a></li>
+                    <li><a href="http://auction.co.kr" target="iframe1">옥션</a></li>
+                </ul>
+            </td>
+            <td>
+                <iframe name="iframe1" width="100%" height="500" frameborder="no"></iframe>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+</body>
+</html>

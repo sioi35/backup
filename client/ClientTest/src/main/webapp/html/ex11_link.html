@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex11_link.html -->
+
+    <!-- 
+        링크, Link
+        - <a>, anchor
+        - 쌍태그, 인라인 태그
+        1. Link
+        2. Anchor
+
+
+        PCDATA
+        - 출력 내용 + 클릭할 대상
+
+        href 속성
+        - reference a hyperlink
+        - 이동할 URL
+        - 웹상에 존재하는 모든 종류의 파일이 링크 대상이 될 수 있다.
+
+        브라우저의 성질
+        - 링크 대상이 자신이 해석할 수 있는 데이터라면 해석해서 결과를 보여준다. 뷰어 역할
+        - HTML 뷰어 & 이미지 뷰어 & 텍스트 뷰어 & PDF 뷰어..
+        - 링크 대상이 자신이 해석할 수 없는 데이터라면.. 무조건 다운로드 시킨다. > 사용자가 알아서 처리해.
+    -->
+
+    <h1>링크</h1>
+    <a href="http://naver.com">네이버(외부링크)</a>
+    <br>
+    <a href="ex10_list.html">10번 예제 페이지(내부링크)</a>
+    <br>
+    <a href="images/catty01.png">이미지</a>
+    <br>
+    <a href="필기.txt">텍스트 파일</a>
+    <br>
+    <a href="수업.zip">압축 파일</a>
+
+    <hr>
+
+    <!-- 
+
+        target 속성
+        - 열거형
+            a. _blank: 새로운 창에서 링크를 연다. 외부 링크에 많이 사용
+            b. _self(기본값): 현재 창에서 링크를 연다. 내부 링크에 많이 사용
+            c. _parent
+            d. _top
+            e. 프레임명
+
+        브라우저 주소창
+        - "google.com" -> "http://www.google.com"변환
+
+        URL
+        - 반드시 프로토콜(http://, https://)로 시작해야 한다.
+
+        http://
+        - Hyper Text Transfet Protocol
+        - HTML 문서를 전송하기 위한 통신 규약
+
+    -->
+
+    <a href="http://google.com" target="_self">구글로 이동합니다.</a>
+    <a href="http://google.com" target="_blank">구글로 이동합니다.</a>
+
+    <br>
+
+    <a href="#!">빈링크(아직 행동이 정의되어 있지 않은 링크)</a>
+
+    <hr>
+
+    <a href="ex12_link.html#item3">12번 예제의 3번 HTML 내용 보기</a>
+
+    <!-- 
+
+        href의 URL
+
+        1. ex12_link.html
+            - 페이지만 있음
+            - 앵커는 없음
+            => 페이지의 최상단으로 이동
+
+        2. #item3
+            - 앵커만 있음
+            - 페이지는 없음
+            => 현재 페이지의 앵커로 이동
+
+        3. ex12_link.html#item3
+            - 페이지#앵커
+            - 둘다 있음
+            => 페이지로 이동하고 그 페이지의 앵커로 이동
+
+        4. #
+            - 페이지없음#앵커없음
+            - 둘다 없음
+            => 현재 페이지의 최상단으로 이동
+
+     -->
+
+     <a href="#">빈링크</a>
+     <a href="#!">빈링크</a> <!--최상단으로 이동 X-->
+
+
+</body>
+</html>

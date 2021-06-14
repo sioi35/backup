@@ -1,0 +1,76 @@
+
+### 자동 완성 기능
+-> Ctrl + Space
+//- 이클립스(Code Assistance)
+//- Visual Studio (인텔리센스)
+
+### 변수이름 , 메소드 이름 등등 바꿀 때 선언된 곳 선택 
+-> Ctrl+ 1 ->rename(workspace)
+
+### 메소드 생성
+-> Ctrl + 1
+
+### 라인 복사 & 라인 이동
+-> Ctrl + Alt + 방향키 : 라인 복사 (여러줄 가능)
+-> Alt + 방향키 : 라인 이동
+
+
+### 자동 줄바꿈(Toggle Word Wrap)
+-> Alt + Shift + y
+
+### 주석
+-> 단일라인: Ctrl + /
+-> 다중라인: Ctrl + Shift + /  
+         : Ctrl + Shift + \
+
+### 해당 메소드가 정의된 곳으로 이동하는 단축키
+-> F3 
+ 
+### 실행
+-> Wind + R(run)  //.exe 생략가능
+// - notepad.exe(메모장)
+// - mspaint.exe(그림판)
+// - explorer(파일탐색기)
+// - iexplore.exe(브라우저)
+// - msedge.exe
+// - wordpad
+// - calc(계산기)
+// - cmd(콘솔창)
+
+### import 자동 추가
+-> Ctrl + Shift + O
+
+### 패키지명, 파일명 바꿀 때
+-> 파일 클릭 + f2
+//- 전체 이름 바꿔줌 
+
+### 자동 들여쓰기
+-> Ctrl + Shift + F
+
+### 라인 지우기
+-> Ctrl + D 
+
+### 실행
+//실행(디버그 없이): Ctrl + F11
+//실행(디버그 모드): F11 (breakpoint가 동작함)
+// - F5(라인을 하나씩 실행한다.)
+// - Variable 창(현재 상태의 변수와 값을 실시간으로 보여준다.)
+// - F8(나머지 코드를 한번에 실행한다.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+
+1. Java
+2. Oracle
+3. Client
+    - Client
+    - Web Client
+    - Client-side Programming
+    - Front-end Programming
+    a. HTML
+    b. CSS
+    c. JavaScript
+    - 위의 3개 언어를 모두 합쳐서 브라우저에 보이는 웹페이지를 만들게 된다.
+
+Java -> 프로그래밍 언어(O) + 제어 구조(O)
+SQL -> 프로그래밍 언어(X) + 제어 구조(X)
+PL/SQL -> 프로그래밍 언어(O) + 제어 구조(O)
+
+HTML, Hyper Text Markup Language
+- 하이퍼 텍스트 마크업 언어
+- Hyper Text: 링크(Link)
+- Markup Language: 태그(Tag)를 사용해서 문법을 표기하는 언어
+    - SGML, XML, HTML, XHTML 등..
+- 프로그래밍 언어(X) -> 표현 언어(O): 브라우저 화면에 무언가를 출력하는 기능만 있는 언어
+- 난이도 하 -> 개발자 입장 -> 중하
+- http://w3.org, http://w3c.org > The World Wide Web Consortium (W3C) > 웹 관련 기술 표준화 작업
+- HTML 1.0 ~ HTML5
+- 수업: HTML 4.01 + XHTML 1.0 + HTML5
+
+브라우저, Web Browser
+- 웹 서버에 접속해서, 필요한 자원(HTML페이지, 이미지, 동영상 등)을 다운로드 받아서 처리 후에 화면에 결과를 출력하는 프로그램
+- HTML 언어를 실행하는 환경(HTML 언어 분석 + 파싱 + 실행 + 결과)
+- 자바에 비교하면 JDK + JRE와 유사
+
+언어(문법) + HTML(w3c 제작) -> 실행 환경 + 여러 기업
+
+HTML 개발 환경
+- 텍스트 편집기 
+1. 메모장
+2. IDE: Eclipse, Visual Studio, IntelliJ 등..
+3. SublimeText, Atom, Brackets, Visual Studio Code 등..
+4. 나모 웹에디터, 프론트 앤드, 드림위버 등..
+
+실행환경
+- 브라우저
+
+
+HTML 1.0 ~ HTML5
+- HTML 4.01 : 대중화 버전, 현재까지..
+- XHTML 1.0 : HTML + XML
+- XHTML 2.0 : 계획 발표 -> 포기
+- HTML5 : 최신 버전 

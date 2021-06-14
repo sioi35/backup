@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* b { color: red; }  */
+        /* 
+            #a { color: red; }
+            #b { color: red; }
+        */
+
+        /* #a, #b { color: red; } */
+
+        /* .c { color : orange; } */
+
+        /*  
+
+            자식 선택자, Child Selector
+            - 부모를 조건(**)으로 자식 태그(**목표)를 검색
+            - 부모 > 자식
+            - 자식은 조건으로 사용 불가
+            
+        */
+        /* li > b { color: green; } */
+        /* div > b { color: pink; } */
+        /* p > b { color: blue; } */
+
+        /* html > body > h1> div > b { color: plum; } */
+
+        ol > li > b { color:tomato; }
+
+
+        /* 
+            자손 선택자, Descendant Selector
+            - 조상을 조건으로 자식 태그를 검색
+            - 직계 조상을 조건으로 검색
+            - 조상 자식 {}
+            
+        */
+        /* blockquote> div> div> ul> li > b { color: goldenrod; } */
+        /* blockquote b { color: blueviolet; } */
+
+        /* blockquote#my b { color: cyan; } */
+
+        #my b { color: deeppink; }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex06_selector.html -->
+    <!--  
+
+        ** id와 class는 최소한으로만 지정해서 사용하자 > 잘 안됨;
+
+        CSS 선택자
+        1. 태그 선택자
+        2. ID 선택자
+        3. class 선택자
+        4. 그룹 선택자
+        5. 자식 선택자
+            - 구체적인 검색
+        6. 자손 선택자
+            - 넓은 범위의 검색
+
+    -->
+
+    <!-- 
+    <ol>
+        <li>자바, <b id="a" class="c">Java</b></li>
+        <li>오라클, <b id="b" class="c">Oracle</b></li>
+        <li>HTML</li>
+    </ol>
+
+    <hr>
+
+    <div>저는 지금 <b>CSS</b>를 공부하고 있습니다.</div>
+    -->
+
+    <ol>
+        <li>자바, <b>Java</b></li>
+        <li>오라클, <b>Oracle</b></li>
+        <li>HTML</li>
+    </ol>
+
+    <div>
+        <div>
+            <div>
+                <ul>
+                    <li>자바, <b>Java</b></li>
+                    <li>오라클, <b>Oracle</b></li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <blockquote>
+        <div>
+            <div>
+                <ul>
+                    <li>자바, <b>Java</b></li>
+                    <li>오라클, <b>Oracle</b></li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+        </div>
+    </blockquote>
+    
+    <blockquote id="my">
+        <div>
+            <div>
+                <ul>
+                    <li>자바, <b>Java</b></li>
+                    <li>오라클, <b>Oracle</b></li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+        </div>
+    </blockquote>
+
+
+    <hr>
+
+    <div><div>저는 지금 <b>CSS</b>를 공부하고 있습니다.</div></div>
+
+    <h1><div>저는 지금 <b>CSS</b>를 공부하고 있습니다.</div></h1>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { color: aquamarine; }
+    </style>
+    <link rel="stylesheet" href="css/ex02.css">
+</head>
+<body>
+    <!-- ex02.html -->
+    <!--  
+        HTML에 CSS를 적용하는 방법
+
+        1. 인라인 스타일 시트, Inline Style Sheet
+            - 서식을 적용하고 싶은 태그에 직접 style 속성을 명시한다.
+            - 적용 범위: 해당 태그만
+            - style="CSS 구문"
+            - 장점: 가독성이 높다.(해당 태그에 직접 CSS를 작성하기 때문에)
+            - 단점: 재사용이 낮다.(재사용 불가!)
+            - 특정 태그 디자인 처리. (C단계)
+
+        2. 내부 스타일 시트, Embeded Style Sheet
+            - 페이지 상단 <head>내에 <style>를 명시한다.
+            - 적용 범위: 현재 페이지
+            - 장점: 재사용이 높다.
+            - 단점: 가독성이 낮다.(해당 태그와 떨어져서 CSS를 작성하기 떄문에)
+            - 한페이지내에서 반복되는 디자인 처리. (B단계)
+
+        3. 외부 스타일 시트, External Style Sheet
+            - 별도의 CSS 파일(*.css)을 만들어서 적용한다.
+            - 적용 범위: 사이트 전체내의 모든 페이지
+            - 장점: 재사용이 가장 높다.
+            - 단점: 가독성이 가장 낮다.(물리적 파일이 분리되어 있어서..)
+            - 커다랗고 굵은 디자인 먼저 처리. (A단계)
+    -->
+
+    <p style="color: red;">안녕하세요. 홍길동입니다.</p>
+    <p>안녕하세요. 홍길동입니다.</p>
+    <p style="color: blue;">안녕하세요. 홍길동입니다.</p>
+    <p>안녕하세요. 홍길동입니다.</p>
+    <p>안녕하세요. 홍길동입니다.</p>
+    <hr>
+
+    <div>반갑습니다. 아무개입니다.</div>
+    <div>반갑습니다. 아무개입니다.</div>
+    <div>반갑습니다. 아무개입니다.</div>
+    <div>반갑습니다. 아무개입니다.</div>
+    <div>반갑습니다. 아무개입니다.</div>
+
+    <hr>
+
+    <h1>제목입니다.</h1>
+    <h1>제목입니다.</h1>
+    <h1>제목입니다.</h1>
+    <h1>제목입니다.</h1>
+    <h1>제목입니다.</h1>
+
+
+</body>
+</html>

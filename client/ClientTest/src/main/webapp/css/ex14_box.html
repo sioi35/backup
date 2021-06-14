@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            박스 모델
+            2. 너비, 높이
+            - width, height
+            - 모든 태그의 영역 크기를 지정한다.
+            - width(px, %)
+            - height(px, %)
+
+        */
+
+        .box {
+            border: 1px solid black;
+        }
+
+        #box2 {
+            background-color: yellow;
+            /* 
+            width: auto;
+            height: auto; 
+            */
+
+            width: 30%;
+            height: 30%;
+        }
+        
+        .txt, .btn {
+            border: 1px solid #CCC;
+            /* height: 23px; */
+            
+        }
+
+        .txt {
+            height: 180px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+        }
+
+        .etc {
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex14_box.html -->
+
+
+    <h1>CSS 박스 모델</h1>
+
+    <div>
+        데이터: <input type="text" class="txt">
+        <input type="button" value="보내기" class="btn">
+    </div>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <input type="checkbox" class="etc">
+    <input type="radio" class="etc">
+    
+
+</body>
+</html>

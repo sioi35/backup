@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex18_table.html -->
+    
+   <!-- 
+        테이블
+        1. 데이터 저장용
+            - 데이터베이스
+            - 병합 개념 존재X
+        
+        2. 데이터 출력용
+            - 표현 언어
+            - 병합 개념 존재O
+
+        테이블 셀 병합
+        
+   -->
+
+   <h1>테이블</h1>
+
+   <table border="1" width="200" height="200">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+   </table>
+
+   <h1>테이블</h1>
+
+   <table border="1" width="400" height="400">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+
+   </table>
+
+   <h1>테이블</h1>
+
+   <table border="1" width="200" height="200">
+        <tr>
+            <td colspan="2">1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+
+    <h1>테이블</h1>
+    <table border="1" width="400" height="400">
+         <tr>
+             <td colspan="4" width="400">1</td>
+         </tr>
+         <tr>
+             <td colspan="2" width="200">5</td>
+             <td width="100">7</td>
+             <td width="100">8</td>
+         </tr>
+         <tr>
+             <td width="100">9</td>
+             <td colspan="2" width="200">10</td>
+             <td width="100">12</td>
+         </tr>
+         <tr>
+             <td colspan="2">13</td>
+             <td colspan="2">15</td>
+         </tr>
+    </table>
+
+    <!-- 모든<tr>이 가지는 <td>의 갯수는 동일해야 한다. -->
+    <h1>테이블</h1>
+    <table border="1" width="200" height="200">
+         <tr>
+             <td rowspan="2">1</td>
+             <td>2</td>
+         </tr>
+         <tr>
+             <td>4</td>
+         </tr>
+    </table>
+
+
+    <h1>테이블</h1>
+    <table border="1" width="400" height="400">
+         <tr>
+             <td rowspan="4" width="100">1</td>
+             <td rowspan="3">2</td>
+             <td>3</td>
+             <td>4</td>
+         </tr>
+         <tr>
+             <td rowspan="2">7</td>
+             <td>8</td>
+         </tr>
+         <tr>
+             <td rowspan="2">12</td>
+         </tr>
+         <tr>
+             <td>14</td>
+             <td>15</td>
+         </tr>
+    </table>
+
+    <h1>체크 리스트</h1>
+
+    <table border="1" width="800">
+        <tr>
+            <th colspan="8">체크 리스트</th>
+        </tr>
+        <tr>
+            <th>날짜</th>
+            <th>06/01</th>
+            <th>06/02</th>
+            <th>06/03</th>
+            <th>06/04</th>
+            <th>06/05</th>
+            <th>06/06</th>
+            <th >비고</th>
+        </tr>
+
+        <tr>
+            <td>관리자 기능</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>v</td>
+            <td></td>
+            <td></td>
+            <td rowspan="5"></td>
+        </tr>
+        <tr>
+            <td>회원가입 기능</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>v</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>포인트 기능</td>
+            <td>v</td>
+            <td></td>
+            <td></td>
+            <td>v</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>게시판 기능</td>
+            <td></td>
+            <td>v</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>로그 기능</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>v</td>
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+</body>
+</html>

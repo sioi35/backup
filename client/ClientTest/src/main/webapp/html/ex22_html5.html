@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex22_html5.html -->
+    <!--  
+        ~ ex21.html: HTML 4.01 + XHTML 1.0
+        ex22.html + ex23.html : HTML5 추가 기능
+
+
+        HTML5에서 추가된 레이아웃 태그(시맨틱 웹 태그) -> 의미가 강조된 태그, 기능(X)
+        - 페이지 레이아웃 구성할 때 사용
+        - 블럭 태그, 쌍태그
+    
+        1. <header>
+            - 머릿말 역할
+            - 주메뉴, 사이트로고, 검색창 등..
+
+        2. <nav>
+            - 메뉴 역할
+            - 주메뉴, 보조 메뉴, 컨텍스트 메뉴 등..
+
+        3. <section>
+            - 주요 컨텐츠 역할
+
+        4. <article>
+            - <section>내의 세부 컨텐츠 역할
+            
+        5. <aside>
+            - 보조 컨텐츠 역할
+            - 광고, 보조업무, 채팅창 등..
+
+        6. <footer>
+            - 바닥글 역할
+            - 저작권, 연락처, 보조 메뉴 등..
+    -->
+
+    <h1>예전방식</h1>
+    <!-- 각각의 영역을 <div>로 묶고 식별하기 위해서 id와 class를 지정 -->
+
+    <div id="header">
+        헤더
+    </div>
+    <div id="menu">
+        메뉴
+    </div>
+    <div id="content">
+        <div id="list">
+            <div class="item">반복되는 아이템</div>
+            <div class="item">반복되는 아이템</div>
+            <div class="item">반복되는 아이템</div>
+        </div>
+        <div id="chat">
+            채팅, 보조 컨텐츠
+        </div>
+    </div>
+    <div id="footer">바닥</div>
+
+
+
+    <h1>새로운 방식</h1>
+    <!--  
+        의미가 추가된 새로운 이름의 <div>태그
+    -->
+
+    <header>
+        헤더
+    </header>
+    <nav>
+        메뉴
+    </nav>
+    <section>
+        <article>아이템</article>
+        <article>아이템</article>
+        <article>아이템</article>
+    </section>
+    <aside>보조 컨텐츠</aside>
+    <footer>바닥</footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            박스 모델
+
+            모든 태그
+            1. 블럭태그
+            2. 인라인태그
+                a. 대체 불가능한 요소, Non-replaced Element
+                    - 거의 대부분의 인라인 태그
+                    - 태그 자체가 화면에 출력되는 태그
+                b. 대체 가능한 요소, Replaced Element
+                    - 폼태그, 이미지
+                    - 태그 자체가 화면에 출력되지 않고 다른 무언가로 교체되어 출력되는 태그
+            
+
+
+            블럭태그와 인라인태그의 너비/높이 정책
+
+            블럭태그 정책
+            1. 기본 정책
+                - 명시적으로 width, height를 지정하지 않았을 때
+                a. width: auto(부모 영역을 채운다.)
+                b. height: 내용물의 높이가 영역의 높이가 된다.
+            2. 명시적 기재
+                - 내용물의 크기와 상관없이 지정한 크기로 출력된다.
+                - 내용물이 상자의 면적보다 많아지면(Overflow) 상자밖으로 빠져나간다.
+                - 내용물에 크기에 따라 width, height를 고정으로 할지 말지 잘 선택
+                a. width: 지정한크기;
+                b. height: 지정한크기;
+
+            인라인 태그 정책
+            1. 기본 정책
+                - 명시적으로 width, height를 지정하지 않았을 때
+                a. width: 내용물의 너비가 영역의 너비가 된다.
+                b. height: 내용물의 높이가 영역의 높이가 된다.
+            2. 명시적 기재
+                - 인라인의 성질에 반하는 행동이라서..
+                1. 대체 불가능한 요소
+                    - <span>
+                    a. 너비: 지정 불가능    
+                    b. 높이: 지정 불가능
+                2. 대체 가능한 요소
+                    - 폼태그, 이미지
+                    a. 너비: 가능 
+                    b. 높이: 가능
+                
+        */
+
+        .box { border : 1px solid black; }
+
+        #box2 {
+            width: 350;
+            height: 300px;
+        }
+
+        /* 어떤 태그가 영역이 얼마나 되는지? 1. 배경색, 2. 테두리 */
+        span {
+            /* border: 1px solid red; */
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+        }
+
+        img{
+            /* 원래너비 : 원래높이 = 수정너비 : 수정높이 */
+            /* 95:140 = 300:442 */
+            width: 300px;
+            /* height: 442px; */
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex15_box.html -->
+
+    <h1>CSS 박스 모델</h1>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2<span>홍길동</span>상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <span>홍길동</span>
+
+    <img src="images/0.png">
+
+</body>
+</html>
