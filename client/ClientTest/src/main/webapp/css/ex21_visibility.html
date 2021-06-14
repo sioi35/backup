@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*  
+            Visibility, 가시성
+
+            visibility
+                - visible, hidden
+                - 요소를 화면에 출력하는 역할
+                - 요소의 영역이 그대로 유지된다.(객체는 존재한다. 안보일뿐)
+
+
+            Rendering, 출력 방식
+
+            display
+                - block, inline, none 등..
+                - 요소를 화면에 안보이게 하는 역할(none)
+                - none: 출력 결과를 생성하지 않는다. 객체가 없음.
+                - 요소의 영역도 같이 사라진다.
+
+        */
+
+        #cat2 {
+            /* visibility: hidden; */
+            /* display: none; */
+        }
+
+        /* #cat1:hover + #cat2{ */
+        #cat1:hover ~ img {
+            /* border: 1px solid black; */
+            visibility: hidden;
+        }
+
+        /* 
+        body {
+            border: 10px solid red;
+        } 
+        */
+
+        body:hover * {
+            visibility: hidden;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex21_visibility.html -->
+
+    <img src="images/catty01.png" id="cat1">
+    <img src="images/catty02.png" id="cat2">
+    <img src="images/catty03.png" id="cat3">
+
+</body>
+</html>
