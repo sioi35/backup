@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body > header {
+            background-color: #0b70b9;
+            color: white;
+        }
+
+        body > header > section {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #submenu {
+            text-align: right;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 14px;
+        }
+
+        #submenu > span {
+            margin-left: 30px;
+        }
+
+        #mainmenu {
+            padding-bottom: 40px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #mainmenu > span {
+            margin-left: 70px;
+        }
+
+        body > section {
+
+        }
+
+        body > section > h1 {
+            width:1200px;
+            margin: 30px auto;
+            color: #333;
+        }
+
+        body > section > div {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        body > section > div > h2 {
+            font-size: 24px;
+            color: #2775c4;
+            margin: 20px auto;
+        }
+
+        body > section > div > p {
+            font-size: 15px;
+            color: #333;
+            letter-spacing: -1px;
+            margin-bottom: 60px;
+        }
+
+        #step {
+            margin-bottom: 60px;
+        }
+
+        #step #one, #step #two {
+            /* border: 1px solid black; */
+            width: 470px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            color: white;
+        }
+
+        #step #one {
+            background-color: #3f7ad2;
+        }
+
+        #step #two {
+            background-color: #bfc4ca;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table .header{
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+
+        table .header td{
+            padding: 12px 0;
+        }
+
+        table tr {
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        table td {
+            padding: 10px 0 15px 0;
+        }
+
+        table input {
+            width: 340px;
+            height: 40px;
+            border: 1px solid #CCC;
+        }
+
+        table td {
+            text-align: left;
+        }
+
+        table td.label{
+            width: 220px;
+        }
+
+        .btn {
+            width: 100px;
+            height: 40px;
+            color: white;
+            background-color: #3671c8;
+            border: 0px;
+            border-radius: 0;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        #table2 {
+            margin-top: 50px;
+        }
+
+        #table2 .header td{
+            text-align: left;
+        }
+
+        #table2 td {
+            text-align: center;
+        }
+
+        #table2 img, #table2 input {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #table2 .txt1 {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        #table2 .txt2, #table2 .txt3{
+            font-size: 14px;
+            color: #787878;
+
+        }
+
+        #table2 .txt3{
+            margin-top: 7px;
+            margin-bottom: 40px;
+        }
+
+        #table img {
+            margin-bottom: 37px;
+        }
+
+        body > footer {
+
+        }
+
+        body > footer > header > .txt1 {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        body > footer > header > .txt2 {
+            font-size: 16px;
+            color: #2775c4;
+            font-weight: bold;
+        }
+
+        body > footer > header > .txt3 {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        body > footer > header .right{
+            float:right
+        }
+
+        body > footer > header .right > span {
+            font-size: 12px;
+            color: #333;
+            border: 1px solid #999;
+            padding: 7px 14px;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+
+        body > footer > header .right > img {
+            width: 32px;
+            height: 32px;
+        }
+
+        body > footer > header {
+            width: 1200px;
+            margin: 200px auto 30px auto;
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid #CCC;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        body > footer > header > img , body > footer > header > span {
+            float: left;
+            margin-right: 8px;
+
+        }
+
+        body > footer > header .right > img ,  body > footer > header .right > span {
+            float: left;
+            margin-left: 8px;
+        }
+
+        body > footer > section{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        body > footer > section > nav {
+            margin-bottom: 25px;
+        }
+
+        body > footer > section > nav > span {
+            font-size: 14px;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        body > footer > section > nav > span.txt1 {
+            color: #2775c4;
+        }
+
+        body > footer > section > nav .right {
+            float: right;
+        }
+
+        body > footer > section > nav .right select {
+            width: 200px;
+            height: 36px;
+            float: left;
+        }
+
+        body > footer > section > nav .right input {
+            width: 60px;
+            height: 36px;
+            color: white;
+            background-color: #666;
+            border: 0px;
+            float: left;
+            margin-left: 10px;
+        }
+
+        body > footer > section > img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        body > footer > section > div {
+            float: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        body > footer > section > div > div {
+            margin-bottom: 7px;
+        }
+        
+        body {
+            padding-bottom: 150px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex37_data.html -->
+    <header>
+        <section>
+            <nav id="submenu">
+                <span>목록등록관리시스템</span>
+                <span>로그인</span>
+                <span>회원가입</span> 
+                <span>사이트맵</span> 
+                <span>ENGLISH</span>
+            </nav>
+            <nav id="mainmenu">
+                <img src="images/logo-top.png">
+                <span>데이터찾기</span>
+                <span>국가데이터맵</span>
+                <span>데이터요청</span>
+                <span>데이터활용</span>
+                <span>정보공유</span>
+                <span>이용안내</span>
+            </nav>
+        </section>
+    </header>
+    <section>
+        <h1>회원가입</h1>
+        <div>
+            <h2>국민과 함께 하는 공공데이터포털에 오신 것을 환영합니다.</h2>
+            <p>회원가입을 하시면 공공데이터포털을 통해 국가가 보유하고 있는 유용한 공공데이터와 오픈API 등 모든 정보를 자유롭게 이용하실 수 있습니다.</p>
+            
+            <div id="step">
+                <div id="one">STEP1가입확인 및 회원구분</div>
+                <div id="two">STEP2정보입력 및 약관동의</div>
+            </div>
+
+            <table>
+                <tr class="header">
+                    <td colspan="2">1. 회원가입여부 확인을 위해 이름, 이메일 주소를 입력해주세요.</td>
+                </tr>
+                <tr>
+                    <td class="label">이름</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="text" placeholder="sample@sample.com"></td>
+                </tr>
+            </table>       
+            
+            <input type="button" value="가입확인" class="btn">
+
+            <table id="table2">
+                <tr class="header">
+                    <td colspan="2">2. 14세이상은 일반회원으로 가입해주세요</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="txt1">일반인</div>
+                        <div class="txt2">만14세이상</div>
+                        <div class="txt3">내국인</div>
+                        <img src="images/icon_join_type01.png">
+                        <input type="button" value="가입하기" class="btn">
+                    </td>
+                    <td>
+                        <div class="txt1">어린이</div>
+                        <div class="txt2">만14세미만</div>
+                        <div class="txt3">내국인</div>
+                        <img src="images/icon_join_type02.png">
+                        <input type="button" value="가입하기" class="btn">
+                    </td>
+                </tr>
+            </table>     
+        </div>
+    </section>
+    <footer>
+        <header>
+            <img src="images/ico-tel.png">
+            <span class="txt1">공공데이터 개방문의</span>
+            <span class="txt2">1566-0025</span>
+            <img src="images/ico-email.png">
+            <span class="txt3">운영자 메일상담</span>
+            <div class="right">
+                <span>뉴스레터 신청</span>
+                <img src="images/ico-facebook.png">
+                <img src="images/ico-twitter.png">
+                <img src="images/ico-blog.png">
+                <div style="clear:both"></div>
+            </div>
+            <div style="clear:both"></div>
+        </header>
+
+        <section>
+            <nav>
+                <span>이용약관</span>
+                <span class="txt1">개인정보처리방침</span>
+                <span>공공데이터포털 소개</span>
+                <span>분쟁조정신청</span>
+                <span>개인정보분야별책임자 : 남호성</span>
+                <span class="right">
+                    <select>
+                        <option>정부24</option>
+                    </select>
+                    <input type="button" value="이동">
+                    <div style="clear:both"></div>
+                </span>
+                <div style="clear:both"></div>
+            </nav>
+
+
+            <img src="images/logo-footer-01.png">
+            <img src="images/logo-footer-02_2.png">
+            <div>
+                <div>대구광역시 동구 첨단로 53 (41068) 한국지능정보사회진흥원</div>
+                <div>대표자 : 문용식사업자등록번호 : 135-82-04900</div>
+                <div>대표번호 : 1566-0025문의시간 : 09:00~18:00 (월~금)팩스 : 053-230-1929</div>
+            </div>
+            
+        </section>
+    </footer>
+
+</body>
+</html>

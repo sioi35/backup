@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main1 {
+            width:600px;
+            border-spacing: 0;
+        }
+
+        #main1 .menu{
+            height: 100px;
+            background-color: red;
+        }
+
+        #main1 .submenu{
+            width: 150px;
+            height: 300px;
+            background-color: yellow;
+        }
+
+        #main1 .content {
+            width: 450px;
+            height: 300px;
+            background-color: green;
+        }
+
+        #main1 .footer{
+            height: 100px;
+            background-color: blue;
+        }
+
+
+        #main2{
+            width: 600px;
+        }
+
+        #main2 #menu {
+            background-color: red;
+            height: 100px;
+        }
+
+        #main2 #submenu {
+            background-color: yellow;
+            width:150px;
+            height: 300px;
+            float: left;
+
+        }
+
+        #main2 #content{
+            background-color: green;
+            width: 450px;
+            height: 300px;
+            float: left;
+        }
+
+        #main2 #footer{
+            background-color: blue;
+            width: 600px;
+            height: 100px;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex28_float.html -->
+    <!--  
+        페이지 레이아웃
+        1. 표
+        2. <div> + CSS
+    -->
+
+    <h1>레이아웃</h1>
+
+    <table id="main1">
+        <tr>
+            <td colspan="2" class="menu">주메뉴(red)</td>
+        </tr>
+        <tr>
+            <td class="submenu">보조메뉴(yellow)</td>
+            <td class="content">컨텐츠(Green)</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="footer">바닥(blue)</td>
+        </tr>
+    </table>
+
+    <h1>레이 아웃</h1>
+
+    <div id="main2">
+        <div id="menu">주메뉴(red)</div>
+        <div id="submenu">보조메뉴(yellow)</div>
+        <div id= "content">컨텐츠(green)</div>
+        <div id= "footer">바닥(blue)</div>
+    </div>
+
+    <h1>semantic Web</h1>
+
+    <main>
+        <header>주메뉴</header>
+        <nav>보조메뉴</nav>
+        <section>컨텐츠</section>
+        <footer>바닥</footer>
+    </main>
+
+</body>
+</html>

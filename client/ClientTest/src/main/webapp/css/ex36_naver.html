@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 1px solid #eaeef3;
+            width: 630px;
+            height: 220px;
+        }
+
+        body header {
+            height: 37px;
+            font-size: 14px;
+            color: #242424;
+            font-weight: bold;
+            padding: 23px;
+            padding-bottom: 0px;
+        }
+
+        body .item{
+            width: 125px;
+            float:left;
+            text-align: center;
+            border-right: 1px solid #eaeef3;
+        }
+
+        body .item.last {
+            border-right: 0px; 
+        }
+
+        body .item.today .day .btn1 {
+            background-image: url(images/btn.png);
+            background-position: 0 100%;
+            padding-left: 2.3px;
+
+         }
+
+        body .item.today .day .btn2 {
+            background-image: url(images/btn.png);
+            background-position: 100% 0;
+            padding-right: 5px;
+
+        }
+         
+
+        body .item .day {
+            font-size: 14px;
+            color: #242424;
+            margin-bottom: 10px;
+        }
+
+
+        body .item .day span {
+            font-size: 13px;
+            color: #8f8f8f;
+        }
+        
+        body .item .icon1, body .item .icon2 {
+            width: 125px;
+            height: 30px;
+            margin-bottom: 8px;
+        }
+
+
+        body .item .icon1 img, body .item .icon2 img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        body .item .icon1 span, body .item .icon2 span {
+            font-size: 14px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        body .item .rainfall{
+            font-size: 14px;
+            color: #73b9ff;
+        }
+
+        body .item .temp{
+            font-size: 14px;
+            color: #242424;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex36_naver.html -->
+
+    <div id="weather">
+
+        <header>주간날씨</header>
+        <div class="item today">
+            <div class="day">목 <span class="btn1">&nbsp;</span><span class="btn2">오늘</span></div>
+            <div class="icon1"><img src="images/icon_wt_22.svg"><span class="rainfall">70%</span></div>
+            <div class="icon2"><img src="images/icon_wt_22.svg"><span class="rainfall">60%</span></div>
+            <div class="temp">21°/25°</div>
+        </div>
+        <div class="item">
+            <div class="day">금 <span>내일</span></div>
+            <div class="icon1"><img src="images/icon_wt_22.svg"><span class="rainfall">60%</span></div>
+            <div class="icon2"><img src="images/icon_wt_07.svg"><span >30%</span></div>
+            <div class="temp">21°/28°</div>
+        </div>
+        <div class="item">
+            <div class="day">토 <span>모레</span></div>
+            <div class="icon1"><img src="images/icon_wt_07.svg"><span >30%</span></div>
+            <div class="icon2"><img src="images/icon_wt_05.svg"><span >30%</span></div>
+            <div class="temp">21°/29°</div>
+        </div>
+        <div class="item">
+            <div class="day">일 <span>6.28</span></div>
+            <div class="icon1"><img src="images/icon_wt_05.svg"><span >30%</span></div>
+            <div class="icon2"><img src="images/icon_wt_09.svg"><span class="rainfall">60%</span></div>
+            <div class="temp">21°/31°</div>
+        </div>
+        <div class="item last">
+            <div class="day">월 <span>6.29</span></div>
+            <div class="icon1"><img src="images/icon_wt_05.svg"><span >30%</span></div>
+            <div class="icon2"><img src="images/icon_wt_09.svg"><span class="rainfall">60%</span></div>
+            <div class="temp">21°/29°</div>
+        </div>
+        <div style="float:clear"></div>
+    </div>
+
+</body>
+</html>

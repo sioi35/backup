@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        #box1 { background-color: tomato; } 
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+
+        #box1 {
+            /* 
+                position: static 
+                - left, top -> 적용X
+                - z-index -> 적용X
+            */
+
+            z-index: 4;
+        }
+
+        #box2 {
+            position: absolute;
+            left: 100px;
+            top:100px;
+            z-index: 3;
+        }
+
+        #box3 {
+            position: absolute;
+            left: 150px;
+            top:150px;
+            z-index: 2;
+        }
+
+        #box4 {
+            background-color: chartreuse;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- ex31_zindex.html -->
+    
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    
+    <div id="box4" class="box">상자4</div>
+
+</body>
+</html>

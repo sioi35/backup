@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: #E4E5EA;
+        }
+
+        #weather{
+            background-color: #FFF;
+            width: 402px;
+            margin: 20px auto;
+            border: 1px solid #CCC;
+        }  
+
+        #weather > header {
+            /* border: 1px solid black; */
+            /* width: 304px; */
+            margin: 0px 49px;
+            margin-top: 55px;
+        }
+
+        #weather > section {
+            /* border: 1px solid black; */
+            /* width: 304px; */
+            margin: 0px 49px;
+        }
+
+        #weather > footer {
+            /* border: 1px solid black; */
+            /* width: 304px; */
+            margin: 0px 49px;
+            margin-bottom: 55px;
+        }
+
+        #weather .title {
+            font-size: 19px;
+            color: #242424;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #weather .date {
+            margin-bottom: 20px;
+        }
+
+        #weather .date .year, #weather .date .month {
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+            border: 1px solid #CCC;
+            display: inline-block;
+            width: 146px;
+            height: 30px;
+            background-color: #fafbfd;
+            text-align: center;
+            padding-top:10px;
+        }
+
+        #weather .date .month {
+            margin-left : -1px;
+        }
+
+        #weather footer {
+            font-size: 12px;
+            color: #8F8F8F;
+        }
+
+        #weather footer span {
+            color: #68A1FF;
+        }
+
+        #weather footer div:last-child {
+            color: #68A1FF;
+            margin-top: 4px;
+        }
+
+        #weather section {
+            margin-bottom: 22px;
+        }
+
+        #weather table {
+            /* border: 1px solid black; */
+            border-collapse: collapse;
+        }
+
+        #weather tr {
+            border-bottom: 1px solid #EEE;
+        }
+
+        #weather .header td{
+            height: 55px;
+            font-size: 15px;
+            color: #666;
+        }
+
+        #weather .header .red, #weather .data span.red {
+            color: #ff2c2c;
+        }
+
+        #weather .header .blue, #weather .data span.blue{
+            color: #5998FF;
+        }
+
+        #weather td {
+            /* border: 1px solid black; */
+            width: 44px;
+            height: 142px;
+            text-align: center;
+        }
+
+        #weather .data td span {
+            display: block;
+            margin-bottom: 0 auto;
+        }
+
+        #weather .data .date {
+            font-size: 16px;
+            color: #424242;
+            margin-bottom: 12px;
+        }
+
+        #weather .data .icon {
+            /* border:1px solid black; */
+            width: 34px;
+            height: 34px;
+            background-image: url(images/weather.png);
+            background-position: 83.33333% 100%;
+            background-size: 238px 204.34px;
+            margin-bottom: 2px;
+        }
+
+        #weather .data .max {
+            font-size: 12px;
+            color: #8f8f8f;
+        }
+
+        #weather .data .min {
+            font-size: 12px;
+            color: #8f8f8f;
+        }
+
+        #weather .data .rainfall {
+            font-size: 12px;
+            color: #68a1ff;
+        }
+
+        #weather .data .date.past {
+            opacity: .2;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex35_naver.html -->
+
+    <div id="weather">
+
+        <header>
+            <div class="title">과거날씨</div>
+            <div class="date">
+                <span class="year">2021년</span><span class="month">06월</span>
+            </div>
+        </header>
+        <section>
+            <table>
+                <tr class="header">
+                    <td class="red">일</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td class="blue">토</td>
+                </tr>
+                
+                <tr class="data">
+                    <td>
+                        <span class="date red past">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date past">31</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">1</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">2</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">3</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">4</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date blue">5</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    
+                </tr>
+
+                <tr class="data">
+                    <td>
+                        <span class="date red">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">31</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">1</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">2</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date blue">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    
+                </tr>
+
+                <tr class="data">
+                    <td>
+                        <span class="date red">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">31</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">1</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">2</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    <td>
+                        <span class="date blue">30</span>
+                        <span class="icon"></span>
+                        <span class="max">26°</span>
+                        <span class="min">11°</span>
+                        <span class="rainfall">18</span>
+                    </td>
+                    
+                </tr>
+
+            </table>
+        </section>
+        <footer>
+            <div>최근 5년 정보를 제공합니다. 제공 <span>기상청</span> 발표 <span>웨더아이</span></div>
+            <div>강수량은 일간 누적 강수량 (mm)</div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

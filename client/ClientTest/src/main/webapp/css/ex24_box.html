@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        #box1 {
+            background-color: tomato;
+        }
+
+        #box2 {
+            background-color: gold;
+
+            /* 상자2의 크기(너비, 높이) */
+            /* 1. 너비(200px), 높이(200px) */
+            /* 
+                width, height - 객체의 크기(X) 
+                width, height - 컨텐츠의 영역의 크기(O) *********
+            */
+
+            /* 2. 너비(220px), 높이(220px) */
+            border: 10px solid black;
+
+            /* 3. 너비(260px), 높이(260px) */
+            padding: 20px;
+
+            /* 4. 너비(260px), 높이(260px) */
+            margin: 30px;
+
+        }
+
+        #box3 {
+            background-color: cornflowerblue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex24_box.html -->
+
+    <h1>박스 모델 크기 정책</h1>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+</body>
+</html>
