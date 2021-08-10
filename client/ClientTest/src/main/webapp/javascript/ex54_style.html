@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex54_style.html -->
+    <h1>뉴스</h1>
+    <fieldset>
+        <button type="button" id="big">크게</button>
+        <button type="button" id="small">작게</button>
+    </fieldset>
+    <p id="content">
+        [서울=뉴시스] 송연주 기자 = 진원생명과학은 코로나19 감염증에 의한 중증 폐질환을 방지하는 경구용 치료제로 개발 중인 ‘GLS-1027’이 동물실험에서 남아공 변이에도 효과를 보였다고 30일 밝혔다.
+
+        진원생명과학에 따르면 ‘GLS-1027’은 햄스터 감염 모델에서 용량 의존적으로 폐렴 증상 마커(표지자)의 감소를 유도했다. 폐 부위 조직에서 바이러스 유발 세포융합체(syncytia) 및 세포이형성(atypia)이 감소하는 것을 확인했다.
+        
+        회사는 “이 같은 효과는 남아공 변이(B.1.351 β variant)에서도 동일하게 나타났다”고 설명했다.
+        
+        GLS-1027은 작년 11월 미국 식품의약국(FDA)의 임상 2상을 승인받아 미국, 푸에르토리코에서 연구가 시작됐다. 현재 피험자 모집 중이다. 북 마케도니아와 불가리아에서도 임상을 착수할 예정이다. 국내에선 지난 2월 식약처에도 임상 승인을 신청했다.
+        
+        회사 관계자는 “신규 감염 확진자들이 자가 격리 중 매일 GLS-1027을 캡슐로 복용해 병원에 입원하는 것을 방지하고 중등증으로 병원에 입원한 경우 중증으로 악화되는 것을 방지하는 목적으로 제품 개발을 진행한다”고 말했다.
+        
+        진원생명과학 박영근 대표는 “기존 변이 바이러스뿐 아니라 향후 백신 저항을 보이는 변이 바이러스까지 출현할 것으로 전망되고 있어 GLS-1027이 변이 바이러스에 상관 없이 효과를 보인 점은 의미가 있다”고 말했다.
+    </p>
+
+    <script>
+        var big = document.getElementById('big');
+        var small = document.getElementById('small');
+        var content = document.getElementById('content');
+
+        big.onclick = function(){
+            //현재크기?
+            // alert(window.getComputedStyle(content).fontSize);
+
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+            fontSize += 2;
+
+            content.style.fontSize = fontSize + 'px';
+            
+        };
+        small.onclick = function(){
+
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+            fontSize -= 2;
+            content.style.fontSize = fontSize + 'px';
+            
+        };
+
+    </script>
+
+
+
+</body>
+</html>

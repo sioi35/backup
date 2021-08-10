@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- jQuery 설치(로컬 설치) -->
+    <script src="js/jquery-3.6.0.js"></script>
+
+    <!-- jQuery 설치(CDN) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/d3js/6.7.0/d3.min.js"></script> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> -->
+
+    <!-- jQuery 설치(npm) -->
+    <!-- <script src="node_modules/jquery/dist/jquery.js"></script> -->
+
+    <!-- 터미널 띄우기 -->
+    <!-- Ctrl + ` -->
+    <!-- Ctrl + J -->
+
+    <!-- Ctrl + Shift + P (cmd창으로 기본 터미널 선택하기)-->
+
+</head>
+<body>
+    <!-- ex01.html -->
+    <!--  
+        jQuery
+        - 자바스크립트 라이브러리/프레임워크
+        - http://jquery.com
+        - Lightweight Footprint, 경량 (> 예전보단 많이 무거워짐)
+        - CSS3 Compliant, CSS3 선택자를 지원 -> 태그 검색하는 도구로 제공
+        - Cross-Browser(Chrome, Edge, Firefox, IE, Safary, Android, iOS, and more)
+            - JavaScript는 아직도 브라우저간의 동작이 완전 표준화가 안되어있음.
+        - What is jQuery?
+            - 빠르고, 소형, 다양한 기능을 가지고 있음.
+            - HTML 문서를 탐색, 조작, 이벤트 핸들링 > 주력
+            - 애니메이션, aJax 편함
+            - jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal(***) and manipulation(***), event handling(***), animation(*), and Ajax(***) much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+        
+    -->
+
+    <h1>jQuery</h1>
+
+    <input type="button" value="버튼" id="btn1" name="btn1">
+    <hr>
+    <div id="box1"></div>
+
+    <script>
+
+        // 버튼 검색 -> 클릭
+        //1. BOM
+        // var btn1 = document.all.btn1;
+        
+        // btn1.onclick = function(){
+        //     alert('BOM');
+        // };
+
+
+        //2. DOM
+        // var btn1 = document.getElementById('btn1');
+        // btn1.addEventListener('click', function(){
+        //     alert('DOM');
+        // });
+
+
+        //3. jQuery
+        var btn1 = jQuery('#btn1');
+        btn1.click(function() {
+            alert('jQuery');
+        });
+
+    </script>
+
+</body>
+</html>

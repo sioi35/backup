@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex29.html -->
+    <!-- 다량의 태그에 일괄적으로 이벤트 적용시 생기는 상황 -->
+
+    <img src="images/cat01.jpg" name="img">
+    <img src="images/cat02.jpg" name="img">
+    <img src="images/cat03.jpg" name="img">
+
+    <script>
+        //document.img;
+        var img = document.all.img;
+
+
+        //alert(img);
+        //alert(img.length);
+        //var i;
+
+        for(var i=0; i<img.length; i++){
+            img[i].onclick = function(){
+                // alert();
+                //누가 나를 불렀냐?
+                // - 3개의 이미지 중 어떤 이미지를 클릭했을 때 이 함수가 호출되었느냐?
+
+                //지금 이벤트(onclick)를 발생시킨 주체? -> 이미지 중 하나
+                // alert(event.srcElement.src);
+
+                //Error: Cannot read property 'src' of undefine
+                // alert(img[i].src);
+                // alert(i); //3
+
+                //1. i가 왜 0,1,2가 아닌가?
+                // -> 시간차 때문에.. 사건의 발생 순서때문에..
+                //2. i가 왜있어? i가 왜 살아있나...? > Closure(클로저)
+                // -> 전역변수
+
+
+            };
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

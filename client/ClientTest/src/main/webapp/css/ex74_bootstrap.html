@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap 설치(로컬) -->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/bootstrap.js"></script> 
+   
+
+    <!-- CDN 설치(원격) -->
+    <!-- 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+    -->
+
+</head>
+<body>
+    <!-- ex74_bootstrap.html -->
+    <!--  
+        CSS 디자인 프레임워크
+        - 디자인은 손쉽게 하기 위해 만들어진 라이브러리 모음
+        - Bootstrap
+        - http:getbootstrap.com : 공홈
+        - http://bootstrapk : 한국어버전
+        - v3 ~ v4 ~ v5
+
+        Bootstrap 설정
+        - *.css
+        - *.js
+        1. 직접 다운로드 -> 참조
+        2. CDN -> 참조
+
+        가이드.. 요령
+
+    -->
+
+    <div class="container">
+        <h1 class="page-header">Bootstrap<small>Design Framework</small></h1>
+
+        <h2>외부 자료(Preformatted Text - 개행 문자 적용)</h2>
+        <pre>
+class Test{
+    public void main(<span style='color:red;'>String</span>[] args){
+        System.out.println("hello");
+    }
+}
+        </pre>
+
+        <h2>단축키</h2>
+        <p>코드의 정렬은 <kbd>Ctrl + Shift + F</kbd>로 합니다.</p>
+
+        <h2>프로그래밍 코드</h2>
+        <p>자바스크립트의 변수는 <code>var a = 10;</code> 와 같이 선언합니다.</p>
+
+
+        <h2>목록</h2>
+        <ul>
+            <li>딸기</li>
+            <li>바나나</li>
+            <li>포도</li>
+        </ul>
+
+
+        <h2>텍스트 관련</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis minus eos, hic porro saepe velit reiciendis illo quo, maiores rem culpa temporibus, nulla vel asperiores doloremque nostrum molestiae voluptatibus ipsum?</p>
+        <p>Error eum enim quibusdam quasi ratione maxime, corporis iusto eius non consequatur, necessitatibus tenetur, quam consequuntur beatae sapiente soluta voluptatem itaque nobis modi dolorum id maiores sequi in est. Quas?</p>
+        <p>Repellat quam mollitia sequi tenetur, provident ex dolorum quas minima exercitationem nesciunt nisi, eos tempore et rem doloribus suscipit sunt, minus ut molestiae? Labore doloremque iusto laborum consectetur eius neque.</p>
+        <blockquote class="blockquote-reverse">
+            Repellat quam mollitia sequi tenetur, provident ex dolorum quas minima exercitationem nesciunt nisi, eos tempore et rem doloribus suscipit sunt, minus ut molestiae? Labore doloremque iusto laborum consectetur eius neque.
+        </blockquote>
+
+        <h2>폼</h2>
+        <table class="table table-bordered" style="width: 600px">
+            <tr>
+                <th style="width: 150px">텍스트 박스</th>
+                <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <th style="width: 150px">암호 박스</th>
+                <td><input type="password" class="form-control"></td>
+            </tr>
+            <tr>
+                <th style="width: 150px">다중라인 텍스트 박스</th>
+                <td><textarea style="height: 200px" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                <th style="width: 150px">셀렉트 박스</th>
+                <td>
+                    <select class="form-control">
+                        <option>항목</option>
+                        <option>항목</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 150px">체크박스</th>
+                <td><input type="checkbox"></td>
+            </tr>
+        </table>
+
+
+        <h2>버튼 디자인(종류)</h2>
+        <input type="button" value="Button">
+        <button>Button</button>
+        <input type="button" value="Button" class="btn btn-defalut">
+        <input type="button" value="Button" class="btn btn-primary">
+        <input type="button" value="Button" class="btn btn-success">
+        <input type="button" value="Button" class="btn btn-danger">
+        <input type="button" value="Button" class="btn btn-warning">
+        <input type="button" value="Button" class="btn btn-info">
+
+        <h2>버튼 크기</h2>
+        <input type="button" value="Button" class="btn btn-success btn-xs">
+        <input type="button" value="Button" class="btn btn-success btn-sm">
+        <input type="button" value="Button" class="btn btn-success">
+        <input type="button" value="Button" class="btn btn-success btn-lg">
+
+        <h2>테이블</h2>
+        <!-- <table class="table"> -->
+        <!-- <table class="table table-bordered"> -->
+        <!-- <table class="table table-striped"> -->
+        <!-- <table class="table table-condensed table-bordered table-striped"> -->
+            <table class="table table-hover">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+                <th>주소</th>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>홍길동</td>
+                <td>20</td>
+                <td>남자</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

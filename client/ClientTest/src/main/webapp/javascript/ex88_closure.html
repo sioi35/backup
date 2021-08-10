@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex88_closure.html -->
+    <input type="button" value="확인" id="btn1">
+
+
+    <script>
+    
+        /*
+            클로저, Closure
+        
+        */
+        
+        function outer(){
+            var a = 10; //지역 변수(outer)
+            console.log('a', a);
+
+            function inner(){ //지역함수(outer)
+                var b = 20; //지역 변수(inner)
+                console.log('b', b);
+
+                console.log('a', a); //X -> O: 클로저 형성
+            }
+
+            // console.log('b', b); //error
+            inner();
+        }
+
+        // inner(); //error
+
+        outer();
+
+        var num1 = 100; //전역변수
+        
+        window.onload = function(){ //outer
+
+            var num2 = 200; // 지역변수(onload)
+
+            document.getElementById('btn1').onclick = function(){ //inner
+
+                // alert(num1); //전역변수.
+                alert(num2); // 원래 안됨!!!!-> 됨;;; : 클로저
+
+                //외부 함수의 자원을 내부 함수에서 사용할 때(***)
+                // -> 시간차에 따라 외부의 지역 리소스가 소멸 후 시점에 내부 함수에 의해서 호출되는 경우
+                // -> 클로저 상황(영역)을 만들어서 그곳에 임시로 num2를 보관한다.
+
+
+            };
+
+        }; //호출 끝;;; -> num2 소멸(지역 변수);;
+
+    
+    </script>
+
+
+
+</body>
+</html>

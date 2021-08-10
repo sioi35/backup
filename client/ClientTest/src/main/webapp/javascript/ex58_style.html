@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .one {
+            color: gold;
+            background-color: darkgray;
+            font-size: 2em;
+            font-weight: bold;
+            font-family: '바탕체';
+        }
+
+        .two {
+            border: 10px solid blue;
+        }
+        .three {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex58_style.html -->
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <hr>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ut, itaque ex, quae laudantium libero molestiae dolor cupiditate, similique enim quisquam aliquid doloribus voluptate. Corporis soluta ab veniam sequi blanditiis!</p>
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+        var p1 = document.getElementById('p1');
+
+        btn1.onclick = function(){
+
+            //1. CSS 속성을 하나씩 직접 제어
+            // p1.style.color = "blue";
+            // p1.style.backgroundColor = 'gold';
+            // p1.style.fontFamily = '궁서';
+            // p1.style.fontSize = '3em';
+            // p1.style.fontStyle = 'italic';
+
+            //2. CSS 속성을 집합으로 제어 -> className
+            // p1.className = 'one'; //BOM
+            // p1.setAttribute('class', 'one'); //DOM
+
+            //3. CSS 다중 클래스 제어
+            // - className: 단일 클래스 제어 or 정적 클래스 제어
+            // - classList: 다중 클래스 제어
+            
+            // p1.className = 'one';
+
+            p1.classList.add('one');
+
+        };
+
+        btn2.onclick = function(){
+            // p1.className += ' two';
+            p1.classList.add('two');
+        };
+
+        btn3.onclick = function(){
+            // p1.className = ??;
+            // p1.classList.remove('one');
+
+            //토글 버튼
+            // if(p1.classList.contains('two')){
+            //     p1.classList.remove('two');
+            // }else {
+            //     p1.classList.add('two');
+            // }
+
+            p1.classList.toggle('two');
+
+        };
+
+    </script>
+
+</body>
+</html>

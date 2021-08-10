@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         h2{
+            font-size: 0.9em;
+        }
+        form{
+            width: 500px;
+            margin: 0 auto;
+        }
+        li {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        ul{
+            border-bottom: 1px dotted #999;
+        }
+        
+        img {
+            border: 10px solid #999;
+            margin: 8px;
+        }
+
+        .btn {
+            margin-left: 10px;
+            width: 230px;
+            height: 60px;
+            border: 10px solid #999;
+            margin-bottom: 30px;
+        }
+
+</style>
+</head>
+<body>
+    <!-- q06.html -->
+
+    <form name="form1">
+        <h1>Pattern Lock</h1>
+        <h2>패턴을 그리고 입력 버튼을 누르시오.</h2>
+        <ul>
+            <li>password: 'L'</li>
+        </ul>
+        <img src="images/rect_icon01.png" name="img" value="1">
+        <img src="images/rect_icon02.png" name="img" value="0">
+        <img src="images/rect_icon03.png" name="img" value="0">
+        <img src="images/rect_icon04.png" name="img" value="2">
+        <img src="images/rect_icon05.png" name="img" value="0">
+        <img src="images/rect_icon06.png" name="img" value="0">
+        <img src="images/rect_icon07.png" name="img" value="3">
+        <img src="images/rect_icon08.png" name="img" value="4">
+        <img src="images/rect_icon09.png" name="img" value="6">
+        <br>
+        <input type="button" value="RESET" name="btn1" class="btn">
+        <input type="button" value="INPUT" name="btn2" class="btn">
+        
+    </form>
+
+    <script>
+
+        var img = document.images;
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        var password='';
+
+        for(var i=0; i<img.length; i++){
+            img[i].onmouseover = function(){
+                var index = event.srcElement.src.lastIndexOf('.');
+                var result = event.srcElement.src.substr(index-1, 1);
+                event.srcElement.src = 'images/rect_icon10.png';
+                password = password + result;
+            }
+        }
+
+        btn1.onclick = function(){
+            for(var i=0; i<img.length; i++){
+                img[i].src ="images/rect_icon0" + (i+1) +".png";
+            }
+            password = '';
+        }
+
+        btn2.onclick = function(){
+            if(password =='14789'){
+                location.href = 'http://google.com';
+            }else{
+                alert('Error!');
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

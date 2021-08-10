@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: #444;
+        }
+
+        .title {
+            width: 550px;
+            margin: 0 auto;
+        }
+        .title ul {
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #444;
+        }
+
+        #box {
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        #tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl td, #tbl tr {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- ex48.html(exam20번) -->
+
+    <div class="title">
+		<h1>테이블 + 집합 이벤트 + innerText</h1>
+		<div>모든 셀에 클릭(onmousedown) 이벤트를 추가해 카운트를 조작하시오.</div>
+		<ul>
+			<li>왼쪽 버튼: 카운트 증가</li>
+			<li>오른쪽 버튼: 카운트 감소</li>
+			<li>오른쪽 버튼을 눌러 0이 되면 클릭 이벤트 사용 중지</li>
+		</ul>
+	</div>
+    <div id="box">
+        <table id="tbl">
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        var td = document.getElementsByTagName('td');
+
+        for(var i=0; i<td.length; i++){
+            td[i].onmousedown = function m1(){
+
+                if(event.buttons == 1){
+                    //좌클릭
+                    // alert(event.srcElement.innerHTML);
+                    event.srcElement.innerHTML = parseInt(event.srcElement.innerHTML)+1;
+
+
+                }else if(event.buttons == 2){
+                    //우클릭
+                    event.srcElement.innerHTML = parseInt(event.srcElement.innerHTML) - 1;
+
+                    if(event.srcElement.innerHTML <= 0){
+                        event.srcElement.innerHTML = 0;
+                        event.srcElement.bgColor='#ccc';
+                        event.srcElement.onmousedown = null;
+                    }                    
+                    
+                }
+
+            };
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

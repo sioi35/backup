@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- ex36_DOM.html -->
+    <!--  
+        JavaScript -> 문법 검사 도구
+
+        ESLint
+        -> node.js
+        -> npm(JS 관련 라이브러리 설치/관리 도구) or yarn
+
+        VSCode
+        1. 폴더열기 (Ctrl + K + O) > javascript 폴더 선택
+        2. Ctrl + ` (cmd창 띄우기)
+
+        3. npm install bootstrap@3
+
+        XXLint
+
+        eslint 설치
+        1. >npm install -g eslint
+        2. >npm init : 작업 공간 선언(초기화)
+        3. > eslint --init
+        4. > eslint ex36.js
+        5. VS 확장 프로그램 -> 연동
+        6. 구글 > eslint-plugin-html
+
+
+    -->
+    
+    
+       <!-- <script>
+           num = 10;
+           console.log(num);
+       </script> -->
+
+    <!--  
+        name: BOM 구성요소만 가질 수 있다.
+        id, class: 모든 태그가 가질 수 있다.
+    -->
+
+    <div class="container">
+        <h1 class="title">DOM</h1>
+    
+        <form name="form1">
+            <h2 class="title">Document Object Model</h2>
+            <div id="container">
+                <input type="text" name="txt1" id="txt1" class="txt"><br>
+                <input type="text" name="txt2" id="txt2" class="txt"><br>
+                <input type="text" name="txt3" id="txt3" class="txt"><br>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        /*
+            BOM vs DOM
+            1. BOM, Browser Object Model
+                - HTML 문서의 일부 요소만을 가지고 트리 구조를 제공
+                - BOM 트리 구조를 기반으로 태그 검색
+                - 접근한 태그 > 속성 조작 
+                - 나머지 태그 접근 불가능!!
+                - 조작 도구가 HTML 속성에 기반 > 프로퍼티로 제공 > 한계(제한)!!
+                - PCDATA 조작 불가능!!
+                - 태그 동적 추가/삭제 불가능!!(예외. <option> 태그)
+                - CSS 조작 불가능!!!
+            
+
+            2. DOM, Document Object Model
+                - 현재 HTML의 모든 태그를 사용해서 트리 구조 생성 + 제공
+                - BOM과 달리 모든 태그를 인식
+                - 검색 도구 추가 제공, 조작 도구 추가 제공
+                - 태그 동적 추가/삭제 가능!!
+                - CSS 조작 가능!!
+                - PCDATA 조작 가능!!
+                - DOM Level 1
+                - DOM Level 2
+                - DOM Level 3
+                - BOM 기반으로 생성 > 모든 DOM 기능이 document를 통해서 정의(사용)되어있음.
+
+        */
+
+        /*
+            DOM 태그 검색 도구
+            1. id 도구(***)
+                - Object getElementById("id")
+                - 유일한 객체(태그)를 찾겠다.
+                - 계층 구조를 고려할 필요가 없다.(누구의 자식(X))
+
+            2. class 검색(**)
+                - collection getElemenstByClassName("class")
+                - 같은 이름의 class를 가진 태그 집합을 반환한다.
+                - 유사 배열
+            3. 태그명 검색
+                - collection getElementsByTagName("tag name")
+                - 태그명을 검색 -> 태그 집합을 반환한다.
+            4. name 검색
+                - BOM에서 사용하는 name 식별자를 지원하기 위해서 추가된 기능
+                - collection getElementsByName("name")
+                - name을 검색 -> 태그 집합을 반환한다.
+            5. axis 검색
+        
+        */
+
+
+        //txt1 검색
+        var txt1 = document.form1.txt1; //BOM
+        // txt1.value = "BOM"; //BOM
+        txt1.setAttribute("value", "BOM2"); //DOM
+
+        //id(유일)
+        var txt2 = document.getElementById("txt2"); //<input id="txt2" //DOM
+        // txt2.setAttribute("value", "DOM"); //DOM
+        txt2.value = "DOM2"; //BOM
+
+        //*** BOM으로 검색하던 DOM으로 검색하던 찾은 결과의 객체는 동일한 타입이다. 
+        var txt3_1 = document.form1.txt3; //BOM
+        var txt3_2 = document.getElementById("txt3"); //DOM
+        
+        console.log(txt3_1 == txt3_2); //true
+        console.log(txt3_1 === txt3_2); //true
+
+
+        var txt = document.getElementsByClassName("txt");
+        console.log(txt.length);
+        console.log(typeof txt);
+        //Array(X)
+        //HTMLCollection(O): Collection, 유사배열
+        console.log(txt.constructor); 
+        txt[0].value = "100";
+
+        //TypeError: txt.forEach is not a function
+        // txt.forEach(function(item, index){
+        //     console.log(item.id);
+        // });
+
+        for(var i=0; i<txt.length; i++){
+            // console.log(txt[i].id);
+            txt[i].value="집합";
+        }
+
+
+        var input = document.getElementsByTagName("input");
+        console.log(input.length);
+        console.log(input.constructor);
+
+        //ESLint -> 강제력(X)
+        for(var i=0; i<input.length; i++){
+            input[i].value="하하하";
+        }
+
+        var txt1 = document.getElementsByName("txt1");
+        txt1[0].value = "추가 검색";
+
+        //<h1>, <h2>
+        var title = document.getElementsByClassName("title");
+        title[0].style.color = "red";
+        title[1].style.color = "blue";
+
+    </script>
+
+
+
+
+</body>
+</html>

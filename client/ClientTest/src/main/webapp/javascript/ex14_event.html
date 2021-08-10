@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Cannot read property 'txt1' of undefined
+        // window.document.form1.txt1.value = new Date(); 
+
+        // <body onload="">
+        // - HTML 문서의 모든 내용이 브라우저에 의해 로딩되고 난 직후에 발생하는 이벤트
+
+        function init(){
+            window.document.form1.txt1.value = new Date(); 
+        }
+
+        // <body onload=""> 유사
+        window.onload = function(){
+            // alert();
+        };
+
+
+    </script>
+</head>
+<!-- <body onload="init()"> -->
+<body>
+    <!-- ex14_event.html -->
+    <h1>Event</h1>
+    <form name="form1">
+        <input type="text" name="txt1" size="50" >
+    </form>
+
+    <script>
+        // window.document.form1.txt1.value = new Date();
+    </script>
+
+</body>
+</html>

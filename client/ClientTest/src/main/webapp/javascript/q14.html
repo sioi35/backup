@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+
+        body{
+            color: #444;
+        }
+        div {
+            width: 1300px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+
+        h2 {
+            font-size: 0.9em;
+        }
+
+        ul {
+            border-bottom: 1px dotted #222;
+            padding-bottom: 30px;
+            font-size: 0.7em;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 2.5em;
+            border: 1px solid #222;
+        }
+
+        button:disabled {
+            background-color: #bbb;
+        }
+
+        button:enabled {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- q14.html -->
+    <div>
+        <h1>버튼 클릭 + 활성화</h1>
+        <h2>활성화된 버튼을 클릭하시오.</h2>
+        <ul>
+            <li>&lt;button&gt; + fontawesome icon</li>
+            <li>흰색 버튼: btn.disabled = false;</li>
+            <li>회색 버튼: btn.disabled = true;</li>
+            <li>흰색 버튼: btn:enabled {background-color:white;}</li>
+            <li>회색 버튼: btn:enabled {background-color:gray;}</li>
+        </ul>
+        <div id="box">
+            <button type="button" name="btn"><i class="fas fa-dog"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-paw"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-bone"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-frog"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-cat"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-piggy-bank"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-horse"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-dove"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-drumstick-bite"></i></button>
+            <button type="button" name="btn" disabled><i class="fas fa-fish"></i></button>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.all.btn;
+        var index = 0;
+        var timer = 0; 
+
+        timer = setInterval(function(){
+           
+            if(index <= 9){
+
+                if(btn[index].disabled==false){
+                btn[index].disabled = true;
+                }
+                index++;
+                if(index==10){
+                    index = 0;
+                }
+                btn[index].disabled = false;
+
+            }else {
+                index = 0;
+            }
+            
+        }, 100);
+
+        
+
+        for (var i=0; i<btn.length; i++){
+        btn[i].onclick = function() {
+            document.body.bgColor = "cornflowerblue";
+            clearInterval(timer);
+        }
+    }
+
+    </script>
+
+</body>
+</html>

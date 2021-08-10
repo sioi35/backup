@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<style>
+		body {
+			background-color: #222;
+		}
+		
+		#text {
+			text-align: center;
+			margin-top: 400px;
+			font-variant: small-caps;
+        }
+
+        #text span{
+            color: white;
+            font-size: 7em;
+            display: inline-block;
+            transform: translate(2000px, 0px);
+            animation-name: key;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+		}
+        
+        @keyframes key {
+            0% {
+                transform: translate(2000px, 0px);
+            }
+       
+            100% {
+                transform: translate(0px,0px) rotate(-1800deg);
+            }
+
+        }
+
+        #text #text2 {
+            animation-delay: .15s;
+        }
+
+        #text #text3 {
+            animation-delay: .3s;
+        }
+
+        #text #text4 {
+            animation-delay: .45s;
+        }
+
+        #text #text5 {
+            animation-delay: .6s;
+        }
+
+        #text #text6 {
+            animation-delay: .75s;
+        }
+
+        #text #text7 {
+            animation-delay: .9s;
+        }
+
+        #text #text8 {
+            animation-delay: 1.05s;
+        }
+
+        #text #text9 {
+            animation-delay: 1.2s;
+        }
+
+        #text #text10 {
+            animation-delay: 1.35s;
+        }
+
+        #text #text11 {
+            animation-delay: 1.5s;
+        }
+
+        #text #text12 {
+            animation-delay: 1.65s;
+            color: gold;
+        }
+		
+	</style>
+</head>
+
+<body>
+    <!-- ex70.html -->
+
+    <div id="text">
+		<span id="text1">H</span>
+		<span id="text2">e</span>
+		<span id="text3">l</span>
+		<span id="text4">l</span>
+		<span id="text5">o</span>
+		<span id="text6">!</span>
+		<span id="text7"></span>
+		<span id="text8">H</span>
+		<span id="text9">T</span>
+		<span id="text10">M</span>
+		<span id="text11">L</span>
+		<span id="text12"><i class="fab fa-html5"></i></span>
+	</div>
+</body>
+
+</html>

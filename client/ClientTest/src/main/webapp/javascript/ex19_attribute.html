@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .one {
+            background-color: gold;
+        }
+
+        .two {
+            background-color: cornflowerblue;
+        }
+
+    </style>
+    <script>
+        function m1() {
+
+            // 모든 폼태그의 자식 태그들은 form이라는 프로퍼티를 가지고 있고, 부모 폼태그를 참조한다.
+            // var txt1 = window.document.form1.txt1;
+            var txt1 = event.srcElement.form.txt1;
+
+            // txt1.value = "test";
+
+            //Attribute 조작
+            // - HTML태그가 가지는 거의 대부분 속성은 자바스크립트에서 프로퍼티로 제공한다.(사용자 경험)
+            // - HTML 속성이 합성어(두단어 복합)라면 > 캐멀 표기법으로 표현
+
+            //<input value> -> txt1.value
+            //<input size> -> txt1.size
+
+            // txt1.size = 50;
+            // txt1.size++;
+
+            //HTML(boolean)
+            // txt1.readOnly = true;
+            // txt1.readOnly = !txt1.readOnly; //이런 버튼(역할): Toggle Button
+
+            // if(txt1.readOnly){
+            //     event.srcElement.value = "읽기전용";
+            // } else{
+            //     event.srcElement.value = "쓰기가능";
+            // }
+
+            //HTML(열거형) -> JavaScript(문자열)
+            // txt1.type = "checkbox"; //type 조작 금지!
+
+            //HTML(색상) -> JavaScript(문자열)
+            // window.document.body.bgColor = "yellow";
+
+            //HTML(문자열) -> JavaScript(문자열)
+            // txt1.value = "문자열";
+            // txt1.title = "풍선도움말";
+            // txt1.placeholder = "이름 입력";
+
+            //모든 속성명이 그대로 사용 가능하지만, 유일하게 class만은 사용 불가능 -> class 키워드(예약어)
+            txt1.className = "two";
+            
+        }
+
+    </script>
+</head>
+<body>
+    <!-- ex19_attribute.html -->
+    <h1>JavaScript를 사용해서 HTML의 Attribute를 조작하기</h1>
+
+    <form>
+        <input type="text" name="txt1" class="one">
+        <input type="button" value="쓰기가능" name="btn1" onclick="m1();">
+    </form>
+
+</body>
+</html>

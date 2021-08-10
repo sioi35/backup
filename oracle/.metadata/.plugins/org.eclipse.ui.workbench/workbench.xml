@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="7" version="2.0">
 <workbenchAdvisor/>
 <window height="1020" maximized="true" width="980" x="950" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -27,16 +27,12 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="copy_of_copy_of_ddd.exerd" partName="copy_of_copy_of_ddd.exerd(읽기 전용)" path="C:/class/oracle/eXERD-Samples/copy_of_copy_of_ddd.exerd" title="copy_of_copy_of_ddd.exerd(읽기 전용)" tooltip="eXERD-Samples/copy_of_copy_of_ddd.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eXERD-Samples/copy_of_copy_of_ddd.exerd"/>
-</editor>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="비디오.exerd" partName="비디오.exerd" path="C:/class/oracle/모델링/비디오.exerd" title="비디오.exerd" tooltip="모델링/비디오.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/모델링/비디오.exerd"/>
+<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="WebProjectERD.exerd" partName="WebProjectERD.exerd" title="WebProjectERD.exerd" tooltip="C:\Users\sioi3\Desktop\WebProjectERD.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/Users/sioi3/Desktop/WebProjectERD.exerd"/>
 </editor>
 </editors>
 <views>
@@ -45,11 +41,8 @@
 <filters>
 <filter element=".*" isEnabled="false"/>
 </filters>
-<expanded>
-<element path="/모델링"/>
-</expanded>
 <selection>
-<element path="/모델링/비디오.exerd"/>
+<element path="/eXERD-Samples"/>
 </selection>
 </viewState>
 </view>
@@ -67,7 +60,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -118,7 +111,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.16867469" ratioLeft="322" ratioRight="1587" relationship="2" relative="leftFolder"/>
+<info part="org.eclipse.ui.editorss" ratio="0.102671556" ratioLeft="196" ratioRight="1713" relationship="2" relative="leftFolder"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@18f8425" ratio="0.86043537" ratioLeft="1344" ratioRight="218" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.thumbnail" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="썸네일"/>
@@ -173,6 +166,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/모델링/비디오.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/copy_of_copy_of_ddd.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/모델링/비디오.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/C:/Users/sioi3/Desktop/WebProjectERD.exerd"/>
 </editors>
 <item historyLabel="pos.exerd" index="0"/>
 <item historyLabel="수업.exerd" index="1"/>
@@ -189,16 +183,14 @@
 <item historyLabel="copy_of_copy_of_ddd.exerd" index="8"/>
 <item historyLabel="비디오.exerd" index="9"/>
 <item historyLabel="copy_of_copy_of_ddd.exerd(읽기 전용)" index="8"/>
-<item active="true" historyLabel="비디오.exerd" index="9"/>
+<item historyLabel="비디오.exerd" index="9"/>
+<item active="true" historyLabel="WebProjectERD.exerd" index="10"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -210,6 +202,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="WebProjectERD.exerd" tooltip="C:\Users\sioi3\Desktop\WebProjectERD.exerd">
+<persistable uri="file:/C:/Users/sioi3/Desktop/WebProjectERD.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="비디오.exerd" tooltip="모델링/비디오.exerd">
 <persistable path="/모델링/비디오.exerd"/>
 </file>

@@ -196,7 +196,6 @@ from tblStaff s
 
 select * from tblStaff;
 
-
 -- 26. tblVideo, tblRent, tblMember. '털미네이터' 비디오를 한번이라도 빌려갔던 회원들의 이름은?
 select 
     m.name,
@@ -225,7 +224,10 @@ select * from tblStaff;
 --?X
 select 
     * 
-from tblCustomer;
+from tblCustomer c
+    inner join tblSales s
+        on s.seq = c.seq
+        where s.qty > 1;
 
 select * from tblSales;
 

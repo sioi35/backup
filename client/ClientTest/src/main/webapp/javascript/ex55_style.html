@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box { border: 5px solid black; width: 200px; height: 200px; background-color: gold;} 
+        fieldset{width: 400px;}
+        fieldset > div {margin: 10px;}
+        input[type=range] {width: 300px;}
+    </style>
+</head>
+<body>
+    <!-- ex55_style.html -->
+
+    <h1>상자</h1>
+
+    <fieldset>
+        <div>배경색: <input type="color" id="color1" value="#ffd700"></div>
+        <div>테두리색: <input type="color" id="color2" value="#000"></div>
+        <div>너비: <input type="range" id="rg1" min="100" max="500" value="200"></div>
+        <div>높이: <input type="range" id="rg2" min="100" max="500" value="200"></div>
+        <div>모서리: <input type="range" id="rg3" min="0" max="50" value="0"></div>
+    </fieldset>
+    <hr>
+    <div id="box">상자</div>
+
+    <script>
+
+        var box = document.getElementById("box");
+
+        var color1 = document.getElementById("color1");
+        var color2 = document.getElementById("color2");
+        var rg1 = document.getElementById("rg1");
+        var rg2 = document.getElementById("rg2");
+        var rg3 = document.getElementById("rg3");
+
+        color1.onchange = function(){
+            // alert(color1.value);
+            box.style.backgroundColor = color1.value;
+        };
+
+        color2.onchange = function(){
+            box.style.borderColor = color2.value;
+        };
+
+        rg1.oninput = function(){
+            //alert(rg1.value);
+            box.style.width = rg1.value + 'px';
+        };
+
+        rg2.oninput = function(){
+            box.style.height = rg2.value + 'px';
+        };
+
+        rg3.oninput = function(){
+            box.style.borderRadius = rg3.value + '%';
+        };
+
+    </script>
+    
+</body>
+</html>

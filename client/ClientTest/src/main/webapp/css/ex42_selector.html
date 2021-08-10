@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tistory.css">
+    <link rel="stylesheet" href="css/example.css">
+    <style>
+
+        /*  
+            전후 선택자
+            1. ::before
+            2. ::after
+
+            전후 선택자에서 사용하는 content 속성의 속성값
+            1. none
+            2. 문자열
+            3. open-quote
+            4. closs-quote
+        */
+
+        p > span {
+            color: tomato;
+        }
+
+        /* p > span::after {
+            content: 'aaa';
+            color: blue;
+            text-decoration: underline;
+        } */
+
+        p > span::before{
+            /* content: '['; */
+            content: open-quote;
+        }
+
+        p > span::after{
+            /* content: ']'; */
+            content: close-quote;
+        }
+
+        #list .item{
+            float: left;
+        }
+
+        /* <div style="clear:both;"><div> */
+        #list::after{
+            content: '';
+            display: block; /* clear > block 태그만 가능*/
+            clear: both;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <!-- ex42_selector.html -->
+
+    <h1>전후 선택자</h1>
+
+    <p>안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~ <span>HTML</span>안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~<span>CSS</span>안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다.<span>JavaScript</span> 반갑습니다~안녕하세요. 홍길동입니다. 반갑습니다~안녕하세요. 홍길동입니다. </p>
+
+    <hr>
+
+    <h1>HTML</h1>
+    <blockquote class="tistory">HTML은 웹 페이지를 만드는 언어입니다. Hypertext Margup Language입니다. -위키백과 발췌</blockquote>
+
+    <hr>
+
+    <div id="list" class="box box-border5">
+        <div class="item box box-small bgcolor-red">아이템</div>
+        <div class="item box box-small bgcolor-yellow">아이템</div>
+        <div class="item box box-small bgcolor-blue">아이템</div>
+        <!-- <div style="clear:both;"></div> -->
+    </div>
+    다른요소
+
+</body>
+</html>

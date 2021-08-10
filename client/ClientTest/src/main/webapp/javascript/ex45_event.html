@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid black;
+            padding: 50px;
+        }
+
+        #box1 {background-color: tomato;}
+        #box2 {background-color: gold;}
+        #box3 {background-color: cornflowerblue;}
+
+        .tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .tbl td {
+            border: 1px solid black;
+        }
+
+        #tbl1 {
+            margin: 20px 0;
+        }
+        
+        #tbl1 td {
+            padding: 5px 20px;
+        }
+
+        #tbl2 td {
+            width: 126px;
+            height: 126px;
+        }
+
+        #tbl2 td img {
+            display: block;
+        }
+
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <!-- ex45_event.html -->
+    
+    <h1>이벤트 버블링(Event Bubbling), 이벤트 터널링(Event Tunneling) == 이벤트 캡처링(Event Capturing)</h1>
+
+    <table id="tbl2" class="tbl">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <table id="tbl1" class="tbl">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+
+
+    <div id="box1" class="box">
+        <div id="box2" class="box">
+            <div id="box3" class="box"></div>
+        </div>
+    </div>
+
+    <script>
+
+        // JavaScript의 이벤트는 기본적으로 버블링을 기반으로 동작한다. (*****)
+        // 터널링 기반의 동작은 지원하지 않는다. -> (추가 지원함)
+
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+
+        // box3.onclick = function(){
+        //     alert('손자');
+        //     // alert(event.srcElement.id);
+
+        //     // 부모로 전파되는 버블링을 취소
+        //     // event.cancelBubble = true;
+        // };
+
+        // box2.onclick = function(){
+        //     alert('부모');
+        //     // alert(event.srcElement.id);
+             
+        //     // event.cancelBubble = true;
+        // };
+
+        // box1.onclick = function(){
+        //     alert('조부모');
+        //     // alert(event.srcElement.id);
+        //     // event.srcElement.style.border = '10px solid black';
+        // };
+
+
+        // box1.addEventListener('click', function(){
+        //     alert('할아버지');
+        // }, true); //true -> 터널링기반으로 동작
+        
+        // box2.addEventListener('click', function(){
+        //     alert('아버지');
+        // }, true);
+        
+        // box3.addEventListener('click', function(){
+        //     alert('나');
+        // }, true);
+        
+
+        // var td = document.getElementsByTagName('td');
+
+        // for(var i=0; i<td.length; i++){
+        //     td[i].onmouseover = function(){
+        //         event.srcElement.bgColor = 'gold';
+        //     };
+        //     td[i].onmouseout = function(){
+        //         event.srcElement.bgColor = 'transparent';
+        //     };
+        // }
+
+
+        // 마우스 이벤트 배경색 바꾸기.
+        // var tr = document.getElementsByTagName('tr');
+
+        // for(var i=0; i<tr.length; i++){
+        //     tr[i].onmouseover = function(){
+        //         // event.srcElement.bgColor = 'gold';
+        //         // event.srcElement.parentNode.bgColor = 'gold';
+        //         event.currentTarget.bgColor = 'tomato';
+        //     };
+
+        //     tr[i].onmouseout = function(){
+        //         // event.srcElement.bgColor = 'transparent';
+        //         // event.srcElement.parentNode.bgColor = 'transparent';
+        //         event.currentTarget.bgColor = 'transparent';
+        //     };
+        // }
+
+        var td = document.getElementsByTagName('td');
+
+        for(var i=0; i<td.length; i++){
+            td[i].onmousedown = function(){
+
+                // event.srcElement.innerHTML ='<img src="images/rect_icon01.png">';  // 문자열을 대상으로 이벤트 걸수 X
+                // event.srcElement.firstElementChild.onmousedown = function(){}; // 부모를 찾아 자식에게 접근해야함 
+
+
+                if(event.buttons == 1){
+                    var img = document.createElement('img');
+    
+                    img.setAttribute('src', 'images/rect_icon01.png');
+
+                    event.srcElement.appendChild(img);
+
+                }else if(event.buttons == 2){
+                    //이미지 삭제
+                    // alert();
+
+                    // alert(event.srcElement.nodeType);
+                    // alert(event.srcElement.nodeName);
+
+                    // event.srcElement.removeChild(event.srcElement.firstElementChild);
+                    // event.srcElement.parentNode.removeChild(event.srcElement);
+
+                    event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+
+                }
+
+                // img.onmousedown = function(){
+                //     //클릭한 이미지를 삭제
+                //     event.srcElement.parentNode.removeChild(event.srcElement);
+                // };
+
+            };
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

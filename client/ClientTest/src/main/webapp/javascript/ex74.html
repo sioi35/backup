@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #title {
+            width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px dotted #444;
+        }
+
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all 1s;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex74.html (exam31) -->
+    <div id="title">
+        <h1>고양이 움직이기 ver. 등속</h1>
+        <h2>고양이를 마우스 클릭한 장소로 이동시키시오.</h2>
+        <ul>
+            <li>CSS: transition</li>
+        </ul>
+    </div>
+
+    <div>
+        <img src="images/catty01.png" id="cat">
+    </div>
+
+    <script>
+
+        var cat = document.getElementById('cat');
+
+        window.onclick = function(){
+            // alert(window.getComputedStyle(cat).width);
+            cat.style.left = (event.clientX-64) +'px';
+            cat.style.top = (event.clientY-64)+'px';
+
+        };
+
+
+
+    </script>
+
+</body>
+</html>

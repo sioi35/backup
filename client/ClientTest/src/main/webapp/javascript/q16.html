@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            color: #444;
+        }
+        
+        div {
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+
+        h2 {
+            font-size: 0.9em;
+            border-bottom: 1px dotted #444;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        #timer {
+		border: 1px solid gray;
+		width: 560px;
+		height: 159px;
+		/* margin: 50px auto 20px auto; */
+		padding: 5px;
+		text-align: center;
+        }
+
+        #timer:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        #timer input, #timer span {
+            float: left;
+            font-size: 7em;
+        }
+        #timer input {
+            width: 155px;
+            border: 0px solid black;
+            outline: none;
+            text-align: center;
+            margin-top: 25px;
+            color: #444;
+        }
+        #timer span {
+            margin-top: 3px;
+        }
+        #btns {
+            width: 440px;
+            /* margin: 20px auto; */
+            margin-top: 20px;
+            /* padding-left: 0; */
+            /* margin-left: 0; */
+        }
+        #btns input {
+            border: 1px solid #aaa;
+            background-color: white;
+            width: 30%;
+            height: 50px;
+            outline: none;
+            cursor: pointer;
+        }
+        #btns input:disabled {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- q16.html -->
+    <div>
+        <h1>스톱워치</h1>
+        <h2>각 버튼의 활성화/비활성화 제어</h2>
+    </div>
+    <div id="timer">
+		<input type="text" name="txt1" id="txt1">
+		<span>:</span>
+		<input type="text" name="txt2" id="txt2">
+		<span>:</span>
+		<input type="text" name="txt3" id="txt3">
+	</div>
+	<div id="btns">
+		<input type="button" value="시작" name="btn1" id="btn1">
+		<input type="button" value="멈춤" name="btn2" id="btn2" disabled>
+		<input type="button" value="종료" name="btn3" id="btn3" disabled>
+	</div>
+
+
+    <script>
+
+        var txt1 = document.getElementById("txt1");
+        var txt2 = document.getElementById("txt2");
+        var txt3 = document.getElementById("txt3");
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+
+        txt3.value = "00";
+        txt2.value = "00";
+        txt1.value = "00";
+        var num3 = 0;
+        var num2 = 0;
+        var num1 = 0;
+        var timer = 0;
+
+        btn1.onclick = function m1(){
+            btn2.disabled = false;
+            btn3.disabled = false;
+
+            timer = setInterval(function(){
+                num3++;
+                if(num3 > 99){
+                    num3 = 0;
+                    num2++;
+                    if(num2 > 59){
+                        num2 = 0;
+                        num1++;
+                        if(num1 > 59){
+                            num1 = 0;
+                        }
+                        if(num1 > 9){
+                        txt1.value=num1;
+                        }else{
+                            txt1.value = "0" + num1;
+                        }
+                    }
+                    if(num2 > 9){
+                        txt2.value=num2;
+                    }else{
+                        txt2.value = "0" + num2;
+                    }
+                }
+
+                if(txt3.value < 9){
+                    txt3.value = "0"+num3;
+                }else{
+                    txt3.value = num3;
+                }
+
+
+            }, 1);
+
+        };
+
+        btn2.onclick = function(){
+            clearTimeout(timer);
+        };
+
+        btn3.onclick = function(){
+            txt3.value = "00";
+            txt2.value = "00";
+            txt1.value = "00";
+            num3 = 0;
+            num2 = 0;
+            num1 = 0;
+            clearInterval(timer);
+            timer = 0;
+        };
+        
+        
+
+    </script>
+
+</body>
+</html>

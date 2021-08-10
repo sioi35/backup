@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/example.css">
+    <style>
+
+        /*  
+            1. first-child: 자신이 첫쨰인 요소
+            2. last-chile: 자신이 막내인 요소
+            3. nth-child(n): 자신이 n번째 요소 (one-based index)
+            4. nth-last-child(n): 자신이 거꾸로 n번째인 요소
+
+
+            nth-child(n)
+            - n : index + 수열 역할
+            1. 숫자: index
+            2. 2n: 0, 2, 4..
+            3. 2n+1: 1, 3, 5..
+            4. even: 짝수(2n)
+            6. odd: 홀수(2n+1)
+
+        */
+
+        /* #list1 > li {
+            color: gold;
+        } */
+
+        /* 현재 <li>가 해당 집합을 첫번째 자식이니?  */
+        #list1 > li:first-child {
+            color: blue;
+        }
+
+        #list1 > li:last-child {
+            color: red;
+        }
+
+        #list1 > li:nth-child(5) {
+            color: orange;
+        }
+
+        #list1 > li:nth-last-child(3) {
+            color: greenyellow;
+        }
+
+        #list1 > li:nth-child(2n+1){
+            background-color: hotpink;
+        }
+
+        /* CSS의 선택자는 태그에 직접 적용 */
+        /* #table1 > tbody > tr {
+            background-color: tomato;
+        } */
+
+        /* #table1 tr:nth-child(odd) {
+            background-color: gold;
+        } */
+
+        /* #table1 td:first-child {
+            background-color: cornflowerblue;
+        }
+
+        #table1 td:last-child {
+            background-color: cornflowerblue;
+        } */
+
+
+        #table1 tr:nth-child(even) td:nth-child(odd){
+            background-color: cyan;
+        }
+        
+        #table1 tr:nth-child(odd) td:nth-child(even){
+            background-color: cyan;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex40_selector.html -->
+
+    <!--  
+        
+        Alt 키 누른채로 원하는 부분 클릭 (=Ctrl + Alt) 
+        Ctrl + D -> 클릭한 단어와 같은거 블럭처리
+
+        CSS1 + CSS2 -> CSS3
+
+        CSS 선택자
+        1. *
+        2. 태그 선택자
+        3. ID 선택자
+        4. class 선택자
+        5. 자식 선택자
+        6. 자손 선택자
+        7. 형제 선택자
+        8. 인접 형제 선택자
+        9. 그룹 선택자
+
+        가상클래스 -> 태그에 실제 클래스가 없음 -> 사용하기 쉬움(태그에 추가 코딩 불필요)
+        10. 가상 클래스(:hover)
+        11. CSS > 가상 클래스 or 필터
+
+    -->
+
+    <h1>목록</h1>
+    <ul id="list1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>C#</li>
+        <li>C++</li>
+        <li>Spring</li>
+        <li>PHP</li>
+        <li>ASP.NET</li>
+        <li>Perl</li>
+        <li>Scalar</li>
+    </ul>
+
+
+    <h1>테이블</h1>
+
+    <!--  
+        1. <table>
+        2. <tr>
+        3. <td>
+        4. <th>
+        ---------------
+        5. <thead>
+        6. <tbody>
+        7. <tfoot>
+        ---------------
+        8. <caption>
+    -->
+
+
+    <table id="table1" class="table medium padding-medium header">
+        <!-- <thead> -->
+            <tr>
+                <th>헤더</th>
+                <th>헤더</th>
+                <th>헤더</th>
+                <th>헤더</th>
+                <th>헤더</th>
+            </tr>
+        <!-- </thead> -->
+        <!-- <tbody> -->
+            <tr>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+            </tr>
+            <tr>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+            </tr>
+            <tr>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+                <td>항목</td>
+            </tr>
+        <!-- </tbody> -->
+        <!-- <tfoot> -->
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+            <tr>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+                <td>바닥</td>
+            </tr>
+        <!-- </tfoot> -->
+    </table>
+
+
+
+
+</body>
+</html>

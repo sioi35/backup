@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex26_image.html -->
+    <h1>이미지</h1>
+
+    <input type="button" value="확인" name="btn1">
+    <hr>
+    <img src="images/cat01.jpg" name="cat1">
+    <hr>
+    <img src="images/dog01.jpg" name="dog1">
+    <hr>
+    
+    <img src="images/switch_on.png" name="sw">
+
+    <h3>문제1.</h3>
+    <!--  
+        1. 방향키에 따라 이미지를 변경한다.
+            a. 오른쪽 방향키: dog01.jpg~05
+            b. 왼쪽 방향키: dog05~01
+    -->
+    <img src="images/dog01.jpg" name="dog2">
+
+    <h3>문제2.</h3>
+    <img src="images/0.png" name="num">
+
+
+    <script>
+
+        var btn1 = document.all.btn1;
+        var cat1 = document.images['cat1'];
+        var dog1 = document.images['dog1'];
+        var sw = document.images['sw'];
+
+        btn1.onclick = function(){
+
+            // alert(cat1.src);
+            // cat1.src = "images/cat02.jpg";
+
+            // cat1.width = "500";
+            // cat1.height = "500";
+            
+            // cat1.alt = "고양이";
+        
+        };
+
+        //롤오버 이미지(Roll over image)
+        cat1.onmouseover = function(){
+            cat1.src = "images/cat02.jpg";
+        };
+
+        cat1.onmouseout = function(){
+            cat1.src = "images/cat01.jpg";
+        }
+
+        var n = 1;
+        dog1.onclick = function(){
+            
+            n++;
+            dog1.src = "images/dog0" + n + ".jpg";
+
+            if(n >= 5) n = 0; //loop
+
+        };
+
+        window.onkeydown = function(){
+            //상단 숫자키(1) -> 49
+            //우측 키패드 숫자키(1) -> 97
+            // alert(event.keyCode);
+
+            if(event.keyCode >= 49 && event.keyCode <=53){
+                dog1.src = "images/dog0" + (event.keyCode - 48) + ".jpg";
+            }else if (event.keyCode >= 97 && event.keyCode <= 101){
+                dog1.src = "images/dog0" + (event.keyCode - 96) + ".jpg";
+            }            
+
+        }
+
+        //토글 버튼
+        sw.onclick = function(){
+            
+            // alert(sw.src);
+            // alert(sw.src.endsWith('switch_on.png'));
+
+            if(sw.src.endsWith('switch_on.png')){
+                sw.src= "images/switch_off.png";
+                document.body.bgColor="#000"
+            }else {
+                sw.src= "images/switch_on.png";
+                document.body.bgColor="#FFF"
+            }
+
+        }
+
+        var i = 1;
+        window.onkeydown = function(){
+
+            //문제 1.
+            if(event.keyCode == 39){
+                i++;
+                if(i > 5) {
+                    alert("더 이상 이미지가 없습니다.");
+                    i = 5;
+                }else{
+                    dog2.src = "images/dog0" +i+ ".jpg";
+                }
+            }else if(event.keyCode == 37){
+                i--;
+                if(i < 1) {
+                    alert("처음 이미지입니다.");
+                    i = 1;
+                }else{
+                    dog2.src = "images/dog0" +i+ ".jpg";
+                }
+            }
+
+            //문제 2.
+            //1(49)
+            if(event.keyCode >= 49 && event.keyCode <= 57){
+                num.src = "images/" +(event.keyCode-48)+ ".png";
+            }else if(event.keyCode >= 97 && event.keyCode <= 104){
+                num.src = "images/" +(event.keyCode-96)+ ".png";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

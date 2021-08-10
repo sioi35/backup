@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-bottom: 600px;
+        }
+        #img1 {
+            width: 300px;
+            height: 300px;
+            background-image: url(images/heart.png);
+            background-position: 0px 0px;
+        }
+
+        #img2 {
+            width: 512px;
+            height: 256px;
+            background-image: url('images/puma.png');
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex69_style.html -->
+
+    <h1>배경 이미지 조작(CSS)</h1>
+
+    <div id="img1"></div>
+
+    <hr>
+    <select id="sel1">
+        <option value="0">100%</option>
+        <option value="-292">50%</option>
+        <option value="-584">0%</option>
+    </select>
+    <hr>
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="img2"></div>
+
+    <script>
+        var img1 = document.getElementById('img1');
+        var btn1 = document.getElementById('btn1');
+        var sel1 = document.getElementById('sel1');
+
+        sel1.onchange = function() {
+            // img1.style.backgroundPositionX = '-292px';
+            img1.style.backgroundPositionX = sel1.valeuf + 'px';
+        }
+
+        btn1.onclick = function() {
+            // img1.style.backgroundPositionX = '-584px';
+
+            // for (var i=0; i<3; i++){
+            //     img1.style.backgroundPositionX = (i * -292) + 'px';
+            // }
+
+            //타이머
+            var i = 0;
+            var timer = setInterval(function() {
+                img1.style.backgroundPositionX = (i * -292) + 'px';
+                i++
+
+                if(i >= 3){
+                    i = 0;
+                    clearInterval(timer);
+                }
+            }, 300)
+        }
+
+        var left = -292;
+
+        img1.onclick = function() {
+            img1.style.backgroundPositionX = left + 'px';
+
+            left += -292;
+
+            if(left < -(292*2)) {
+                left = 0;
+            }
+        }
+
+
+
+        //-----------------------------------
+        var img2 = document.getElementById('img2');
+        var x = 0;
+        var y = 0;
+        var timer = 0;
+        img2.onclick = function() {
+
+            if(timer == 0){
+                timer = setInterval(function() {
+    
+                    x -= 512;
+    
+                    if(x < -(512*3)) {
+                        x = 0;
+                        y -= 256;
+    
+                        if( y < -256) {
+                            y = 0;
+                        }
+                    }
+    
+                    img2.style.backgroundPosition = x + 'px '+ y +'px';//y좌표 노이동
+                }, 50);
+
+            } else {
+                clearInterval(timer);
+                timer = 0; //reset
+            }
+        }
+
+    </script>
+</body>
+</html>

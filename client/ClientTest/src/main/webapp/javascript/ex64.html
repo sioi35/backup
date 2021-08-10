@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .header {
+            width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px dotted #444;
+            padding-bottom: 10px;
+        }
+
+        .img {
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex64.html (exam25) -->
+    <div class="header">
+        <h1>마우스 + 동적 이미지 추가하기</h1>
+        <h2>마우스를 클릭하면 이미지를 추가하시오.</h2>
+    </div>
+  
+    <script>
+
+        window.onmousedown = function(){
+            
+            var img = document.createElement('img');
+
+            img.setAttribute('src', 'images/face03.png');
+
+            img.className = 'img';
+
+            img.style.left = (event.clientX-64) +'px';
+            img.style.top = (event.clientY-64) +'px';
+
+            document.body.appendChild(img);
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 너비: 1000px + 가운데 정렬 */
+
+        /*  
+            인접한 인라인 태그 사이의 공백을 없애는 방법
+            
+            1. 직접 공백을 지운다. > 비권장
+            2. float > 추가 비용 발생 
+            3. font-size: 0;
+
+        */
+
+
+        #menu {
+            width: 630px;
+            margin: 0 auto;
+            font-size: 0px;
+            /* border: 1px solid black; */
+            /* text-align: center; */ /*center정렬하거나 or 박스크기를 이미지크기에 딱 맞게 설정하기*/
+            transform: translate(0px, -100px);
+        }
+
+        /* #menu:hover {
+            transform: translate(0px, -10px);
+        } */
+
+        #menu > img:hover {
+            transform: translate(0px, 90px);
+        }
+
+
+        /* #menu > img {
+            float:left;
+        }
+
+        #menu::after {
+            content: "";
+            display: block;
+            clear:both;
+        } */
+
+        section {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #submenu {
+            /* border: 1px solid black; */
+            width: 126px;
+            font-size: 0;
+            transform: translate(-110px, 0px);
+        }
+
+        #submenu > img:hover {
+            transform: translate(100px, 0px);
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex49_transform.html -->
+
+    <nav id="menu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+    <nav id="submenu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+
+    <section>
+
+        <h1>Transform Menu</h1>
+
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto illo est nemo inventore id nisi eum nostrum officiis fuga harum quisquam fugit, quaerat dignissimos debitis blanditiis accusantium, animi delectus quidem!</p>
+        <p>Laudantium impedit incidunt unde id et dolore eligendi facere nihil temporibus reiciendis nam dolorum, quasi exercitationem accusantium similique repudiandae excepturi doloremque repellat distinctio ab. Suscipit aut optio alias rem ducimus!</p>
+        <p>Voluptatum velit laborum eligendi corporis id? Rem culpa laudantium unde corrupti officia, at animi architecto. Veniam blanditiis quaerat sed, ipsam vero officiis dolores fugiat odit similique quia corrupti incidunt nesciunt.</p>
+        <h2>At sed inventore nemo est!</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti nemo impedit magni quibusdam dolorum obcaecati natus culpa unde alias enim tempore labore repudiandae sit accusamus, voluptatum doloremque, error mollitia exercitationem?</p>
+        <p>Incidunt aut reprehenderit velit praesentium? Ipsum nobis sed eligendi, hic corrupti molestiae magnam officiis qui vitae sunt deserunt non ipsam harum ab sint vel laborum quidem animi aspernatur obcaecati odio.</p>
+        <p>Doloremque nostrum repellat, laborum ducimus consectetur, labore earum, dolor nam harum corporis rem natus! Maxime unde sed minus nostrum ea? Minima aliquam amet ex repellat debitis aut iusto ipsum fugit.</p>
+        <h2>Libero eum velit a molestias?</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dignissimos modi dolor animi enim quis placeat, quos corrupti eveniet accusamus repellat in dolorum distinctio nostrum, unde autem officia aspernatur repudiandae.</p>
+        <p>Ad architecto veniam illo doloremque quas voluptas, ipsa culpa quasi, voluptatem atque eius eum laborum voluptatum earum! Sequi voluptatum perferendis provident inventore vero illum quo, dolor aperiam veritatis quas cupiditate.</p>
+        <p>Corrupti repellat iure reiciendis, dignissimos animi sed voluptatibus quae voluptates. Sapiente ad repellat at quam fugiat dolorem magni odio nulla libero iusto vel tenetur totam porro exercitationem unde, perspiciatis ipsum.</p>
+        <h2>Vel nisi dolores laborum. Sit?</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse illo saepe sint, eligendi vero enim est corrupti nihil. Repudiandae fuga quibusdam ipsam suscipit delectus provident at incidunt. Veniam, eaque quasi!</p>
+        <p>Nobis, iusto officia ullam sed earum, inventore fuga, optio quisquam suscipit molestiae repellat! Accusantium architecto cum laudantium pariatur, laboriosam voluptates maiores impedit enim labore sint saepe ratione, consequuntur voluptas suscipit.</p>
+        <p>Fugit repellendus corrupti ex odit saepe non dolor quod vel obcaecati perferendis, assumenda dolorum quisquam reprehenderit eligendi, libero quidem vitae. Dolore aut animi laudantium provident delectus aspernatur iure beatae nam?</p>
+        <h2>Maiores eos sint quos optio.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente obcaecati asperiores sint veritatis laboriosam maxime dolorem ab adipisci provident, vitae officia qui repellendus corrupti nisi eveniet nemo perferendis temporibus vel?</p>
+        <p>Aut porro pariatur vel exercitationem iusto temporibus aliquam obcaecati deserunt doloribus non dignissimos animi repellendus, consequatur rerum. Assumenda aut officia voluptatum repellendus sapiente blanditiis unde alias, beatae optio laudantium corporis.</p>
+        <p>Beatae est tempore veritatis dignissimos, amet labore, fugiat sed nesciunt voluptatum similique voluptate dolor cupiditate iure corporis aliquam quos soluta dicta? Ipsa ad fugit adipisci voluptatum accusantium, placeat deleniti repellat?</p>
+    </section>
+
+
+
+</body>
+</html>

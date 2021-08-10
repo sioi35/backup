@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex87_regex.html -->
+    <h1>JavaScript + 정규 표현식</h1>
+
+    <textarea id="txt" cols="80" rows="10">
+        동네마다 한 집 걸러 한 집이 카페일 정도로 요즘 우리나라는 커피 열풍이 불고 있다. 특히 코로나19가 장기화 되면서 집에서 커피를 즐기는 홈카페가 유행을 하고 있다. 이는 커피 전문가들만 했었던 커피 로스팅을 집에서도 하게 만드는 요인이 되었고 다양한 커피 추출을 집에서 하게 만드는 유행을 이끌고 있다.
+
+        이제 커피는 한 잔의 음료라기 보다는 하나의 식(食)문화라고 불러도 손색이 없을 정도로 우리의 식문화의 한 부분이 되어버렸다.
+
+        010-1234-5678
+
+        커피는 생산국에 따라 생산고도에 따른 분류, 결점두에 따른 분류, 생두 크기에 따른 분류로 등급을 나눠서 수출이 되고 있다. 또한 커피의 독특한 향미와 품질로도 등급을 분류하고 한정된 지역적 특성으로 인해 생성되는 독특한 향미와 철저한 관리를 통해 우수한 품질을 지닌 커피를 스페셜티 커피라고 부르면서 일반 상업용 커피와 구분을 하고 있다.
+
+        우리가 흔히 마시고 있는 커피인 아메리카노는 대부분 상업용 커피를 사용하고 있다. 이 상업용 커피는 수입업체에서 010-5678-9123 로스팅업체로 판매할 때까지는 생산지와 생산 단계에 대한 정보를 제공하고 있지만 문제는 카페 커피 원두로 전달이 될때에는 그 정보들이 충분이 제공되지 못하고 있다는 점이다.
+
+        카페에 가보면 우리가 마시는 커피의 생산국과 생산 단계에 대한 정보가 있는 카페가 있고 아무런 정보 없이 메뉴명만 있는 경우도 있다. 지금 소비자들은 안전한 먹거리를 위해 원산지 표시, GMO유무, 잔류 농약에 대한 안전 유무 등 먹거리에 대해 더욱 많은 정보를 요구하고 있다.
+
+        하지만 왜 그런지 커피 선택에 있어서 만큼은 소비자들이 너무나 관대한 기준을 들이대고 있는 것 같아 우려스럽다. 소비자들은 내가 마시고 있는 커피가 어떤 곳에서 생산이 되었는지? 나한테 오기 전 어떠한 과정을 거쳐서 가공이 되었고 보관은 어떻게 되었으며 로스팅 과정은 위생적으로 진행이 되어서 음료로 만들어 졌는지 이 과정을 철저히 확인 할 필요가 있다.
+
+        우리가 좋은 음식을 만들기 위해서는 꼭 재료의 손질을 필요로 한다. 이 손질과정을 통해 불필요한 부분과 음식에 포함되면 안 되는 불량 재료들을 선별하고 제거해야만 좋은 음식을 만들 수 있다. 커피도 마찬가지이다. 커피 로스팅에서 그 과정을 결점두 선별작업(Hand-pick) 이라고 한다.
+
+        이 과정을 통해 과발효되어 상한 커피생두를 제거하고 정상적인 커피생두만 로스팅을 해야하지만 이 과정을 귀찮게 여기거나 많은 시간을 들여야 하는 과정이기 때문에 많은양의 커피를 볶아야 하는 대형 로스터들은 이 과정을 생략하는 경우가 많다. 특히 고온 가열을 하는 로스팅의 특성상 불필요한 과정이라고 변명을 하는 로스터들도 있지만 커피는 사람이 마시는 음료이기 때문에 결점두 선별 작업은 꼭 필요하다.
+
+        커피생두는 생산지에서 과발효로 인한 곰팡이 발생과 이물질이 혼입, 보관 과정에서의 곰팡이 발생 등 식품 위생상의 문제가 생길 수 있다.
+        물론 대부분의 결점을 가진 커피생두는 가열을 통해서 문제가 해결될 수도 있지만 곰팡이로 인해 생성될 수 있는 곰팡이 독소인 오크라톡신A(Ochratoxin A)는 가열을 통해서도 제거가 쉽지 않기 때문에 결점두 선별 작업을 통해 곰팡이에 의한 피해가 있는 커피생두는 반드시 제거해야 한다. 특히 이 오크라톡신A는 240℃ 이상의 고온에서도 수분간 활성을 하고 인체내에서는 암을 유발하는 등 심각한 문제를 야기시킬 수 있기 때문에 반드시 제거를 하는 것이 좋다.
+
+        커피생두의 결점두는 여러 이유에 따라 다른 명칭을 가지고 있고 각기 다른 향미 결점과 문제점들을 가지고 있다. 이 중 반드시 제거해야 하는 세 개의 결점두가 있는데 첫 번째는 생두 전체가 검게 변한 풀블랙빈(Full Black Bean)이다. 이 결점두는 미생물과 연관된 과발효로 인해 발생을 한다.
+
+        두 번째는 부분적으로 검녹색 또는 검푸른색을 띄는 펑거스 데미지빈(Fungus Damage Bean)으로 누룩 곰팡이(Aspergillus)와 페니실륨 곰팡이(Penicillium molds)로 인해 만들어 진다.
+
+        세 번째 결점두는 인센트 데미지빈(Insect Damage Bean)으로 해충에 의해 피해를 입어 생긴 구멍 주변에 곰팡이로 인한 푸른빛 또는 검푸른빛이나 검은색을 띄게 되는 결점두이다.
+    </textarea>
+    <hr>
+
+    <input type="button" value="버튼" id="btn1">
+
+    <h1>입력</h1>
+    <form method="GET" action="ex87.jsp">
+        
+        <div>이름: <input type="text" name="name" pattern="[가-힣]{2,5}" required> 필수 + 한글(2~5자) </div>
+        <div>나이: <input type="text" name="age" pattern="[0-9]{1,2}" required> 필수 + 숫자 </div>
+        <div>나이: <input type="number" name="age" pattern=""> 필수 + 숫자 </div>
+        <div><input type="submit" value="등록하기"></div>
+    </form>
+
+
+    <script>
+
+        var txt = document.getElementById('txt')
+        var btn1 = document.getElementById('btn1')
+
+
+        btn1.onclick = function(){
+
+            //정규 표현식
+            //1. 생성자 함수 사용
+            //2. 리터럴 표기법 사용
+
+            //정규 표현식 객체 메소드
+            //1. boolean test()
+            //2. array exec(): 추출함수
+            //3. array match(): 문자열 함수, g(global 함수 붙이면 전역 탐색)
+            //4. string replace()
+            //5. array split
+
+            // - g(global): 전역 탐색(N회 검색)
+            // var regex = new RegExp('[0-9]{3}-[0-9]{4}-[0-9]{4}', 'g');
+
+            var regex = /([0-9]{3})-[0-9]{4}-[0-9]{4}/g;
+
+            console.log(regex.test(txt.value));
+            console.log('-----------------')
+
+            // console.log(regex.exec(txt.value));
+            var result = regex.exec(txt.value);
+            console.log(result.length);
+            result.forEach(function(item){
+                console.log(item);
+            });
+            console.log('-----------------')
+
+            var result = txt.value.match(regex);
+            console.log(result.length);
+
+            result.forEach(function(item){
+                console.log(item);
+            });
+            
+        };
+        
+        var str = '홍길동님 안녕하세요. 반갑습니다. 홍길동님';
+
+        console.log(str.replace('홍길동', '아무개'));
+        console.log(str.replace(/홍길동/g, '아무개'));
+
+        var str = 'Hello Java~~ Hi java';
+
+        console.log(str.replace(/Java/g, '자바'));
+
+        //g(global), i(insensitive)
+        console.log(str.replace(/Java/gi, '자바'));
+        console.log(str.replace(/Java/ig, '자바'));
+        
+
+        // var str = '홍길동,아무개,하하하,호호호,후후후';
+        // var str = '홍길동,아무개;하하하!호호호,후후후';
+        var str = '홍길동,         아무개,하하하     ,호호호,후후후';
+
+
+
+        console.log(str.split(','));
+        console.log(str.split(/[,;!]/));
+        console.log(str.split(/\s*,\s*/));
+
+
+
+
+    </script>
+
+</body>
+</html>

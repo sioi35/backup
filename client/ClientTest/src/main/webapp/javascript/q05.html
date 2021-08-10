@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-size: 0.9em;
+        }
+        form{
+            width: 700px;
+            margin: 0 auto;
+        }
+        input {
+            border: 0px;
+            width :400px;
+            display: block;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- q05.html -->
+
+    <form name="form1">
+        <h1>롤오버 이미지 + 텍스트 박스</h1>
+        <h2>이미지에 반응해 아래의 텍스트를 변경하시오.</h2>
+        <img src="images/img01.jpg" name="img">
+        <img src="images/img02.jpg" name="img">
+        <img src="images/img03.jpg" name="img">
+        <input type="text" value="" name="txt">
+    </form>
+
+    <script>
+
+        var img = document.images;
+        var txt = document.form1.txt;
+
+        for(var i=0 ; i<img.length; i++){
+            
+            img[i].onmouseover = function(){
+                var index = event.srcElement.src.lastIndexOf('.');
+                var result = (event.srcElement.src.substr(index-1, 1));
+                result = parseInt(result) + 3;
+                event.srcElement.src = 'images/img0' + result + '.jpg';
+                if(result == 4){
+                    txt.value = "'스키'타는 사람이 '당근'으로 변했습니다."
+                }else if(result == 5){
+                    txt.value = "'해바라기'가 '피망'으로 변했습니다."
+                }else if(result == 6){
+                    txt.value = "'나무'가 '개'가 됐습니다."
+                }
+            };
+            
+            img[i].onmouseout = function(){
+                var index = event.srcElement.src.lastIndexOf('.');
+                var result = (event.srcElement.src.substr(index-1, 1));
+                result = parseInt(result) -3;
+                event.srcElement.src = 'images/img0' + result + '.jpg';
+                txt.value = ""
+
+            };
+
+        }
+
+
+    </script>
+
+</body>
+</html>

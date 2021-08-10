@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #bigbox{
+            width: 770px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            border-radius: 5px;
+            float: left;
+            margin: 1px;
+            font-size: 2em;
+        }
+
+        .back {
+            float: left;
+            width: 74px;
+            height: 74px;
+            border: 1px solid black;
+            background-image: url(images/rect_icon07.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all .5s;
+            /* overflow: hidden; */
+            background-size: 100% 100%;
+            transition-timing-function: linear;
+            transform: translate(0px, 0px);
+
+        }
+  
+        #box1:hover ~ .one {
+            transform: translate(0px, 74px);
+            opacity: 0;
+
+        }
+        
+        #box2:hover ~ .two {
+            transform: translate(0px, 74px);
+            opacity: 0;
+
+        }
+
+        #box3:hover ~ .three {
+            transform: translate(0px, 74px);
+            opacity: 0;
+
+        }
+
+        #box4:hover ~ .four {
+            transform: translate(0px, 74px);
+            opacity: 0;
+
+        }
+
+        #box5:hover ~ .five {
+            transform: translate(0px, 74px);
+            opacity: 0;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex62.html -->
+    <div id="bigbox">
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+        <div id="box5" class="box">5</div>
+        <div style="clear: both;"></div>
+        <hr>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+        
+        <div class="back"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+        
+        <div class="back"></div>
+        <div class="back four five"></div>
+        <div class="back four five"></div>
+        <div class="back"></div>
+        <div class="back one"></div>
+        <div class="back one"></div>
+        <div class="back four"></div>
+        <div class="back two three four"></div>
+        <div class="back two three"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+        
+        <div class="back"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back one two three four five"></div>
+        <div class="back one two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back two four"></div>
+        <div class="back two four"></div>
+        <div class="back four"></div>
+        <div class="back one four"></div>
+        <div class="back one four"></div>
+        <div class="back four"></div>
+        <div class="back three four five"></div>
+        <div class="back three four five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back two three five"></div>
+        <div class="back two three five"></div>
+        <div class="back two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back two three five"></div>
+        <div class="back two three five"></div>
+        <div class="back two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back one two three five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three four five"></div>
+        <div class="back two three five"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div class="back"></div>
+        <div style="clear: both;"></div>
+        
+    </div>
+</body>
+</html>

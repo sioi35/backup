@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- child.html -->
+    <h1>자식창</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="창 닫기" name="btn1">
+        <input type="button" value="부모창의 텍스트 박스에 접근하기" name="btn2">
+    </form>
+    <hr>
+    <form name="form2">
+        아이디: <input type="text" name="txtID">
+        <input type="button" value="중복검사">
+        <br>
+        <input type="button" value="사용하기" name="btnUse">
+    </form>
+
+    <script>
+        var txt1 = document.form1.txt1;
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        
+        var txtID = document.form2.txtID;
+        var btnUse = document.form2.btnUse;
+
+        btn1.onclick = function(){
+            window.close();
+        };
+
+        btn2.onclick = function() {
+
+            //부모창의 window를 얻어오기(= opener)
+            opener.document.form1.txt1.value = "자식창에서 접근했습니다.";
+
+        };
+
+        btnUse.onclick = function(){
+            //1. 아이디를 부모창에 복사하기
+            //2. 팝업창을 닫기
+
+            opener.document.form1.txt1.value = txtID.value;
+
+            window.close();
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{ 
+            margin-bottom: 100px;
+        }
+        /*  
+            입력 폼 선택자
+            1. :focus
+            2. :enabled
+            3. :disabled
+            4. :checked
+            5. :required
+            6. :read-only
+            7. :optional
+        */
+
+        form:nth-child(2) > input{
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #999;
+            background-color: white;
+            outline: none;
+            padding: 5px;
+        }
+
+        /* form:nth-child(2) > input:focus { background-color: palegreen; } */
+
+        /* form:nth-child(2) > input:enabled { background-color: peru; } */
+        /* form:nth-child(2) > input:disabled { background-color: pink; } */
+        /* form:nth-child(2) > input:disabled { 
+            background-color: palevioletred;
+            opacity: .3;            
+            cursor: not-allowed;
+        } */
+
+        form:nth-child(2) > input:required { background-color: gold; }
+        form:nth-child(2) > input:optional { background-color: tomato; }
+
+        form:nth-child(2) > input:read-only { cursor: not-allowed; }
+
+        form:nth-child(4) > input {
+            /* background-color: tomato; */
+            /* width: 50px;
+            height: 50px; */
+        }
+
+        /* 
+        input[type=checkbox]:checked {
+            width: 50px;
+            height: 50px;
+        }
+
+        input[type=radio]:checked {
+            width: 50px;
+            height: 50px;
+        } 
+        */
+
+        /* input.cat + img {
+            opacity: .3;
+        }
+
+        input.cat:checked + img {
+            opacity: 1;
+        } */
+
+        input.cat{
+            display: none;
+        }
+
+        input.cat + label > img {
+            opacity: .3;
+        }
+        
+        input.cat:checked + label > img {
+            opacity: 1;
+        }
+
+        #cb1{
+            display: none;
+        }
+
+        #cb1 + label + div{
+            visibility: hidden;
+        }
+        
+        #cb1:checked + label + div{
+            visibility: visible;
+        }
+
+        #cb1:checked + label > span:nth-child(2){
+            display: inline;
+        }
+        #cb1:checked + label > span:nth-child(1){
+            display: none;
+        }
+        
+        #cb1 + label > span:nth-child(2){
+            display: none;
+        }
+
+        .item {
+            border: 1px solid #CCC;
+            width: 200px;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5em;
+            float: left;
+            margin-right: 10px;
+        }
+
+
+        .item > input[type=checkbox] {
+            display: none;
+        }
+
+        .item > label {
+            display: block;
+            background-color: #EEE;
+            padding: 5px;
+            padding-left: 8px;
+            font-weight: bold;
+            font-variant: small-caps;
+            cursor: pointer;
+            border-bottom: 1px solid #CCC;
+        }
+
+        .item > div {
+            padding: 10px;
+        }
+
+        .item > input[type=checkbox]:checked + label + div {
+            display: none;
+        }
+
+        .item > input[type=checkbox]:checked + label{
+            color: #CCC;
+            border-bottom: 0px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex43_selector.html -->
+
+    <h1>입력 폼</h1>
+
+    <form>
+        <input type="text" required>
+        <input type="text" readonly>
+        <input type="text" disabled>
+        <input type="text" required>
+        <input type="text">
+        <input type="text">
+        <input type="text" readonly>
+        <input type="text" required>
+        <input type="text">
+        <input type="text" disabled>
+    </form>
+
+
+    <h1>체크박스 + 라디오버튼</h1>
+    
+    <form>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="radio" name="rb">
+        <input type="radio" name="rb">
+        <input type="radio" name="rb">
+    </form>
+
+    <h1>고양이</h1>
+
+    <form>
+        <div>
+            <input type="checkbox" class="cat" id="cat1">
+            <label for="cat1"><img src="images/catty01.png"></label>
+        </div>
+        <div>
+            <input type="checkbox" class="cat" id="cat2">
+            <label for="cat2"><img src="images/catty02.png"></label>
+        </div>
+        <div>
+            <input type="checkbox" class="cat" id="cat3">
+            <label for="cat3"><img src="images/catty03.png"></label>
+        </div>
+        <div>
+            <input type="checkbox" class="cat" id="cat4">
+            <label for="cat4"><img src="images/catty04.png"></label>
+        </div>
+        <div>
+            <input type="checkbox" class="cat" id="cat5">
+            <label for="cat5"><img src="images/catty05.png"></label>
+        </div>
+    </form>
+
+    <hr>
+
+    <details>
+        <summary style="cursor: pointer;">클래스</summary>
+        <div>클래스가 어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구 </div>
+    </details>
+
+    <hr>
+
+    <input type="checkbox" id="cb1">
+    <label for="cb1"><span>▶</span><span>▼</span>클래스</label>
+    <div>클래스가 어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구  어쩌구 저쩌구 </div>
+
+    <h1>자바</h1>
+    
+    <div class="item">
+        <input type="checkbox" class="cb" id="item1">
+        <label for="item1">Class</label>
+        <div>
+            클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구
+        </div>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" class="cb" id="item2">
+        <label for="item2">Method</label>
+        <div>
+            클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구
+        </div>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" class="cb" id="item3">
+        <label for="item3">Interface</label>
+        <div>
+            클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구 클래스가 어쩌구 저쩌구
+        </div>
+    </div>
+
+</body>
+</html>

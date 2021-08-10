@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* <style>은 일반적으로 문서내 <head> 자식으로 1회 적용 */
+    </style>
+    <script>
+
+        // <script>는 문서내에 여기저기 여러번 적용하는 모습을 자주 볼 수 있다.
+        // -> 코드의 실행 순서를 제어하기 위해서..
+        // -> 동기순으로 적용
+
+        // alert('하나');
+
+        // window.document.all.txt1.value = new Date();
+
+        //출력(변수);
+        //변수 선언;
+
+
+    </script>
+</head>
+<body>
+    <!-- ex02.html -->
+    <!--  
+
+        자바스크립트 구문의 실행 순서
+        - 동기(문장 순서대로 실행)
+        - 브라우저가 HTML과 JavaScript를 동시에 실행한다.
+        - HTML 조작 시 HTML과 JavaScript 구문의 순서가 중요하다.(****)
+
+    -->
+
+    <input type="text" name="txt1" size="50" />
+
+    <script>
+        // alert('둘');
+        window.document.all.txt1.value = new Date();
+    </script>
+
+</body>
+</html>

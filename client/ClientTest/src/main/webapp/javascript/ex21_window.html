@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='button'] {display: block; margin-bottom: 5px;}
+    </style>
+</head>
+<body>
+    <!-- ex21_window.html -->
+    <h1>window 객체</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="자식창 띄우기" name="btn1">
+        <input type="button" value="자식창의 텍스트박스에 접근하기" name="btn2">
+        <input type="button" value="" name="btn3">
+        <input type="button" value="" name="btn4">
+        <input type="button" value="" name="btn5">
+    </form>
+
+    <script>
+
+        var txt1 = document.form1.txt1;
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        var btn4 = document.form1.btn4;
+        var btn5 = document.form1.btn5;
+
+        //window 객체
+        // - 최상위 객체
+        // - 브라우저 창 자체를 참조하는 객체
+
+        var child;  //전역변수로 만들기
+
+        btn1.onclick = function() {
+            //open(url, name, option)
+            // - name: 자식창의 중복 방지
+
+            //child: 새창(자식창)의 window 객체
+            child = window.open('child.html', 'child', 'width=300, height=300, left=300, top=200');
+        };
+
+        btn2.onclick = function(){
+            // window.close();
+
+            //열려있는 자식창의 window 객체를 얻어내기
+            // child.close();
+            child.document.form1.txt1.value = "부모창에서 접근했습니다.";
+
+        };
+
+        //사용자에게 허락 구함? > 팝업 광고
+        //window.open('child.html', 'child', 'width=300, height=300');
+
+    </script>
+
+</body>
+</html>

@@ -32,6 +32,7 @@ public class Smain {
 		Smain start=new Smain();		//객체화
 		start.go();						//생성자 기능을 맡은 초기화를 담당한 go 메소드 실행
 	}
+	
 	/*생성자처럼 초기화를 담당하는 메소드*/
 	public void go(){
 		frame = new JFrame(frameTitle);		//프레임 객체화

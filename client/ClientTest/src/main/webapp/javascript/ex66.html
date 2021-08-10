@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .header {
+            width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px dotted #444;
+            padding-bottom: 10px;
+        }
+
+        .img {
+            position: absolute;
+        }
+
+        #box {
+            width: 700px;
+            height: 700px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        img{
+            /* display: flex; 
+            justify-content: center; 
+            align-items: center; */
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex66.html (exam27) -->
+    <div class="header">
+        <h1>마우스 + 이미지 이동하기</h1>
+        <h2>마우스를 어느 방향에서 올리느냐에 따라 이미지를 좌/우로 이동하시오.</h2>
+    </div>
+
+    <div id="box">
+        <img src="images/face16.png" id="img">
+    </div>
+  
+    <script>
+
+        var img = document.getElementById('img');
+
+
+        img.onmouseover = function(){
+            
+            if(event.clientX <= (parseInt(window.getComputedStyle(img).left)+64)){
+                // alert(event.clientX);  //564
+                img.style.left = parseInt(window.getComputedStyle(img).left) + 30 +'px';
+            }else{
+                img.style.left = parseInt(window.getComputedStyle(img).left) - 30 +'px';
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            transition: all 1s;
+        }
+
+        #menu {
+            /* border: 1px solid black; */
+            width: 680px;
+            height: 136px;
+            margin: 0px auto;
+            transform: translate(0px, -110px);
+        }
+
+        #menu .item {
+            border: 5px solid white;
+            float: left;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        #menu::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex72_style.html -->
+
+    <header>
+        <nav id="menu">
+            <img src="images/rect_icon01.png" class="item" data-no="0">
+            <img src="images/rect_icon02.png" class="item" data-no="1">
+            <img src="images/rect_icon03.png" class="item" data-no="2">
+            <img src="images/rect_icon04.png" class="item" data-no="3">
+            <img src="images/rect_icon05.png" class="item" data-no="4">
+        </nav>
+    </header>
+
+    <section>
+
+    </section>
+
+
+    <script>
+
+        var item = document.getElementsByClassName('item');
+        var color = [ "#A67F62", "#BE4F3B", "#E7C758", "#666666", "#63AFD1" ];
+
+        for(var i=0; i<item.length; i++){
+
+            item[i].onclick = function(){
+
+                for(var i=0; i<item.length; i++){
+                    if(item[i] != event.srcElement){
+                        item[i].style.transform = 'translate(0px,0px)';
+                    }
+                }
+
+                if(event.srcElement.style.transform == 'translate(0px, 90px)'){
+                    //접기
+                    event.srcElement.style.transform = 'translate(0px, 0px)';
+                    document.body.style.backgroundColor = 'white';
+                }else{
+                    //펼치기
+                    event.srcElement.style.transform = 'translate(0px, 90px)';
+                    document.body.style.backgroundColor = color[event.srcElement.dataset['no']];
+
+                }
+
+            };
+
+        }
+
+
+        //32
+        // onmousedown = function(){
+        //     if(event.ctrlKey)
+        // }
+        // onmousemove = function(){
+        //     배열.push(마우스 좌표)
+        // }
+        // 시작버튼.onclick = {
+
+        // }
+
+
+
+    </script>
+
+
+</body>
+</html>

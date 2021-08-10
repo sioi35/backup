@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #header {
+            margin: 0 auto;
+            padding: 50px;
+            width: 1400px;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            left: 0px;
+            top:0px;
+        }
+
+        .box .lane{
+            border-bottom: 1px solid black;
+            height: 149px;
+        }
+
+        .box .lane:last-child {
+            border-bottom: 0px;
+        }
+
+        .ball{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+            left: 0px;
+            border-radius: 50%;
+            font-size: 70px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 5s;
+        }
+
+        #ball1 { background-color: tomato; transition-timing-function: linear; top: 48px; }
+        #ball2 { background-color: gold; transition-timing-function: ease; top: 198px; }
+        #ball3 { background-color: orangered; transition-timing-function: ease-in;  top: 348px; }
+        #ball4 { background-color: greenyellow; transition-timing-function: ease-out; top: 498px; }
+        #ball5 { background-color: cornflowerblue; transition-timing-function: ease-in-out; top: 648px; }
+
+        .box:hover .ball{
+            transform: translate(1290px, 0px) rotate(3600deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex61.html -->
+    <h1 id="header">:hover + position(absolute) + transform(rotate) + transition</h1>
+    <div class="box">
+        <div class="lane">
+            <div class="ball" id="ball1">A</div>
+        </div>
+        <div class="lane">
+            <div class="ball" id="ball2">B</div>
+        </div>
+        <div class="lane">
+            <div class="ball" id="ball3">C</div>
+        </div>
+        <div class="lane">
+            <div class="ball" id="ball4">D</div>
+        </div>
+        <div class="lane">
+            <div class="ball" id="ball5">E</div>
+        </div>
+    </div>
+</body>
+</html>

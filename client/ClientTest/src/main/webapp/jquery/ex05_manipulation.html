@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- ex05_manipulation.html -->
+
+    <!--  
+
+        공부 여유 시간: 100시간
+
+        목표: 클라이언트 개발
+        1. JavaScript: 50 
+        2. jQuery: 0
+        3. Vue.js: 50
+
+        목표: 웹 개발
+        1. JavaScript: 50 
+        2. jQuery: 50
+        3. Vue.js: 0
+
+        목표: 자기계발(실력 향상)
+        1. JavaScript: 100시간 
+        2. jQuery: 0
+        3. Vue.js: 0
+        
+
+        언어: 시간이 지나도 변함없이 기둥 역할
+        --------------
+        1. JavaScript
+        
+        응용기술: 시대에 따라 생겨나거나 사라진다.
+        --------------
+        2. jQuery
+        3. Vue.js
+
+
+    -->
+
+    <h1>jQuery + HTML 조작</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="list">
+        <div id="box1" class="box">상자1</div>
+        <div id="box2" class="box">상자2</div>
+        <div id="box3" class="box">상자3</div>
+    </div>
+    <hr>
+    <input type="text" id="txt1">
+    <hr>
+    <a href="http://google.com" id="link1">구글</a>
+
+    <h1>고양이</h1>
+    <div id="cat">
+        <img src="images/catty01.png" alt="">
+        <img src="images/catty02.png" alt="">
+        <img src="images/catty03.png" alt="">
+        <img src="images/catty04.png" alt="">
+        <img src="images/catty05.png" alt="">
+    </div>
+
+    <script>
+
+        // $('#btn1').click();
+        // $('#btn1').click(함수); // 쓰기 -> 이벤트 추가
+
+        // $('#btn1').on(이벤트명, 함수); //쓰기 -> 이벤트 추가
+
+
+        $('#btn1').click(function(){
+
+            //HTML 조작
+            // 1. 컨텐츠 조작
+            //      - innerText(textContent) > text()
+            //      - innerHTML > html()
+            //      - append(), prepend()
+            //      - val()
+
+            // 2. 속성 조작
+            //      - attr() //범용함수
+            
+            // 3. CSS 조작
+            //      - css()
+
+            // 1. 컨텐츠 조작
+            // $('#box1').text('<b>안녕하세요.</b>');
+            // $('#box2').html('<b>반갑습니다.</b>');
+            // $('#box3').html('<input type="text">')
+
+            //$('#box3').html() : 읽기(getter)
+            //$('#box3').html(text) : 쓰기(setter)
+
+            // document.getElementById('box3').innerHTML += '<input type="text">';
+            // $('#box3').html($('#box3').html() + '<input type="text">');
+
+            // alert($('#box3').html()); //읽기(getter)
+            // alert(document.getElementById('box3').innerHTML); //읽기(getter)
+
+
+            // $('#box3').append('<input type="text">'); //누적
+            // $('#box3').prepend('<input type="text">');
+
+            // alert($('#txt1').val());
+            // $('#txt1').val('안녕~');
+
+            //jQuery 메소드의 패턴
+            //1. 전용 함수
+            // - 메소드명을 보면 무슨 행동인지 유추가 가능하다.
+            //  a. obj.test()       : getter, 읽기
+            //  b. obj.test(param)  : setter, 쓰기
+
+            // alert($('#box3').text());   //1.a
+            // alert($('#box3').text("ABC")); //1.b
+
+
+            //2. 범용 함수
+            //  - 메소드명을 보면 무슨 행동인지 유추가 모호하다.
+            //  a. obj.test(param)       : getter, 읽기
+            //  b. obj.test(pram, param) : setter, 쓰기
+
+            // $('#box3').css('color'); //2.a
+            // $('#box3').css('color', 'blue'); //2.b
+
+
+            //2. 속성 조작
+            // alert($('#link1').attr('href')); //읽기
+            // $('#link1').attr('href', 'http://naver.com'); //쓰기
+            // $('#link1').attr('title', '네이버');
+            // $('#link1').attr('target', '_blank');
+            
+            // $('#link1').attr('href', 'http://naver.com')
+            //            .attr('title', '네이버')
+            //            .attr('target', '_blank');
+            
+
+            // $('#link1').attr({
+            //     href: 'http://naver.com',
+            //     title: '네이버',
+            //     target: '_blank'
+            // });
+
+            
+            //3. CSS 조작
+            // alert($('#box1').css('width'));
+            // $('#box1').css('width', '600px');
+            // $('#box1').css('height', '300px');
+            // $('#box1').css('background-color', 'gold');
+            
+            // $('#box2').css('width', '100px')
+            //           .css('height', '100px')
+            //           .css('border', '10px solid black');
+
+            // $('#box3').css({
+            //     width: '500px',
+            //     height: '150px',
+            //     outline: '5px solid blue'
+            // });
+
+            // $('#cat').append('<img src="images/catty06.png">');
+
+            //문자열을 가지고 진짜 태그를 만들어서 jQuery 객체로 반환한다.
+            $('#cat').append('<img>').attr('src', 'images/catty07.png')
+                                     . css('opacity', '.5')
+                                     . mouseover(function(){
+                                        $(this).css('opacity', '1');
+                                     });
+
+        }); //btn1.click
+
+
+        $('#cat > img').click(function(){
+            // alert(this.src);
+            // alert(this.constructor); //function HTMLImageElement() { [native code] }
+
+            //jQuery에 걸린 이벤트 함수내에서 this
+            // -> jQuery 객체(X)
+            // -> DOM 객체(O)
+
+            // this.css('opacity', '.5'); // 할수없음. > DOM 객체라
+            // this.style.opacity = .5;
+
+            //DOM 객체 -> jQuery 객체 변환
+            // $(this).css('opacity', '.3');
+
+            $(this).css({
+                opacity: .3,
+                transform: 'scale(.5, .5) rotate(45deg)'
+            });
+
+            // document.body (DOM 순수 자바스크립트 객체)-> $() -> jQuery 객체
+
+            // document.body.style.backgroundColor = 'gold';
+            // $(document.body).css('background-color', 'blue');
+
+
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>

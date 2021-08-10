@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex43_event.html -->
+
+    <h1>DOM 이벤트</h1>
+
+    <input type="button" value="버튼" id="btn1">
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+
+        function m1(){
+            alert('m1');
+            
+        }
+        
+        function m2(){
+            alert('m2');
+
+        }
+
+        function m3(){
+            m1();
+            m2();
+        }
+        
+
+        //BOM 이벤트
+        // btn1.onclick = function(){};
+        // btn1.onclick = m1; //덮어쓰기 발생
+        // btn1.onclick = m2; //덮어쓰기 발생
+        // btn1.onclick = null; //이벤트 제거
+
+        // //m1 , m2 동시호출
+        // // btn1.onclick = m1 + m2; //불가능
+        // btn1.onclick = m3; //m1 + m2
+
+
+        //DOM 이벤트
+        // - addEventListener
+        //      : 함수를 목록으로 관리한다.(Invocation List)
+        //      : 리스트에 함수를 Append
+
+        // btn1.addEventListener('click', function(){
+        //     alert();
+        // }); //= btn1.onclick = function(){};
+        btn1.addEventListener('click', m1);
+        btn1.addEventListener('click', m2); //덮어쓰기 (X), 누적(O)
+
+        btn1.removeEventListener('click', m1);
+
+    </script>
+
+
+</body>
+</html>

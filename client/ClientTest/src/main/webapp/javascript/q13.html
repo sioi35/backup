@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            color: #444;
+        }
+        div {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+
+        h2 {
+            font-size: 0.9em;
+        }
+
+        ul {
+            border-bottom: 1px dotted #222;
+            padding-bottom: 30px;
+            font-size: 0.7em;
+        }
+
+        input {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            font-size: 8em;
+            font-weight: bold;
+            margin: 100px 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- q13.html -->
+    <div>
+        <h1>카운트 다운 + 페이지 이동</h1>
+        <h2>카운트 다운을 구현하시오.</h2>
+        <ul>
+            <li>카운트가 0이 되면 페이지를 구글로 이동하시오.</li>
+            <li>esc 키를 누르면 카운트를 중단하시오.</li>
+        </ul>
+        <input type="text" value="10" name="txt">
+    </div>
+
+    <script>
+
+        var txt = document.all.txt;
+
+        var timer = setInterval(function(){
+            txt.value = parseInt(txt.value) - 1;
+            if(txt.value == 0){
+                location.href = "http://google.com"
+            }
+        }, 1000); 
+
+        window.onkeydown = function(){
+            // alert(event.keyCode);
+            if(event.keyCode == 27){
+                clearInterval(timer);
+                document.body.bgColor = 'tomato';
+            }
+        };
+            
+        
+        
+
+
+    </script>
+
+</body>
+</html>

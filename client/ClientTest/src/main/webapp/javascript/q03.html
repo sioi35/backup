@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0 auto;
+        }
+
+        h1 {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .big{
+            border: 1px solid black;
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .left {
+            width: 220px;
+            height: auto;
+            float: left;
+            border-right: 1px solid black;
+        }
+
+        .left input[type=button]{
+            display: block;
+            width: 160px;
+            height: 40px;
+            margin: 10px;
+            margin: 15px;
+        }
+
+        .right{
+            width: 200px;
+            height: auto;
+            float: left;
+        }
+
+        .right img {
+            margin: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- q03.html -->
+
+    <h1>롤오버 이미지 + 새창 띄우기</h1>
+    
+    <div class="big">
+        <div class="left">
+            <input type="button" value="강아지1" name="btn">
+            <input type="button" value="강아지2" name="btn">
+            <input type="button" value="강아지3" name="btn">
+            <input type="button" value="강아지4" name="btn">
+            <input type="button" value="강아지5" name="btn">
+        </div>
+        <div class="right">
+            <img src="images/dog01.jpg" name="dog">
+        </div>
+    </div>
+
+    <script>
+
+        var btn = document.all.btn;
+       
+        var img = document.images.dog;
+
+        for(var i=0; i<btn.length; i++){
+            btn[i].onmouseover = function(){
+                var result = event.srcElement.value.substr(3);
+                img.src = 'images/dog0' + result + '.jpg';
+            };
+
+            btn[i].onclick = function(){
+                var result = event.srcElement.value.substr(3);
+                var child = window.open('images/dog0'+result+'_big.jpg', 'child', 'width=1400, height=1050');
+            };
+
+        }
+        
+
+        
+
+    </script>
+
+
+
+</body>
+</html>

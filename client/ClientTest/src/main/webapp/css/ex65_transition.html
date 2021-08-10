@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        
+        #html {
+            font-size: 5em;
+            color: tomato;
+        }
+
+        button{
+            background-color: black;
+            border: 0px;
+            outline: none;
+            border-radius: 0;
+            padding: 10px;
+            color: white;
+        }
+
+        button > i {
+            color: gold;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .char {
+            font-size: 5em;
+            color: tomato;
+            display: block;
+            width: 60px;
+            margin: 100px auto;
+            /* margin-top: 500px; */
+
+            transform: scale(100, 100);
+            opacity: 0;
+
+            animation-name: keychar;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+
+        .char:nth-child(1) {animation-delay: 0s;}
+        .char:nth-child(2) {animation-delay: 0.7s; color: gold;}
+        .char:nth-child(3) {animation-delay: 1.4s; color: cornflowerblue;}
+
+        @keyframes keychar {
+            0%{
+                transform: scale(100, 100);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex65_transition.html -->
+
+    <!-- 벡터(폰트) 기반: 수식, 확대/축소 능함 -->
+    <!-- <i class="fab fa-html5" id="html"></i>
+    <hr>
+
+    <button><i class="fas fa-trash-alt"></i> Delete</button> -->
+
+    <i class="fab fa-html5 char"></i>
+    <i class="fab fa-css3-alt char" ></i>
+    <i class="fab fa-js char" ></i>
+
+
+</body>
+</html>

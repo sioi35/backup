@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         h2{
+            font-size: 0.9em;
+        }
+        form{
+            width: 500px;
+            margin: 0 auto;
+        }
+        li {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        ul{
+            border-bottom: 1px dotted #999;
+        }
+        #id {
+            width: 100px;
+            font-weight: bold;
+        }
+        #txt{
+            border: 0px;
+            width: 150px;
+            color: red;
+            font-weight: bold;
+
+        }
+</style>
+</head>
+<body>
+    <!-- q06.html -->
+
+    <form name="form1">
+        <h1>아이디 유효성 검사</h1>
+        <h2>아이디 유효성 검사를 하시오.</h2>
+        <ul>
+            <li>아이디: 5자 ~ 10자 이내</li>
+        </ul>
+        아이디: <input type="text" name="txtID" value= "" id="id">
+        <input type="text" name="txt" value= "" id="txt" readonly>
+    </form>
+
+    <script>
+
+        var txtID = document.form1.txtID;
+        var txt = document.form1.txt;
+
+        txtID.onkeyup = function(){
+            if (txtID.value.trim().length < 5 ){
+                txt.value = '아이디가 너무 짧습니다.';
+            }else if(txtID.value.trim().length <= 10){
+                txt.value = '아이디가 적합합니다.';
+            }else {
+                txt.value = '아이디가 너무 깁니다.';
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

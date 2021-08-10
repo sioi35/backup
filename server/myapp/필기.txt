@@ -1,0 +1,122 @@
+
+자바 배포 파일(압축 파일)
+1. java class
+     -> *.jar
+2. web application
+     -> *.war
+
+myapp
+1. 패키지 구성
+	a. com.test.myapp
+		- 메인 패키지
+		- Index.java(index.jsp): 시작 페이지
+		- Template.java(template.jsp): 템플릿
+		- EncodingFilter.java: 인코딩 필터
+	b. com.test.myapp.board(*****)
+		- 게시판 패키지
+		- Template.java(template.jsp): 게시판 템플
+	c. com.test.myapp.member
+		- 회원 패키지
+		- Login.java, LoginOk.java: 로그인
+		- Logout.java: 로그아웃
+
+
+2. 콘텐츠 구성
+	a. asset
+		- jQuery, Bootstrap
+		- images
+	b. files
+		- 게시판 첨부 파일
+	c. inc
+		- 조각 페이지
+		- asset.jsp: 클라이언트 코드 참조 페이지
+		- header.jsp: 사이트 공통 헤더
+		- init.jsp: 초기 JavaScript 실행 페이지
+	d. WEB-INF
+		1. lib
+			- cos.jar: 파일 업로드
+			- jstl-1.2.jar: JSTL
+			- ojdbc6.jar, ojdbc8.jar 둘 중 하나 선택하고 나머지 삭제
+		2. views
+			- index.jsp: 시작 페이지
+			- template.jsp: 템플릿
+			a. board
+				- 게시판 뷰 페이지
+			b.member
+				- 회원 뷰 페이지
+
+
+댓글 쓰기
+1. 별도 테이블
+	- tblComment
+2. JSP 페이지(X)
+3. Servlet(O)
+	- AddComment.java
+	- DelComment.java
+	- CommentDAO.java(X)> BoardDAO.java 사용
+	- CommentDTO.java
+
+
+
+게시판 정책
+1. 익명 사용자
+	- 목록보기가 가능하다.(list.do)
+	- 글보기 가능(view.do)
+	- 글쓰기, 수정하기, 삭제하기, 댓글쓰기 등은 불가능하다.
+
+2. 수정하기, 삭제하기
+	- 글쓴이만 가능하게
+	
+
+
+페이징, Paging
+- 데이터베이스 종류에 따라 구현 기법이 달라짐
+1. 오라클: rownum 사용
+2. MS-SQL: top 키워드 사용
+3. MySQL: limit 키워드 사용
+
+
+답변형 게시판
+- thread(number), depth(number) 컬럼 추가
+
+1. 새글 쓰기
+ - /board/add.do
+ a. 현존 모든 게시물 중에서 가장 큰 thread값을 찾는다. > 0 > 그 찾은 thread값에 +1000 한 값을 현재 새글의 thread값으로 사용한다.
+ b. 현재 새글의 depth는 0을 넣는다. 
+
+2. 답변글 쓰기
+ - /board/add.do?reply=1
+ a. 현존 모든 게시물의 thread값을 대상으로 현재 작성 중인 답변글의 부모글의 thread값보다 작고, 이전 새글의 thread값보다 큰 thread를 찾아서 모두 -1한다.
+ b. 현재 작성중인 답변글의 thread값은 부모글의 thread -1을 넣는다.
+ c. 현재 작성중인 답변글의 depth값을 부모글의 depth + 1을 넣는다.
+
+
+지도 OpenAPI
+- 구글맵
+- 네이버맵
+- 다음맵(카카오맵)
+
+패키지 > com.test.myapp.map > Map.java
+
+- views > map
+			  > map.jsp
+			  >ex01.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

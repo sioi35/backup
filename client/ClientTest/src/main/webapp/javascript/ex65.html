@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .header {
+            width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px dotted #444;
+            padding-bottom: 10px;
+        }
+
+        .img {
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex65.html (exam26) -->
+    <div class="header">
+        <h1>마우스 + 동적 이미지 추가하기</h1>
+        <h2>마우스를 클릭하면 이미지를 추가하시오.</h2>
+        <ul>
+            <li>최대 10개 까지만 출력하시오.(오래된 순으로 삭제)</li>
+        </ul>
+    </div>
+    <div id="box"></div>
+  
+    <script>
+        var n;
+        var count = 0;
+        var img;
+        var box = document.getElementById('box');
+
+        window.onmousedown = function(){
+
+            if(count >= 10) {
+                box.removeChild(box.firstElementChild);
+                count--;
+            }
+
+            img = document.createElement('img');
+            n = parseInt(Math.random() * 39 ) + 1;
+            if(n<=9){
+                n='0'+n;
+            }
+            img.setAttribute('src', 'images/face'+n+'.png');
+
+            img.className = 'img';
+
+            img.style.left = (event.clientX-64) +'px';
+            img.style.top = (event.clientY-64) +'px';
+
+            box.appendChild(img);
+            count++;
+
+        };
+
+    </script>
+
+</body>
+</html>

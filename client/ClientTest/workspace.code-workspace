@@ -1,0 +1,10 @@
+{
+  "folders": [
+	{
+		"path": "src\\main\\webapp"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Responsive-Immersive-jQuery-Slider-Plugin-Immersive-Slider"
+  }
+}

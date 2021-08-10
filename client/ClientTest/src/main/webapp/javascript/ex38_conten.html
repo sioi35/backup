@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 500px;
+            height: 500px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 4em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex38_conten.html -->
+
+    <h1>게시판</h1>
+
+    <div><input type="button" value="첨부파일 추가하기" id="btnAdd"></div>
+    <hr>
+    <div><label>첨부파일: <input type="file" class="file"></label></div>
+    <div id="filelist"></div>
+
+    <hr>
+    
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        var btnAdd = document.getElementById("btnAdd");
+        var filelist = document.getElementById("filelist");
+
+        btnAdd.onclick = function(){
+            filelist.innerHTML += "<div><label>첨부파일: <input type=\"file\" class=\"file\"></label></div>";
+        };
+
+        var td = document.getElementsByTagName("td");
+        
+        for(var i=0; i<td.length; i++){
+            td[i].onclick = function(){
+                // alert("click");
+                // alert(i);
+
+                // event.srcElement.innerText = "O";
+                event.srcElement.innerHTML="<img src='images/catty01.png' width='90' height='90'>";
+
+                // event.srcElement.innerHTML=""; // 빈문자열 > 삭제
+            };
+        }
+
+    </script>
+
+</body>
+</html>

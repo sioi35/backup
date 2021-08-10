@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: #444;
+        }
+
+        .title {
+            width: 550px;
+            margin: 0 auto;
+        }
+        .title ul {
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #444;
+        }
+
+        #box {
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        #tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl td{
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+        }
+
+        #tbl td img{
+            display: block;
+        }
+
+        
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- ex49.html(exam21번) -->
+
+    <div class="title">
+		<h1>테이블 + 집합 이벤트 + innerText</h1>
+		<div>모든 셀에 클릭 이벤트를 추가해 이미지 태그를 동적 추가하시오.</div>
+		<ul>
+			<li>왼쪽 버튼: rect_icon01.png 추가</li>
+			<li>오른쪽 버튼: rect_icon02.png 추가</li>
+		</ul>
+	</div>
+    <div id="box">
+        <table id="tbl">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </table>
+    </div>
+
+    <script>
+
+        var td = document.getElementsByTagName('td');
+        var img;
+
+        for(var i=0; i<td.length; i++){
+
+            td[i].onmousedown = function(){
+                img = document.createElement('img');
+                
+                if(event.buttons == 1){
+                    //좌클릭 
+
+                    img.setAttribute('src', 'images/rect_icon01.png');
+
+                }else if(event.buttons == 2){
+                    //우클릭
+                    img.setAttribute('src', 'images/rect_icon02.png');
+                }
+
+                event.srcElement.appendChild(img);
+                event.srcElement.onmousedown = null;
+
+            };
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

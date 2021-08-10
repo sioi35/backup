@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { 
+            width: 150px; 
+            height: 150px; 
+
+            /* 텍스트 중앙정렬 */
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        #box1 {background-color: tomato;}
+        #box2 {background-color: gold;}
+        #box3 {background-color: cornflowerblue;}
+        #box4 {background-color: chartreuse;}
+        #box5 {background-color: cyan;}
+
+
+    </style>
+</head>
+<body>
+    <!-- ex56_style.html -->
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+        var box4 = document.getElementById('box4');
+        var box5 = document.getElementById('box5');
+        
+        var list = [box1, box2, box3, box4, box5];
+
+        btn1.onclick = function(){
+
+            box1.style.position = 'absolute';
+            box1.style.left = '500px';
+            box1.style.top = '300px';
+
+        };
+
+        //클릭한 좌표 얻어내기
+        var index = 0;
+        var zIndex = 1;
+        
+        window.onmousedown = function(){
+
+            // 좌표
+            // - event.clientX: 문서의 좌측 상단 기준
+            // - absolute: 문서의 좌측 상단 기준
+
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // box1.style.top = y + 'px';
+            // box1.style.left = x + 'px';
+
+            list[index].style.left = (x - 75) + 'px';
+            list[index].style.top = (y - 75) + 'px';
+            list[index].style.zIndex = zIndex;
+            index++;
+            zIndex++;
+
+            if(index >= list.length){
+                index = 0;
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

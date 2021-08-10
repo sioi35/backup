@@ -2,11 +2,13 @@
 
 -- 관리자: 5명---------------------------------------------------------------------------
 -- 관리자고유번호, 비밀번호
-INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '1122334');
-INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '2432511');
-INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '1111111');
-INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '2222222');
-INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '3333333');
+INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '6485');
+INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '0509');
+INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '0453');
+INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '9425');
+INSERT INTO tblManager (managerSeq, managerPW) values (managerSeq.nextVal, '9154');
+
+select * from tblManager;
 
 
 -- 교사: 강의 인원(6명), 대기 인원(4명)---------------------------------------------------------------------------
@@ -2691,21 +2693,21 @@ INSERT INTO tblTeacherSurvey (teacherSurveySeq, studentComment) values (teacherS
 INSERT INTO tblTeacherSurvey (teacherSurveySeq, studentComment) values (teacherSurveySeq.nextVal, ' null');
 INSERT INTO tblTeacherSurvey (teacherSurveySeq, studentComment) values (teacherSurveySeq.nextVal, ' null');
 
--- 개설과정
 
+-- 개설과정
 --INSERT INTO tblOpenCourse VALUES(개설과정 고유번호(PK), 과정시작기간, 과정종료기간, 교육생 등록인원, 교사고유번호(FK), 전체과정고유번호(FK), 강의실 고유번호(FK));
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2020-09-07', '2021-02-26', 30, 1, 11, 1);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2020-09-14', '2021-03-12', 30, 2, 12, 2);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-03-02', '2021-08-13', 30, 1, 1, 1);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-03-15', '2021-08-27',30, 2, 2, 2);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-04-05', '2021-09-24', 30, 4, 3, 3);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-02-01', '2021-09-03',26, 5, 4, 4);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-04-19', '2021-10-08', 26, 8, 5, 5);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-05-03', '2021-10-15', 26, 10, 6, 6);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-08-16', '2022-02-16', 25, 1, 7, 1);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-08-30', '2022-02-11', 20, 2, 8, 2);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-09-27', '2022-03-11', 21, 4, 9, 3);
-INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-09-06', '2022-02-25', 26, 5, 10, 4);
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2020-09-07', '2021-02-26', 30, 1, 1, 1, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2020-09-14', '2021-03-12', 30, 2, 2, 2, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-03-02', '2021-08-13', 30, 1, 1, 1, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-03-15', '2021-08-27', 30, 2, 2, 2, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-04-05', '2021-09-24', 30, 4, 3, 3, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-02-01', '2021-09-03', 26, 5, 4, 4, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-04-19', '2021-10-08', 26, 8, 5, 5, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-05-03', '2021-10-15', 26, 10, 6, 6, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-08-16', '2022-02-16', 25, 1, 7, 1, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-08-30', '2022-02-11', 20, 2, 8, 2, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-09-27', '2022-03-11', 21, 4, 9, 3, 'Y');
+INSERT INTO tblOpenCourse VALUES(openCourseSeq.nextval, '2021-09-06', '2022-02-25', 26, 5, 10, 4, 'Y');
 
 --[강의가능과목]
 --강의가능과목고유번호, 전체과목번호(FK), 교사고유번호(FK)
@@ -2864,140 +2866,6 @@ INSERT INTO tblUsedBook VALUES(usedBookSeq.nextval, 30, 30);
 INSERT INTO tblUsedBook VALUES(usedBookSeq.nextval, 31, 31);
 INSERT INTO tblUsedBook VALUES(usedBookSeq.nextval, 32, 32);
 
--- 상담일지
---INSERT INTO tblCounselingDiary VALUES(상담일지고유번호, 상담날짜, 내용, 개설과정고유번호);
-
---종료과정,1강의실,1과정
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 1 );
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 1);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 1);
-
-
---종료과정,2강의실,2과정
-
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 2);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 2);
-
-
---진행중인과정,1강의실,3과정
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 3);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 3);
-
---진행중인과정,2강의실,4과정
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 2700만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 4);
-INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 4);
-
 
 --개설과목
 --INSERT INTO tblOpenSubject VALUES(개설과목 고유번호,과목시작날짜, 종료날짜, 개설과정고유번호, 전체과목번호, 과목기간);
@@ -3070,833 +2938,6 @@ INSERT INTO tblOpenSubject VALUES(openSubjectSeq.nextval, '2021-07-19', '2021-08
 INSERT INTO tblOpenSubject VALUES(openSubjectSeq.nextval, '2021-08-30', '2021-09-24', 8, 27, '25일');
 INSERT INTO tblOpenSubject VALUES(openSubjectSeq.nextval, '2021-09-27', '2021-10-15', 8, 29, '19일');
 
-
---강의스케줄
---강의스케줄고유번호, 강의상태, 개설과목고유번호
---1번과정, 1번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 1);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 2);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 3);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 4);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 5);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 6);
-
---2번과정, 2번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 7);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 8);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 9);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 10);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 11);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 12);
-
-
---3번과정, 1번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 13);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 14);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 15);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 16);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 17);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 18);
-
---4번과정, 2번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 19);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 20);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 21);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 22);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 23);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 24);
-
---5번과정, 4번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 25);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 26);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 27);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 28);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 29);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 30);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 31);
-
---6번과정, 5번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 32);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 33);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 34);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 35);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 36);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 37);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 38);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 39);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 40);
-
---7번과정, 8번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 41);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 42);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 43);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 44);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 45);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 46);
-
---8번과정, 10번선생님
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 47);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 48);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 49);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 50);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 51);
-INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 52);
-
--- 강의평가
---INSERT INTO tblCourseSurvey VALUES(강의평가 고유번호, '평가내용', 평가 점수, 개설과목 고유번호);
-
---종료1강의실, 1과목 (30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '이해잘되게 세세하게 설명해주셔서 너무 좋았습니다.', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰시간은 아주 유용한거 같아요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 9, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 9, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 친절히 설명해주셔서 너무 좋았습니다.', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 조금 빨랐습니다ㅜㅜ', 9, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 실력이 많이 좋아진거같아요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '알고있으면 좋을만한 정보들을 많이 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 진도를 많이 나가서 한번 놓치면 따라가기 힘든것 같아요', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 따라가기가 벅찼습니다ㅜ', 8, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '설명을 잘해주셔서 따라가기에 어려움이 없었습니다', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 다양한 시각을 가지게 되는거 같아요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '적응 못할 때 좋은 얘기 많이 해주셔서 무사히 첫 과목 잘 마친거 같아요!', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 10, 1);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1);
-
---1강의실 2과목(30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2);
-
---1강의실 3과목(30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3);
-
---종료1강의실, 4과목
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4);
-
---종료1강의실, 5과목
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5);
-
---종료1강의실, 6과목
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6);
-
---현재1강의실, 1과목 (30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '이해잘되게 세세하게 설명해주셔서 너무 좋았습니다.', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰시간은 아주 유용한거 같아요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 9, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 9, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 친절히 설명해주셔서 너무 좋았습니다.', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 조금 빨랐습니다ㅜㅜ', 9, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 실력이 많이 좋아진거같아요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '알고있으면 좋을만한 정보들을 많이 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 진도를 많이 나가서 한번 놓치면 따라가기 힘든것 같아요', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 따라가기가 벅찼습니다ㅜ', 8, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '설명을 잘해주셔서 따라가기에 어려움이 없었습니다', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 다양한 시각을 가지게 되는거 같아요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '적응 못할 때 좋은 얘기 많이 해주셔서 무사히 첫 과목 잘 마친거 같아요!', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 10, 13);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13);
-
---1강의실 2과목(30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14);
-
---1강의실 3과목(30명)
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15);
-INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15);
-
-
-
---시험지등록여부
---INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, 시험지등록날짜, 시험지등록여부, 개설과목 고유번호);
-
---1강의실(종료)
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-07' , '등록', 1);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-27' , '등록', 2);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-28' , '등록', 3);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-11-24' , '등록', 4);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-12-26' , '등록', 5);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-01-31' , '등록', 6);
-
---2강의실(종료)
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-14' , '등록', 7);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-04' , '등록', 8);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-29' , '등록', 9);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2020-11-30', '등록', 10);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-01-18', '등록', 11);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-02-16', '등록', 12);
-
---1강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-02' , '등록', 13);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-05' , '등록', 14);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-04' , '등록', 15);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-06-07', '등록', 16);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 17);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 18);
-
---2강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-15' , '등록', 19);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-12' , '등록', 20);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-13' , '등록', 21);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 22);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 23);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 24);
-
---3강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-05' , '등록', 25);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-03' , '등록', 26);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-31' , '등록', 27);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 28);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 29);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 30);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 31);
-
---4강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-02-01' , '등록', 32);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-02' , '등록', 33);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-01' , '등록', 34);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-02' , '등록', 35);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-01' , '등록', 36);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 37);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 38);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 39);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 40);
-
---5강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-19' , '등록', 41);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-07' , '등록', 42);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-04' , '등록', 43);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 44);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 45);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 46);
-
---6강의실
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-03' , '등록', 47);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-01' , '등록', 48);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 49);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 50);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 51);
-INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 52);
-
-
---시험
---INSERT INTO tblTest VALUES(testSeq.nextval, 시험날짜, 필기배점, 실기, 출석, 개설과목고유번호, 시험지등록번호);
-
-
---종료,1강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 1, 1);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 2, 2);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 3, 3);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 4, 4);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 5, 5);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 6, 6);
-
---종료,2강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 7, 7);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 8, 8);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 9, 9);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 10, 10);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 11, 11);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 12, 12);
-
-
---1강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-02', 30, 40, 30, 13, 13);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-03', 30, 40, 30, 14, 14);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-04', 30, 40, 30, 15, 15);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-07-07', 30, 40, 30, 16, 16);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 17, 17);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 18, 18);
-
---2강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-09', 35, 45, 20, 19, 19);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-12', 35, 45, 20, 20, 20);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-14', 35, 45, 20, 21, 21);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 22, 22);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 23, 23);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 24, 24);
-
---3강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-30', 40, 40, 20, 25, 25);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-28', 40, 40, 20, 26, 26);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-29', 40, 40, 20, 27, 27);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 28, 28);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 29, 29);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 30, 30);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 31, 31);
-
---4강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-02-26', 40, 40, 20, 32, 32);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-31', 40, 40, 20, 33, 33);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-30', 40, 40, 20, 34, 34);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-31', 40, 40, 20, 35, 35);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-30', 40, 40, 20, 36, 36);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 37, 37);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 38, 38);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 39, 39);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 40, 40);
-
---5강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-06', 35, 45, 20, 41, 41);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-03', 35, 45, 20, 42, 42);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-30', 35, 45, 20, 43, 43);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 44, 44);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 45, 45);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 46, 46);
-
---6강의실
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-31', 30, 40, 30, 47, 47);
-INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-24', 30, 40, 30, 48, 48);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 49, 49);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 50, 50);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 51, 51);
-INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 52, 52);
-
-
---성적
---INSERT INTO tblScore VALUES(scoreSeq.nextval, 필기, 실기, 출석, 시험고유번호);
---1강의실(30)명 
---종료 1강의실,1과목
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 1);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 31, 30, 1);
-
---2과목
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 2);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 2);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2);
-
---3과목
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 3);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 3);
-
---4과목
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 4);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 4);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4);
-
---5과목
-
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 5);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 5);
-
-
---6과목
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 6);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 6);
-
---현재 1강의실, 1과목
---1강의실(30)명 
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 13);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 13);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 31, 30, 13);
-
---2과목
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 14);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 14);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14);
-
---3과목
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15);
-
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 15);
-INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 15);
 
 
 -- 수강신청
@@ -4147,6 +3188,976 @@ INSERT INTO tblEnrollment VALUES(enrollmentSeq.nextval, 25, 8, 25);
 INSERT INTO tblEnrollment VALUES(enrollmentSeq.nextval, 26, 8, 26);
 
 
+-- 상담일지
+--INSERT INTO tblCounselingDiary VALUES(상담일지고유번호, 상담날짜, 내용, 수강신청고유번호);
+
+--종료과정,1강의실,1과정
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 1 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 2);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 3 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 4 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 5 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 6 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 7);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 8 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 9 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 10 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 11 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 12);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 13 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 14 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 15 );
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 16);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 17);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 18);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 19);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 20);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 21);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 22);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 23);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 24);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 25);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 26);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 27);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 28);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 29);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 30);
+
+
+--종료과정,2강의실,2과정
+
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 31);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 32);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 33);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 34);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 35);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 36);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 37);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 38);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 39);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 40);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 41);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 42);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 43);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 44);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-07', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 45);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 46);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 47);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 48);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 49);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 50);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 51);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 52);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 53);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 54);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 55);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 56);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 57);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 58);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 59);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2020-10-08', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 60);
+
+
+--진행중인과정,1강의실,3과정
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 61);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 62);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 63);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 64);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 65);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 66);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 67);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 68);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 69);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 70);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 27000만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 71);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 72);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 73);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 74);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 75);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 76);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 77);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 78);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 79);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 80);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 81);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 82);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 83);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 84);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 85);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 86);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 87);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 88);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 89);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-02', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 90);
+
+--진행중인과정,2강의실,4과정
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상 , 과제 난이도: 상, 희망 기업: 백엔드 쪽으로 희망 함 ,희망 연봉: 4000 희망 함, 추가사항: 조장으로 팀원을 이끌어가는 리더쉽이 보이나 완벽을 추구함', 91);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중 , 과제 난이도: 하, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉: 3000만원 이상, 추가사항: 전문대 졸로 전공이긴 하나 이해도가 떨어짐', 92);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공 , 수업 이해도: 상, 과제 난이도:상, 희망 기업: 아직 희망 취업 분야 없음, 희망 연봉:3000 만원 이상, 추가사항: 비전공이나 이해도가 높고 자기주도 학습이 잘 이루어짐', 93);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도:중, 과제 난이도:중, 희망 기업: DB분야 ,희망 연봉: 2500만원, 추가사항: 수업을 잘 따라 옴', 94);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발 분야 ,희망 연봉: 3000만원, 추가사항: 수업 참여도가 높고 질문에 대해 이해가 빠름', 95);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도: 하, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 2000만원 이상, 추가사항: 수업 진도에 빠르다고 느끼며 과제 제출에 매번 늦음', 96);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 공기업, 희망 연봉: 4000만원, 추가사항: 수업 참여도는 적으나 프로젝트 결과물이 상당히 좋음, 팀워크가 좋음', 97);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 상, 희망 기업: 은행 ,희망 연봉: 3500만원이상, 추가사항: 프로젝트 설문조사때 기여도가 가장 큰 학생으로 리더쉽을 가짐', 98);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공 , 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망 기업 없음, 희망 연봉: 희망 연봉 없음, 추가사항: 없음', 99);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 하, 과제 난이도 :하, 희망 기업: 아직 희망 기업 없음 , 희망 연봉: 2000만원 중반, 추가사항: 수업에 어려움을 느낌, 성향과 안맞는다고 생각함', 100);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 소프트웨어 개발, 희망 연봉: 2700만원 이상, 추가사항: 수업참여도는 높으나 프로젝트때 비전공자의 한계를 느낌', 101);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 아직 희망기업 없음, 희망 연봉: 2000만원 초반, 추가사항: 없음 ', 102);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 상, 희망 기업: 아직 희망기업 없음, 희망 연봉: 3000만원 이상, 추가사항: 아르바이트로 인한 피로로 수업에 집중하기 어려운 환경이지만 질문과 상담으로 최선을 다 함', 103);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공, 수업 이해도: 상, 과제 난이도: 중, 희망 기업: 금융업 희망, 희망 연봉: 4000만원, 추가사항: 개념에 대한 이해도가 높으며  탐워크가 좋음', 104);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공, 수업 이해도: 중, 과제 난이도: 중, 희망 기업: 앱개발, 희망 연봉: 3000만원 이상, 추가사항: 프로젝트로 인한 팀원 갈등으로 단체활동에 어려움을 느낌', 105);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 보통, 희망 기업: 중소기업, 희망 연봉: 3000만원, 추가사항: 대면수업을 희망함', 106);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 아직까지 무난, 과제 난이도: 무난, 희망 기업: 아직X, 희망 연봉: 2800이상, 추가사항: ', 107);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 수업은 따라갈만함, 과제 난이도: 응용 어려워함, 희망 기업: 아직X , 희망 연봉:X, 추가사항: 아르바이트 병행하고있음.', 108);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제 해결ok, 희망 기업: 중견기업 , 희망 연봉: 3500이상, 추가사항: 응용문제 많이 풀기를 희망함', 109);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 아직까지 이해 잘됨, 과제 난이도: 해결하는데 문제없음, 희망 기업: 은행관련기업, 희망 연봉: 3500만원, 추가사항: ', 110);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 응용문제는 좀 힘들어함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 대면수업 늘리길 희망함', 111);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무난, 과제 난이도: 해결하는데 문제없음, 희망 기업: 아직X, 희망 연봉: X, 추가사항: 코딩에 재미를 붙였으나, 아직 정확한 진로를 못정함', 112);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없이 따라옴, 과제 난이도: 시간이 많이 걸리나 해결함, 희망 기업: 중소/중견기업 , 희망 연봉: 3000이상, 추가사항: 비전공자이지만 프로그래밍에 흥미를 가지고 배우러옴.', 113);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 해결하는데 문제없음, 희망 기업: 쌍용, 희망 연봉: 3800이상, 추가사항: 전공이 적성에 맞아 체계적으로 더 배우고 싶어 지원', 114);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 조금 힘들어함, 과제 난이도: 시간 투자에 비해 해결이 잘 안됨, 희망 기업: X , 희망 연봉: X, 추가사항: 문제풀이에 있어 많이 힘들어함. 응용 문제 풀이 설명 원함.', 115);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 네이버, 희망 연봉: 3800이상, 추가사항: 임베디드에 관심이 많음', 116);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 삼성, 희망 연봉: 3800이상, 추가사항: ', 117);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 아직까지 무난, 희망 기업: 임베디드관련기업, 희망 연봉: 3000이상, 추가사항: 코드리뷰 시간 늘리길 원함.', 118);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 비전공자, 수업 이해도: 무리없음, 과제 난이도: 응용문제(상)빼고는 괜찮음, 희망 기업: 웹페이지관리 , 희망 연봉: X, 추가사항: 문제풀이 많이 하길 원함.', 119);
+INSERT INTO tblCounselingDiary VALUES(counselingDiarySeq.nextval, '2021-04-15', '전공/비전공: 전공자, 수업 이해도: 무리없음, 과제 난이도: 무난, 희망 기업: 전산직분야, 희망 연봉: 3500이상, 추가사항: ', 120);
+
+
+
+--강의스케줄
+--강의스케줄고유번호, 강의상태, 개설과목고유번호
+--1번과정, 1번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 1);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 2);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 3);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 4);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 5);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 6);
+
+--2번과정, 2번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 7);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 8);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 9);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 10);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 11);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 12);
+
+
+--3번과정, 1번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 13);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 14);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 15);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 16);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 17);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 18);
+
+--4번과정, 2번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 19);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 20);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 21);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 22);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 23);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 24);
+
+--5번과정, 4번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 25);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 26);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 27);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 28);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 29);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 30);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 31);
+
+--6번과정, 5번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 32);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 33);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 34);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 35);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 36);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 37);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 38);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 39);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 40);
+
+--7번과정, 8번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 41);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 42);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 43);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 44);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 45);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 46);
+
+--8번과정, 10번선생님
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의종료', 47);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의중', 48);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 49);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 50);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 51);
+INSERT INTO tblLectureSchedule VALUES(lectureScheduleSeq.nextval, '강의예정', 52);
+
+
+
+-- 강의평가
+--강의평가고유번호, 평가내용, 평가점수, 개설과목고유번호, 수강신청고유번호
+--종료1강의실, 1과목 (30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '이해잘되게 세세하게 설명해주셔서 너무 좋았습니다.', 10, 1, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 1, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰시간은 아주 유용한거 같아요!', 10, 1, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 1, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 9, 1,7 );
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 9, 1, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 친절히 설명해주셔서 너무 좋았습니다.', 10, 1, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 조금 빨랐습니다ㅜㅜ', 9, 1, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 실력이 많이 좋아진거같아요!', 10, 1, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '알고있으면 좋을만한 정보들을 많이 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 1, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 진도를 많이 나가서 한번 놓치면 따라가기 힘든것 같아요', 10, 1, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 따라가기가 벅찼습니다ㅜ', 8, 1, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '설명을 잘해주셔서 따라가기에 어려움이 없었습니다', 10, 1, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 1, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 1, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 다양한 시각을 가지게 되는거 같아요!', 10, 1, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 1, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '적응 못할 때 좋은 얘기 많이 해주셔서 무사히 첫 과목 잘 마친거 같아요!', 10, 1, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 10, 1, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 1, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 10, 1, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 1, 30);
+
+--종료1강의실 2과목(30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2, 7);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 2, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 2, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 2, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 2, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 2, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 2, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 2, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 2, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 2, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 2, 30);
+
+--종료1강의실 3과목(30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3, 7);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 3, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 3, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 3, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 3, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 3, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 3, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 3, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 3, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 3, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 3, 30);
+
+--종료1강의실, 4과목
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4, 7);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 4, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 4, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 4, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 4, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 4, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 4, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 4, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 4, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 4, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 4, 30);
+
+--종료1강의실, 5과목
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5, 7);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 5, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 5, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 5, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 5, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 5, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 5, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 5, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 5, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 5, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 5, 30);
+
+--종료1강의실, 6과목
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6, 1);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6, 2);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6, 3);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6, 4);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6, 5);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6, 6);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6, 7);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6, 8);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6, 9);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6, 10);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6, 11);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6, 12);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6, 13);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6, 14);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6, 15);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6, 16);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6, 17);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6, 18);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6, 19);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6, 20);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 6, 21);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 6, 22);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 6, 23);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 6, 24);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 6, 25);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 6, 26);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 6, 27);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 6, 28);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 6, 29);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 6, 30);
+
+--현재1강의실, 1과목 (30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '이해잘되게 세세하게 설명해주셔서 너무 좋았습니다.', 10, 13, 61);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 13, 62);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13, 63);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰시간은 아주 유용한거 같아요!', 10, 13, 64);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13, 65);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 13, 66);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 9, 13, 67);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13, 68);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 9, 13, 69);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13, 70);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 친절히 설명해주셔서 너무 좋았습니다.', 10, 13, 71);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 조금 빨랐습니다ㅜㅜ', 9, 13, 72);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13, 73);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 실력이 많이 좋아진거같아요!', 10, 13, 74);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '알고있으면 좋을만한 정보들을 많이 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13, 75);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '응용문제는 아직 해결하는데 어려움이 있지만 실력이 많이 좋아졌어요!', 10, 13, 76);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 진도를 많이 나가서 한번 놓치면 따라가기 힘든것 같아요', 10, 13, 77);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13, 78);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 따라가기가 벅찼습니다ㅜ', 8, 13, 79);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13, 80);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '설명을 잘해주셔서 따라가기에 어려움이 없었습니다', 10, 13, 81);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '비전공자가 따라가기에 진도가 조금 빨랐습니다ㅜㅜ', 9, 13, 82);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '질문할때마다 잘 답변해주셔서 수업 이해하기가 좋았습니다!', 10, 13, 83);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '코드리뷰하면서 다양한 시각을 가지게 되는거 같아요!', 10, 13, 84);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '단축키같은 좋은 정보를 다 알려주셔서 너무 좋았습니다ㅎㅎ', 10, 13, 85);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '적응 못할 때 좋은 얘기 많이 해주셔서 무사히 첫 과목 잘 마친거 같아요!', 10, 13, 86);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '매일 8시간씩 나가다보니까 복습없이는 따라가기 힘들거같아요', 10, 13, 87);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '선생님이 시키시는대로만 했는데 실력이 아주 좋아진거 같습니다!!ㅎ', 10, 13, 88);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '자세히 알려주시는데도 따라가기가 벅찼습니다ㅜ', 10, 13, 89);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '첫 과목이 끝났는데 쌍용교육센터 오길 잘했단 생각이 듭니다!', 10, 13, 90);
+
+--현재1강의실 2과목(30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14, 61);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14, 62);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14, 63);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14, 64);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14, 65);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14, 66);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14, 67);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14, 68);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14, 69);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14, 70);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14, 71);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14, 72);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14, 73);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14, 74);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14, 75);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14, 76);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14, 77);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14, 78);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14, 79);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14, 80);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '오라클은 자바보다 더 어렵네요 ㅜㅜ', 10, 14, 81);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '두번째 과목은 더 빨리 지나가버린 거 같아요', 10, 14, 82);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 조금 힘들었습니다', 9, 14, 83);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '데이터베이스도 자세히 알려주셔서 많이 배운거 같습니다!', 10, 14, 84);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '항상 좋은 얘기 해주셔서 힘 얻으며 수업 잘 받고있습니다.', 10, 14, 85);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용은 이해하기 어려웠지만 진도 속도도 좋았고 질문하면 친절하게 알려주셔서 좋았습니다!. ', 10, 14, 86);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념부분보다 실습하는 부분에 초점을 맞춰서 실무에 적용할 때 유용할것 같습니다.', 10, 14, 87);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '프로젝트 기간이 짧아서 힘들었습니다', 7, 14, 88);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습문제를 질문하면 답을 바로주기보다 방향을 알려주셔서 혼자공부하기 좋았습니다.', 10, 14, 89);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '조별로 프로젝트를 하는것 보다 개인으로 진행하고싶습니다. 강의는 좋았습니다.', 9, 14, 90);
+
+--현재1강의실 3과목(30명)
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15, 61);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15, 62);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15, 63);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15, 64);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15, 65);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15, 66);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15, 67);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15, 68);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15, 69);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15, 70);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15, 71);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15, 72);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15, 73);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15, 74);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15, 75);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15, 76);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15, 77);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15, 78);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15, 79);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15, 80);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도가 빨라서 따라가기 어려지만 구현하는 실습때는 충분한 시간을 주셔서 좋았습니다.', 9, 15, 81);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하는 컴퓨터가 렉이 많이 걸려서 진도 따라가기 어려웠습니다.', 7, 15, 82);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '내용이 너무어려워서 배우는 기간이 너무 짧은것 같습니다.', 8, 15, 83);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '저는 포기해야할까요..  실습이 부족한건지 프로젝트 준비가 매우 벅찼습니다.', 7, 15, 84);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '짧은 시간인대도 불구하고 선생님 강의실력이 좋아서 좋은 결과물을 낼 수 있었습니다.', 10, 15, 85);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습보다 개념부분 설명이 더 길었으면 좋겠습니다.', 9, 15, 86);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '진도 속도도 좋았고, 설명도 좋아서 공부하기 편했습니다.', 10, 15, 87);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습할때 모바일 강의도 포함돼서 혼자 공부하기 좋았습니다.', 10, 15, 88);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '개념이해도 완벽하게 되었고 기사시험공부할 때 도움이 많이 되었습니다.', 10, 15, 89);
+INSERT INTO tblCourseSurvey VALUES(courseSurveySeq.nextVal, '실습하기 재밌었고 선생님께서 일일히 봐주셔서 도움이 많이 되었습니다.', 10, 15, 90);
+
+
+
+--시험지등록여부
+--INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, 시험지등록날짜, 시험지등록여부, 개설과목 고유번호);
+
+--1강의실(종료)
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-07' , '등록', 1);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-27' , '등록', 2);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-28' , '등록', 3);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-11-24' , '등록', 4);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-12-26' , '등록', 5);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-01-31' , '등록', 6);
+
+--2강의실(종료)
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-09-14' , '등록', 7);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-04' , '등록', 8);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2020-10-29' , '등록', 9);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2020-11-30', '등록', 10);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-01-18', '등록', 11);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-02-16', '등록', 12);
+
+--1강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-02' , '등록', 13);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-05' , '등록', 14);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-04' , '등록', 15);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, '2021-06-07', '등록', 16);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 17);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 18);
+
+--2강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-15' , '등록', 19);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-12' , '등록', 20);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-13' , '등록', 21);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 22);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 23);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 24);
+
+--3강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-05' , '등록', 25);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-03' , '등록', 26);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-31' , '등록', 27);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 28);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 29);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 30);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 31);
+
+--4강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-02-01' , '등록', 32);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-03-02' , '등록', 33);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-01' , '등록', 34);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-02' , '등록', 35);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-01' , '등록', 36);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 37);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 38);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 39);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,null, '미등록', 40);
+
+--5강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-04-19' , '등록', 41);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-07' , '등록', 42);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-04' , '등록', 43);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 44);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 45);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null , '미등록', 46);
+
+--6강의실
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-05-03' , '등록', 47);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval,'2021-06-01' , '등록', 48);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 49);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 50);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 51);
+INSERT INTO tblRegistrationStatus VALUES(registrationStatusSeq.nextval, null, '미등록', 52);
+
+
+--시험
+--INSERT INTO tblTest VALUES(testSeq.nextval, 시험날짜, 필기배점, 실기, 출석, 개설과목고유번호, 시험지등록번호);
+
+
+--종료,1강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 1, 1);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 2, 2);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 3, 3);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 4, 4);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 5, 5);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2020-09-07', 30, 40, 30, 6, 6);
+
+--종료,2강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 7, 7);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 8, 8);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 9, 9);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 10, 10);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 11, 11);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-02', 35, 45, 20, 12, 12);
+
+
+--1강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-02', 30, 40, 30, 13, 13);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-03', 30, 40, 30, 14, 14);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-04', 30, 40, 30, 15, 15);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-07-07', 30, 40, 30, 16, 16);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 17, 17);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 18, 18);
+
+--2강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-09', 35, 45, 20, 19, 19);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-12', 35, 45, 20, 20, 20);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-14', 35, 45, 20, 21, 21);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 22, 22);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 23, 23);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 24, 24);
+
+--3강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-30', 40, 40, 20, 25, 25);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-28', 40, 40, 20, 26, 26);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-29', 40, 40, 20, 27, 27);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 28, 28);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 29, 29);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 30, 30);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 31, 31);
+
+--4강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-02-26', 40, 40, 20, 32, 32);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-03-31', 40, 40, 20, 33, 33);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-04-30', 40, 40, 20, 34, 34);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-31', 40, 40, 20, 35, 35);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-30', 40, 40, 20, 36, 36);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 37, 37);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 38, 38);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 39, 39);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 40, 40);
+
+--5강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-06', 35, 45, 20, 41, 41);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-03', 35, 45, 20, 42, 42);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-30', 35, 45, 20, 43, 43);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 44, 44);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 45, 45);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 46, 46);
+
+--6강의실
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-05-31', 30, 40, 30, 47, 47);
+INSERT INTO tblTest VALUES(testSeq.nextval, '2021-06-24', 30, 40, 30, 48, 48);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 49, 49);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 50, 50);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 51, 51);
+INSERT INTO tblTest VALUES(testSeq.nextval, null, null, null, null, 52, 52);
+
+
+--성적
+--INSERT INTO tblScore VALUES(scoreSeq.nextval, 필기, 실기, 출석, 시험고유번호, 수강신청고유번호);
+--1강의실(30)명 
+--종료 1강의실,1과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 1, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 1, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 1, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 1, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 1, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 1, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 1, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 1, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 1, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 1, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 1, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 1, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 1, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 1, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 1, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 1, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 1, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 31, 30, 1, 30);
+
+--2과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 2, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 2, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 2, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 2, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 2, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 2, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 2, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 2, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 2, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 2, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 2, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 2, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 2, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 2, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 2, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 2, 30);
+
+--3과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 3, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 3, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 3, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 3, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 3, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 3, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 3, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 3, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 3, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 3, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 3, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 3, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 3, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 3, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 3, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 3, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 3, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 3, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 3, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 3, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 3, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 3, 30);
+
+--4과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 4, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 4, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 4, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 4, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 4, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 4, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 4, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 4, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 4, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 4, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 4, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 4, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 4, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 4, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 4, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 4, 30);
+
+--5과목
+
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 5, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 5, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 5, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 5, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 5, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 5, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 5, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 5, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 5, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 5, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 5, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 5, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 5, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 5, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 5, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 5, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 5, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 5, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 5, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 5, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 5, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 5, 30);
+
+
+--6과목
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6, 1);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 6, 2);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 6, 3);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 6, 4);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 6, 5);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6, 6);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 6, 7);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6, 8);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 6, 9);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 6, 10);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 11);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 12);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 13);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 6, 14);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 6, 15);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 16);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 6, 17);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 6, 18);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 19);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 6, 20);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 6, 21);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 6, 22);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 6, 23);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 6, 24);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 6, 25);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 6, 26);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 6, 27);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 6, 28);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 6, 29);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 6, 30);
+
+
+--현재 1강의실, 1과목
+--1강의실(30)명 
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 35, 30, 13, 61); --30 40 30만점
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 37, 28, 13, 62);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 23, 35, 30, 13, 63);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 13, 64);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 28, 40, 29, 13, 65);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 13, 66);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 33, 29, 13, 67);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 30, 30, 13, 68);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 13, 69);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 28, 30, 13, 70);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 29, 30, 13, 71);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 13, 72);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 28, 32, 30, 13, 73);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 31, 28, 13, 74);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 28, 37, 30, 13, 75);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 32, 30, 13, 76);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 40, 30, 13, 77);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 13, 78);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 37, 30, 13, 79);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 13, 80);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 36, 30, 13, 81);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 23, 37, 30, 13, 82);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 13, 83);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 37, 30, 13, 84);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 34, 28, 13, 85);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 13, 86);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 28, 33, 30, 13, 87);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 39, 30, 13, 88);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 34, 30, 13, 89);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 31, 30, 13, 90);
+
+--2과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 61);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 14, 62);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 14, 63);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 64);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 14, 65);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 14, 66);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 67);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 68);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 69);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 35, 30, 14, 70);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 14, 71);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 72);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 14, 73);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 74);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 75);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 76);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 14, 77);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14, 78);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14, 79);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 39, 30, 14, 80);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 14, 81);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 14, 82);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 14, 83);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 84);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 14, 85);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 14, 86);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 14, 87);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14, 88);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14, 89);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 14, 90);
+
+--3과목
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15, 61);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 28, 15, 62);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 35, 30, 15, 63);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 19, 38, 30, 15, 64);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 40, 30, 15, 65);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15, 66);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 38, 30, 15, 67);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15, 68);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 32, 30, 15, 69);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 25, 35, 30, 15, 70);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 71);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 72);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 73);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 32, 28, 15, 74);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 35, 30, 15, 75);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 76);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 40, 30, 15, 77);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 26, 36, 30, 15, 78);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 79);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 24, 32, 30, 15, 70);
+
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 15, 81);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 29, 38, 30, 15, 82);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 21, 39, 30, 15, 83);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 22, 33, 30, 15, 84);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 28, 15, 85);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 30, 40, 30, 15, 86);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 33, 30, 15, 87);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 32, 30, 15, 88);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 15, 89);
+INSERT INTO tblScore VALUES(scoreSeq.nextval, 27, 34, 30, 15, 90);
+
+
+
+
 
 --교육종료교육생
 --고유번호, 수료날짜, 수료상태, 수강신청고유번호
@@ -4333,9 +4344,5 @@ INSERT INTO tblLicense (licenseSeq, name, licenseType, testAgency, round, recept
 INSERT INTO tblLicense (licenseSeq, name, licenseType, testAgency, round, receptionFee, writtenRegisterBegin, writtenRegisterEnd, writtenTestDate, writtenResultDate, practicalRegisterBegin, practicalRegisterEnd, practicalTestDate, practicalResultDate) values (licenseSeq.nextVal, '정보처리산업기사', '국가기술자격', '한국산업인력공단', '3회', '19400', '2021/07/13', '2021/07/16', '2021/08/08 ~ 2021/08/18', '2021/09/01', '2021/09/14', '2021/09/17', '2021/10/16 ~ 2021/10/29', '2021/11/26');
 
 INSERT INTO tblLicense (licenseSeq, name, licenseType, testAgency, round, receptionFee, writtenRegisterBegin, writtenRegisterEnd, writtenTestDate, writtenResultDate, practicalRegisterBegin, practicalRegisterEnd, practicalTestDate, practicalResultDate) values (licenseSeq.nextVal, '컴퓨터시스템응용기술사', '국가기술자격', '한국산업인력공단', '125회', '67800', '2021/07/06', '2021/07/09', '2021/07/31', '2021/09/10', '2021/09/13', '2021/09/16', '2021/10/16 ~ 2021/10/26', '2021/11/12');
-
-
-
-
 
 

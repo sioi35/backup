@@ -1,0 +1,237 @@
+/*-----------------------------------------------------------------------------------*/
+
+/*  -  Navbar fixd page
+/*-----------------------------------------------------------------------------------*/
+
+.subpage-nav {
+    display: block !important;
+    position: relative;
+  }
+  
+  /*-----------------------------------------------------------------------------------*/
+  
+  /*  /* Single page */
+  
+  /*-----------------------------------------------------------------------------------*/
+  
+  /* main content */
+  
+  .main-content {
+    background: #f7f7f7;
+  }
+  
+  .main-content .container-main {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .main-content .container-main .block-main {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  
+  .container-main .block-main .content-main {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .h-10 {
+    margin-bottom:10px;
+  }
+
+  .h-20 {
+    margin-bottom:20px;
+  }
+
+  .h-30 {
+    margin-bottom:30px;
+  }
+
+  h1, h2, h3{
+    color: #555;
+  }
+
+  .portfolio-txt h1 {
+    font-size: 40px;
+    line-height: 70px;
+  }
+  
+  .portfolio-txt h2 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 400;
+  }
+
+  .portfolio-txt h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 450;
+    border-left: 4px solid #b8a07e;
+    padding-left: 5px;
+  }
+
+  .portfolio-txt h4 {
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 700;
+  }
+
+  .portfolio-txt h4 span {
+    font-size: 10px;
+    padding-left: 7px;
+  }
+
+  .portfolio-txt img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .portfolio-txt h4 a {
+    display: block;
+    font-size: 19px;
+    line-height: 24px;
+    margin: 10px 0 13px 0;
+    font-weight: 500;
+    color: #292929;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  .portfolio-txt h4 a:hover {
+    color: #b8a07e;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+  .environment th{
+    width: 100px;
+  }
+
+  .post-meta ul li {
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-transform: capitalize;
+    display: inline-block;
+    float: none;
+  }
+  
+  .content-main .post-meta a {
+    color: #a2a2a2;
+    margin-left: 5px;
+  }
+  
+  /* Commonts */
+  
+  .comments {
+    background: #fff;
+  }
+  
+  .entry-comments h6 {
+    margin-right: 10px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  
+  .entry-comments-item {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+  .entry-comments-avatar {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .entry-comments-body {
+    padding-left: 86px;
+  }
+  
+  .entry-comments-author {
+    margin-right: 10px;
+    font-size: 13px;
+    color: #292929;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  
+  .rep {
+    font-size: 13px;
+    color: #292929;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .entry-comments span a {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .entry-comments-reply {
+    padding-left: 10%;
+  }
+  
+  /* Commonts form */
+  
+  .cmt {
+    background: #fff;
+  }
+  
+  blockquote {
+    padding: 40px;
+    background-color: #f2f2f2;
+    margin: 30px 0;
+    border: none;
+    border-left: 4px solid #b8a07e;
+  }
+  
+  .pro_tbl{
+    margin-top: 10px;
+    margin-bottom: 1rem;
+    vertical-align: middle;
+  }
+  
+  .pro_tbl th{
+      background-color: #b8a07e; 
+      font-weight: bold;
+      color: white;
+      height: 35px;
+      padding: 10px;
+  }
+    
+  .pro_tbl td{
+    padding: 10px;      
+    border-bottom: 1px solid #cfcfd1; 
+  }
+
+  .pro_tbl .first{
+      width: 110px;
+  }
+
+  .pro_tbl .second{
+      width: auto;
+  }
+
+  .pro_tbl .me {
+    font-weight: bolder;
+    color: #b8a07e;
+  }
+ 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //함수 선언
+        function m1() {
+            window.document.body.bgColor = "red";
+        }
+        function m2() {
+            window.document.body.bgColor = "yellow";
+        }
+        function m3() {
+            window.document.body.bgColor = "blue";
+        }
+
+        function m4(color) {
+            window.document.body.bgColor = color;
+        }
+
+        function m5(btn){
+            //this: 이벤트를 발생시킨 태그 자신
+            // alert(btn.name);
+            // alert(this.name); 
+            // alert(this); // Window 객체
+
+            window.document.body.bgColor = btn.value;
+
+        }
+
+        function m6(){
+            //지금 나를 호출한 버튼이 누구냐?
+            // event 객체 사용 가능
+
+            //event.srcElement - 지금 이벤트를 발생시킨 태그
+            // -> 3번에서 사용한 this와 동일한 표현
+            // alert(event.srcElement.name);
+
+            window.document.body.bgColor = event.srcElement.value;
+        }
+
+    </script>
+</head>
+<body>
+    <!-- ex18_event.html -->
+    <h1>이벤트(******************)</h1>
+    
+    <h2>7</h2>
+    <form name="form7">
+        <!--  
+            data-XXX 속성
+            : 사용자 정의 속성(개발자 맘대로)
+        -->
+        <input type="button" value="빨강" name="btn17" data-color="tomato">
+        <input type="button" value="노랑" name="btn17" data-color="gold">
+        <input type="button" value="파랑" name="btn17" data-color="cornflowerblue">
+    </form>
+
+    <h2>6</h2>
+    <form name="form6">
+        <input type="button" value="red" name="btn16">
+        <input type="button" value="yellow" name="btn16">
+        <input type="button" value="blue" name="btn16">
+    </form>
+
+    <h2>5</h2>
+    <form name="form5">
+        <input type="button" value="red" name="btn13">
+        <input type="button" value="yellow" name="btn14">
+        <input type="button" value="blue" name="btn15">
+    </form>
+
+    <h2>4</h2>
+    <form name="form4">
+        <input type="button" value="red" name="btn10" onclick="m6();">
+        <input type="button" value="yellow" name="btn11" onclick="m6();">
+        <input type="button" value="blue" name="btn12" onclick="m6();">
+    </form>
+
+    <h2>3</h2>
+    <form name="form3">
+        <input type="button" value="tomato" name="btn7" onclick="m5(this);">
+        <input type="button" value="yellow" name="btn8" onclick="m5(this);">
+        <input type="button" value="blue" name="btn9" onclick="m5(this);">
+    </form>
+
+    <h2>2</h2>
+    <form name="form2">
+        <input type="button" value="red" name="btn4" onclick="m4('red');">
+        <input type="button" value="yellow" name="btn5" onclick="m4('yellow');">
+        <input type="button" value="blue" name="btn6" onclick="m4('blue');">
+    </form>
+
+    <h2>1</h2>
+    <form name="form1">
+        <input type="button" value="red" name="btn1" onclick="m1();">
+        <input type="button" value="yellow" name="btn2" onclick="m2();">
+        <input type="button" value="blue" name="btn3" onclick="m3();">
+    </form>
+
+    <script>
+
+        var btn13 = window.document.form5.btn13;
+        var btn14 = window.document.form5.btn14;
+        var btn15 = window.document.form5.btn15;
+
+        // btn13.onclick = function() {
+        //     window.document.body.bgColor = event.srcElement.value;
+        // };
+        
+        // btn14.onclick = function() {
+        //     window.document.body.bgColor = event.srcElement.value;
+        // };
+        
+        // btn15.onclick = function() {
+        //     window.document.body.bgColor = event.srcElement.value;
+        // };
+
+        function m7(){
+            window.document.body.bgColor = event.srcElement.value;
+        }
+
+        btn13.onclick = m7;
+        btn14.onclick = m7;
+        btn15.onclick = m7;
+
+        var btn16 = window.document.form6.btn16;
+        // btn16[0].onclick = m7;
+        // btn16[1].onclick = m7;
+        // btn16[2].onclick = m7;
+
+        for(var i=0; i<btn16.length; i++){
+            btn16[i].onclick = m7;
+        }
+
+        btn16.forEach(function (item, index){
+            item.onclick = m7;
+        });
+        
+
+        var btn17 = window.document.form7.btn17;
+        btn17.forEach(function(item, index){
+            item.onclick = function(){
+                window.document.body.bgColor = item.dataset["color"];
+            }
+        });
+
+    </script>
+
+
+
+</body>
+</html>

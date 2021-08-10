@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <style>
+
+        .table {
+            width: auto;
+        }
+
+        .table td {
+            width: 100px;
+            height: 50px;
+        }
+
+        .table tr:nth-child(odd) td:nth-child(even){
+            background-color: #ddd;
+        }
+
+        .table tr:nth-child(even) td:nth-child(odd){
+            background-color: #ddd;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex06_manipulation.html -->
+
+    <div class="container">
+        <h1 class="page-header">테이블</h1>
+
+        <label>
+            행:
+            <input type="number" id="row" min="1" max="20" class="form-control" value="1">
+        </label>
+        <label>
+            열:
+            <input type="number" id="column" min="1" max="5" class="form-control" value="1">
+        </label>
+
+        <hr>
+
+        <table id="tbl1" class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <script>
+
+        // 행 선택
+        $('#row').change(edit);
+        
+        // 열 선택
+        $('#column').change(function(){
+            edit();
+        });
+
+        function edit(){    
+
+            //기존에 <tbody>안에 있던 내용을 먼저 삭제
+            //$('#tbl1 > tbody').html('');
+            $('#tbl1 > tbody').empty();
+
+            //행x열 -> 테이블 생성
+            let rowCount = $('#row').val();
+            let columnCount = $('#column').val();
+
+            // alert(rowCount + ',' + columnCount);
+
+            for(let i=0; i<rowCount; i++){
+                
+                let tr = $('<tr></tr>');
+
+                for(let j=0; j<columnCount; j++){
+                    let td = $('<td></td>').text('cell')
+                                           .css({
+                                               color: 'blue',
+                                               'font-size': '2em'
+                                           })
+                                           .mouseover(function(){
+                                               $(this).css('color', 'red');
+                                           })
+                                           .mouseout(function(){
+                                               $(this).css('color', 'blue');
+                                           });
+                    tr.append(td);
+                }
+
+                $('#tbl1 > tbody').append(tr);
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

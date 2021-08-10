@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            border: 1px solid black;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+
+        #n7 { border: 5px solid cornflowerblue; }
+
+        .sel { border: 5px solid tomato; }
+
+    </style>
+</head>
+<body>
+    <!-- ex40_axis.html -->
+
+    <div id="n1">할아버지
+        <div id="n2">큰아버지
+           <div id="n5">사촌</div>
+        </div>
+        <div id="n3">아버지
+            <div id="n6">형</div>
+            <div id="n7">나
+                <div id="n10">첫째 자식</div>
+                <!-- 기준 요소 -->
+                <div id="n11">둘째 자식
+                    <div id="n13">손자</div>
+                </div>
+                <div id="n12">셋째 자식</div>
+            </div>
+            <div id="n8">동생</div>
+        </div>
+        <div id="n4">작은아버지
+            <div id="n9">사촌</div>
+        </div>
+    </div>
+    
+    <hr>
+    <input type="button" value="확인" id="btn1">
+
+    <script>
+        // Axis 검색
+        // - 상대 검색
+        // - 나를 중심으로 다른 노드를 찾는 검색 방식
+        
+        // DOM Tree의 구성요소(***********)
+        // - 페이지 소스의 모든 요소들이 구성요소가 된다.
+        // - 선언문(<!DOCTYPE>), 주석, 태그, PCDATA, 속성 등..
+
+
+        var btn1 = document.getElementById("btn1");
+
+        var n7 = document.getElementById("n7");
+
+        btn1.onclick = function(){
+
+            // Tree 구조 -> 요소 -> 노드(Node)
+
+            // 내 자식들 검색 도구
+            // n7.hasChildNodes
+
+            // n7.childNodes ***
+            // n7.firstChild
+            // n7.lastChild
+
+            // n7.children ***
+            // n7.firstElementChild
+            // n7.lastElementChild
+            
+            // alert(n7.hasChildNodes()); //확인
+
+            // 유사 배열 - function NodeList()
+            // alert(n7.childNodes.constructor);
+
+            // 내 자식이 몇명 ? > 7명
+            // alert(n7.childNodes.length);
+
+            //노드(Node)
+            // - 태그, 속성, PCDATA, 주석, 선언문 등..
+            // 1. nodeType
+            //      - 해당 노드의 타입
+            //      - 태그(1), 속성(2), PCDATA(3), 주석(8), 선언문(13)
+            // 2. nodeName
+            //      - 태그(태그명), 속성(속성명), PCDATA(#text), 주석(#comment), 나머지(#xxx)
+            // 3. nodeValue
+            //      - 태그(null), 속성(속성값),PCDATA(텍스트)
+
+            // for(var i=0; i<n7.childNodes.length; i++){
+            //    console.log('index', i);
+            //    console.log('\tnodetype', n7.childNodes[i].nodeType); 
+            //    console.log('\tnodename', n7.childNodes[i].nodeName); 
+            //    console.log('\tnodevalue', n7.childNodes[i].nodeValue); 
+            // }
+            
+            //n7.childNodes > 모든 타입의 노드를 자식으로
+            //n7.children > 태그만 자식으로
+            // console.log(n7.children.length); //3
+
+            // for( var i=0; i<n7.children.length; i++){
+            //     console.log('nodetype', n7.children[i].nodeType);
+            //     console.log('nodename', n7.children[i].nodeName);
+            // }
+
+            // n7.firstElementChild.className="sel";
+            // n7.lastElementChild.className="sel";
+
+            // alert(1);
+        };
+
+        // 가능? O
+        // -> 함수 덮어쓰기.
+        btn1.onclick = function(){  //부모 찾기
+            // alert(2);
+
+            //부모
+            // 두개가 아예 똑같음 > 부모는 무조건 태그, 한 명.
+            // - n7.parentNode 
+            // - n7.parentElement 
+
+            // n7.parentNode.className = "sel";
+            // n7.parentNode.parentNode.className = "sel";
+            // n7.parentNode.parentNode.parentNode.className = "sel";
+            // n7.parentNode.parentNode.parentNode.parentNode.className = "sel";
+
+            //<html>노드의 부모
+            // - 화면에 안보이는 노드
+            // - window.document 객체
+            // n7.parentNode.parentNode.parentNode.parentNode.parentNode.className = "sel";
+
+            // alert(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName); //#document
+            // alert(n7.parentNode.parentNode.parentNode.parentNode.parentNode.nodeType); //9
+
+            // alert(n7.parentNode.parentNode.parentNode.parentNode.parentNode === window.document);
+
+
+            //BOM: document의 부모는 window이다.
+            //DOM: document가 최상위 객체이다.
+            // alert(n7.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName); //document의 부모가 누구냐 ? > Error > DOM에서는 document가 최상위 객체라 부모가 X.
+
+        };
+
+        btn1.onclick = function(){  //형제 찾기
+
+            // n7.parentNode.firstElementChild.className = "sel";
+            
+            // n7.parentNode.lastElementChild.className = "sel";
+
+            n7.previousElementSibling.className = "sel";
+            n7.nextElementSibling.className = "sel";
+        };
+
+        //패턴
+        // 1. id 검색 > 나를 검색
+        // 2. 나를 중심 > axis 검색
+
+    </script>
+    
+</body>
+</html>

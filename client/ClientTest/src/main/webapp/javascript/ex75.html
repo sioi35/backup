@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #title {
+            width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px dotted #444;
+        }
+
+        #box {
+            padding-top: 40px;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex75.html (exam32) -->
+    <div id="title">
+        <h1>고양이 움직이기 ver. path</h1>
+        <h2>고양이를 마우스 경로를 따라 움직이시오.</h2>
+        <ul>
+            <li>왼쪽 Ctrl을 누른채 마우스를 움직인다.</li>
+            <li>Ctrl을 떼고, 시작 버튼을 누른다.</li>
+            <li>CSS: transition</li>
+            <li>JavaScript: setInterval() + event.ctrKey</li>
+        </ul>
+    </div>
+
+    <div id="box">
+        <img src="images/catty01.png" id="cat">
+        <input type="button" value="시작" id="btn">
+    </div>
+
+    <script>
+
+        var cat = document.getElementById('cat');
+        var btn = document.getElementById('btn');
+        var xlist = [];
+        var ylist = [];
+
+            
+        window.onmousemove = function(){
+            if(event.ctrlKey){
+                xlist.push(event.clientX);
+                ylist.push(event.clientY);
+            }
+
+        }
+        
+        btn.onclick = function() {
+            // alert(xlist.length);
+            // alert(ylist.length);
+
+            setInterval(function(){
+                
+                // for(var i = 0; i< xlist.length; i++){
+                    cat.style.left = (xlist[0] - 64) +'px';
+                    cat.style.top = (ylist[0] - 64) +'px';
+                // cat.style.left = xlist.pop()-64 +'px';
+                // cat.style.top = ylist.pop()-64 +'px';
+                // }
+                xlist.shift();
+                ylist.shift();
+
+            }, 10);
+        }
+
+    </script>
+
+</body>
+</html>

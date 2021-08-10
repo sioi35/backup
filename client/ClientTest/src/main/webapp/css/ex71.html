@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 80px;
+        }
+
+        #main {
+            border: 1px solid black;
+        }
+         
+        #main > input {
+            display: none;
+        
+        }
+
+        #main > #txt {
+            text-align: justify;
+        }
+
+        #main > label {
+            border: 1px solid black;
+            display: block;
+            float: left;
+            width: 105px;
+            height: 50px;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:checked+label{
+            background-color: black;
+            font-weight: bold;
+            color: white;
+        }
+        
+        #cb1:checked ~ #txt {
+            font-weight: bold;
+        }
+
+        #cb2:checked ~ #txt {
+            font-style: italic;
+        }
+
+        #cb3:checked ~ #txt {
+            text-decoration: underline;
+        }
+
+        #cb4:checked ~ #txt {
+            font-size: larger;
+        }
+
+        #cb5:checked ~ #txt {
+            font-size: small;
+        }
+
+        #cb6:checked ~ #txt {
+            text-shadow: 2px 2px 4px #777;
+        }
+
+        #cb7:checked ~ #txt {
+            font-variant: small-caps;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <!-- ex71.html -->
+
+    <div id="main">
+        <h1>Text</h1>
+        <input type="checkbox" id="cb1"><label for="cb1">두껍게</label>
+        <input type="checkbox" id="cb2"><label for="cb2">이탤릭</label>
+        <input type="checkbox" id="cb3"><label for="cb3">밑줄</label>
+        <input type="checkbox" id="cb4"><label for="cb4">크게</label>
+        <input type="checkbox" id="cb5"><label for="cb5">작게</label>
+        <input type="checkbox" id="cb6"><label for="cb6">그림자</label>
+        <input type="checkbox" id="cb7"><label for="cb7">꾸미기</label>
+        <div style="clear:both;"></div>
+    
+        <div id="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt minus dicta tenetur fugit repellat nihil commodi. Ex dignissimos quas esse quasi non sunt voluptatum facilis ipsam, accusantium nobis? Quod vitae cumque optio magni dolor, dolores
+            similique ipsa porro doloremque quia inventore architecto nobis debitis nam. Voluptas molestias esse quibusdam facere nemo incidunt temporibus dolor! Molestiae ipsum rerum a veritatis voluptas odio exercitationem perspiciatis recusandae corrupti,
+            excepturi harum dolorem quos aliquam fugit nostrum suscipit! Aliquid corrupti dolorum, pariatur officia facere culpa? Repellat asperiores ad mollitia, temporibus consequatur tempora quia aliquid modi deserunt saepe dignissimos distinctio id
+            iste blanditiis a labore ullam quas suscipit. Doloribus, dolor alias eveniet iusto explicabo sint reprehenderit dolorum perferendis beatae quae error provident in maxime, temporibus rerum, nam praesentium. Iure asperiores modi magni repellendus
+            laudantium eveniet laboriosam placeat ratione totam quo animi, voluptate labore hic, blanditiis ea. Minus rem culpa qui ad consequatur facere corporis at fuga temporibus et sunt, nam eveniet! Facere reprehenderit deserunt possimus atque consequatur
+            ipsum numquam dolorem magni. Alias fugit voluptas inventore esse accusamus? Eligendi nihil accusantium assumenda accusamus porro perferendis perspiciatis quis, itaque inventore commodi, odit culpa tempore enim iure expedita totam exercitationem
+            magni suscipit praesentium nostrum recusandae possimus eaque aut at. Quisquam nostrum excepturi dignissimos, sequi facere alias laudantium perferendis quibusdam, earum commodi quam explicabo ut non temporibus facilis velit fugiat accusamus.
+        </div>
+    </div>	
+
+</body>
+</html>

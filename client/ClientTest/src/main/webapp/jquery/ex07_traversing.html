@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+
+        div {
+           border: 1px solid black;
+           padding: 5px 10px;
+           margin: 5px;
+        }
+  
+        #n7 { border: 5px solid cornflowerblue; }
+  
+        .sel { border: 5px solid tomato; }
+  
+     </style>
+
+</head>
+<body>
+    <!-- ex07_traversing.html -->
+    <div id="n1">할아버지
+        <div id="n2">큰아버지
+           <div id="n5">사촌</div>
+        </div>
+        <div id="n3">아버지
+           <div id="n6">형</div>
+           <div id="n7">나
+              <div id="n10" class="item">첫째 자식</div>
+              <!-- 기준 요소 -->
+              <div id="n11">둘째 자식
+                 <div id="n13" class="item">손자</div>
+              </div>
+              <div id="n12">셋째 자식</div>
+           </div>
+           <div id="n8">동생</div>
+        </div>
+        <div id="n4">작은아버지
+           <div id="n9">사촌</div>
+        </div>
+     </div>
+     
+     <hr>
+     <input type="button" value="확인" id="btn1">
+
+
+     <script>
+
+         $('#btn1').click(function(){
+
+            // 자식 검색
+            // - DOM: childNodes, children
+            // - jQuery: children(), find()
+
+            // $('#n7').children().addClass('sel');
+            // $('#n7').children().children().addClass('sel');
+
+            // $('#n7').find(CSS 선택자);
+            // $('#n7').find('.item').addClass('sel');
+            // $('#n7').find('div').addClass('sel');
+
+            // $('#n7').children('.item').addClass('sel');
+
+            
+            //부모 검색
+            // - DOM: parentNode, parentElement
+            // - jQuery : parent(), parents()
+
+            // $('#n7').parent().toggleClass('sel'); //부모만
+            // $('#n7').parents().toggleClass('sel'); // 모든 조상들까지.
+            // $('#n7').parents('html, body').toggleClass('sel'); // 모든 조상들까지.
+            // $('#n7').parentsUntil('body').toggleClass('sel'); //body 밑까지의 조상만
+
+            
+            //형제 검색
+            // - DOM: previousSibling, nextSibling
+            // - jQuery: prev(), next()
+
+            // $('#n7').prev().toggleClass('sel'); //위 형제
+            // $('#n7').next().toggleClass('sel'); // 아래 형제
+            // $('#n7').siblings().toggleClass('sel'); //모든 형제
+
+
+         });
+
+
+     </script>
+
+</body>
+</html>

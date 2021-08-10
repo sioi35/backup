@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex13_event.html -->
+    <!--  
+        이벤트, Event
+        - 사용자(사람)와 상호 작용을 하면서 마우스(키보드, 터치, 펜 등)를 조작하면 그에 대한 반응을 정의하는 모델
+
+        이벤트 걸기 -> 이벤트 매핑(Event Mapping)
+        - 특정 태그 검색 + 이벤트 정의 + 코드 등록(함수 등록)
+        1. 정적 방식 > BOM 정적 이벤트 모델
+            - 이벤트가 발생할 태그에 onXXX속성을 미리 정의한다.
+            - onXXX 속성: 이벤트 핸들러, Event Handler > 사건이 발생하면 일을 처리하는 담당자
+            - 하는일이 고정일 때..(변화가 없을 때)
+        2. 동적 방식 > BOM 동적 이벤트 모델
+            - 자바스크립트로 객체를 찾아서 이벤트를 정의한다.
+            - 태그객체.onXXX = 익명함수;
+            - 태그객체.onXXX = 실명함수;
+
+
+    -->
+    <h1>Event</h1>
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="확인1" name="btn1" onclick="txt1.value='click';">
+        <input type="button" value="확인2" name="btn2">
+    </form>
+
+    <script>
+
+        var btn1 = window.document.form1.btn1;
+        var btn2 = window.document.form1.btn2;
+        var txt1 = window.document.form1.txt1;
+
+        //동적 이벤트 모델
+        // btn1.onclick = function(){
+        //     // alert();
+        //     txt1.value = '클릭';
+        // };
+
+        btn1.onclick = function(){ //여기에서만 사용 가능
+
+        };
+
+        function test(){
+
+        }
+
+        btn1.onclick = test;
+
+        test(); //다른 용도로 호출
+
+        var now = new Date();
+
+        //수요일에만 btn2를 클릭할 수 있다. -> 조건부 클릭 이벤트
+        if(now.getDay() == 3){
+            btn2.onclick = function(){
+            alert('click');
+            };
+        }
+    </script>
+
+</body>
+</html>

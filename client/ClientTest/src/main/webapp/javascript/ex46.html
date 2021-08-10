@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .title ul {
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #444;
+        }
+
+        #box {
+            border: 1px solid black;
+            padding: 20px;
+            min-height: 146px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex46.html(exam18번) -->
+
+    <div class="title">
+		<h1>숫자키 이벤트 + 이미지 동적 생성하기</h1>
+        <h3>숫자키를 누르면 하단의 박스(div)안에 이미지를 생성하시오.</h3>
+		<ul>
+			<li>상단 숫자키 사용 가능</li>
+			<li>우측 숫자키패드 사용 가능</li>
+		</ul>
+	</div>
+
+	<div id="box"></div>
+
+    <script>
+
+        var box = document.getElementById('box');
+        var num;
+        var img;
+
+        window.onkeydown = function(){
+            
+            if(event.keyCode >= 96 && event.keyCode <=105){
+                img = document.createElement('img');
+                num = event.keyCode - 96;
+            }else if(event.keyCode >=48 && event.keyCode <=57){
+                img = document.createElement('img');
+                num = event.keyCode - 48;
+            }
+            img.setAttribute('src', 'images/' +num+ '.png');
+
+            box.appendChild(img);
+
+        };
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

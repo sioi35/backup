@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/highcharts.js"></script>
+    <script src="js/series-label.js"></script>
+    <script src="js/exporting.js"></script>
+    <script src="js/export-data.js"></script>
+    <script src="js/accessibility.js"></script>
+
+    <style>
+
+        #container {
+            width: 800px;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex19_chart.html -->
+
+    <!--  
+
+        HighCharts or Google Chart
+
+    -->
+
+    <h1>Line Chart</h1>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+        
+            title: {
+                text: '몸무게 변화'
+            },
+        
+            subtitle: {
+                text: '2020년 몸무게'
+            },
+        
+            yAxis: {
+                title: {
+                    text: '몸무게'
+                }
+            },
+        
+            xAxis: {
+                accessibility: {
+                    rangeDescription: 'Range: 2010 to 2017'
+                }
+            },
+        
+            // 범례
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+        
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 1
+                }
+            },
+        
+            series: [{
+                name: '홍길동',
+                data: [70, 72, 73, 73.5, 72, 73, 76, 78, 83, 85, 80, 75]
+            },
+            {
+                name: '아무개',
+                data: [60, 62, 65, 68.5, 71, 72, 74, 70.8, 69, 65, 64, 64.5]
+            }
+            ],
+        
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        
+        });
+    </script>
+
+
+</body>
+</html>

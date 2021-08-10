@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex29_timer.html -->
+    <!--  
+        타이머, timer
+    -->
+
+    <h1>Timer</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1" placeholder="10초내에 입력하세요.">
+        <hr>
+        <input type="button" value="버튼1" name="btn1">
+        <input type="button" value="버튼2" name="btn2">
+        <input type="button" value="버튼3" name="btn3">
+        <hr>
+        <input type="button" value="시작" name="btnStart">
+        <input type="button" value="멈춤" name="btnStop">
+        <hr>
+        <img src="images/catty01.png" name="cat1" alt="">
+        <hr>
+        <input type="button" value="버튼4" name="btn4">
+        <input type="button" value="버튼5" name="btn5">
+        <input type="button" value="버튼6" name="btn6">
+
+        <hr>
+        <select name="sel1" size="5">
+            <option>하나</option>
+            <option>둘</option>
+            <option>셋</option>
+            <option>넷</option>
+            <option>다섯</option>
+        </select>
+        <input type="button" value="삭제" name="btnDelete">
+
+
+    </form>
+
+    <script>
+
+        var txt1 = document.form1.txt1;
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        
+        var btnStart = document.form1.btnStart;
+        var btnStop = document.form1.btnStop;
+
+        var btn4 = document.form1.btn4;
+        var btn5 = document.form1.btn5;
+        var btn6 = document.form1.btn6;
+        
+        var cat1 = document.images['cat1'];
+        
+        var sel1 = document.form1.sel1;
+        var btnDelete = document.form1.btnDelete;
+
+        //타이머
+        // - window 객체 메소드
+
+        // - number setTimeout(함수, 시간(ms))
+        //      - 해당 함수 실행 후 지정한 시간이 되는 순간 함수를 실행한다.
+        //      - 1회 실행
+        // void clearTimeout(타이머 ID)
+
+        // - number setInterval(함수, 시간(ms))
+        //      - 해당 행수 실행 후부터 지정한 시간마다 함수를 실행한다.
+        //      - 반복 실행
+        // void clearInterval(타이머 ID)
+
+        btn1.onclick = function(){
+            setTimeout(function(){
+                alert('확인');
+            }, 3000);
+        };
+
+        btn2.onclick = function(){
+            setInterval(function(){
+                alert('확인');
+            }, 3000);
+        };
+
+        btn3.onclick = function(){
+            // setTimeout(function(){
+            //     txt1.size += 10;
+            // }, 3000);
+
+            var now = new Date();
+            txt1.value = now.toLocaleTimeString();
+            
+            setInterval(function(){
+                var now = new Date();
+                txt1.value = now.toLocaleTimeString();
+                
+            }, 1000); //1초마다 함수 실행
+        };
+        
+        // var now = new Date();
+        // txt1.value = now.toLocaleTimeString();
+        
+        // setInterval(function(){
+        //         var now = new Date();
+        //         txt1.value = now.toLocaleTimeString();
+        // }, 1000); //1초마다 함수 실행
+
+        // 전역 변수는 페이지가 화면에 보이는 동안은 계속 살아있다.
+        var n = 1; 
+        var timer = 0; // 타이머 1개 기억
+        var timerList = []; // 타이머 N개 기억
+
+        // 개발자가 아니라, 시스템이나 실행환경이 호출하는 함수(메소드)
+        // - 콜백 함수(Callback Function), 콜백 메소드
+        
+
+        btnStart.onclick = function() {
+            // timer = setTimeout(function(){
+            //     txt1.value = n;
+            // }, 5000);
+            // console.log(timer);
+
+            // timer = setInterval(function(){
+            //     txt1.value = n;
+            //     n++;
+            // }, 100);
+            // console.log(timer);
+            // timerList.push(timer);
+            if(timer == 0){
+                timer = setInterval(function(){
+                    txt1.value = n;
+                    n++;
+                }, 10);
+            }
+
+        };
+
+        btnStop.onclick = function() {
+            // clearTimeout(timer);
+            // clearInterval(timer);
+            // n = 0;
+
+            // timer = timerList.pop();
+            // clearInterval(timer);
+            // console.log(timerList);
+
+            clearInterval(timer);
+            timer = 0;
+        };
+
+        var index = 0;
+        var colors = [ 'white', 'black', 'tomato', 'gold', 'cornflowerblue'];
+
+        btn4.onclick = function(){
+
+            setInterval(function(){
+                document.body.bgColor = colors[index];
+                index ++;
+                if(index >= colors.length){
+                    index = 0; //reset
+                }
+            }, 1000);
+        };
+
+        cat1.onclick = function(){
+            
+            index = 1; 
+
+            if(timer == 0) {
+                timer = setInterval(function(){
+                    
+                    //JavaScript -> format String X
+                    //console.log() -> format String O
+                    cat1.src = "images/catty0" + index + ".png";
+                    index++;
+                    if(index > 9){
+                        index = 1;
+                    }
+                }, 100);
+            }else {
+                clearInterval(timer);
+                timer = 0;
+            }
+
+        };
+
+        btn6.onclick = function(){
+
+        };
+
+        
+        txt1.onkeyup = function(){
+            //무언가를 입력중이면 타이머 중지
+            clearTimeout(timer);
+        };
+
+        txt1.onblur = function(){
+            //포커스가 소멸되는 순간 발생
+            //입력 상태가 풀리면..
+            // alert();
+            txt1.readOnly = true;
+        };
+
+        timer = setTimeout(function(){
+            txt1.readOnly = true;
+            txt1.placeholder = '입력이 불가능합니다.';
+
+        }, 10000);
+
+
+        btnDelete.onclick = function(){
+
+            //<select>의 모든 <option>태그 삭제하기
+            
+            //1. 
+            // while(sel1.options.length > 0){
+                // sel1.options.remove(0);
+            // }
+            
+            //2.
+            // sel1.options = null; //안됨
+
+            //3. 
+            //  a. length의 변화
+            //  b. index의 shift
+            
+            //length -> 5 => loop X 5
+            
+            var count = sel1.options.length;
+
+            // for(var i=0; i<count; i++){
+            //     sel1.options.remove(i);
+            //     // console.log(sel1.options.length);
+            // }
+
+            for(var i = count-1; i>=0; i--){
+                sel1.options.remove(i);
+            }
+        };
+
+
+    </script>
+
+</body>
+</html>

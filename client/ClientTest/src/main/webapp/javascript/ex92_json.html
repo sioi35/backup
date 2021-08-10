@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1{ 
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        #tbl1 th, #tbl td {
+            border: 1px solid black;
+        }
+
+        #tbl1 th:nth-child(1){
+            width: 550px;
+        }
+
+        #tbl1 th:nth-child(2){
+            width: 50px;
+        }
+
+        #tbl1 th {
+            background-color: #eee;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex92_json.html -->
+
+    <h1>Todo</h1>
+
+    <table id="tbl1">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>completed</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <script>
+
+        var tbody = document.getElementById('tbl1').lastElementChild;
+
+        fetch('https://jsonplaceholder.typicode.com/todos').then(function(resp) {
+            return resp.json()
+        }).then(function(data){
+
+            // console.log(data);
+            data.forEach(function(item){
+                // console.log(item.title, item.completed);
+
+                let tr = document.createElement('tr');
+                
+                let td1 = document.createElement('td');
+                td1.innerText = item.title;
+            
+                tr.appendChild(td1);
+
+                let td2 = document.createElement('td');
+                td2.innerText = item.completed ? 'O' : 'X';
+
+                tr.appendChild(td2);
+
+                tbody.appendChild(tr);
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+</html>

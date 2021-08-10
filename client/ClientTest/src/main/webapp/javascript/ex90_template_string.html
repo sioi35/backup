@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex90_template_string.html -->
+
+    <div id="output"></div>
+
+    <script>
+
+        const output = document.getElementById('output');
+
+        let name = '홍길동';
+        let age = 20;
+        let score = 100;
+
+        let result = '이름은' +name + '이고, 나이는' + age + '세입니다. 이번 수업에서 ' + score + '점을 받았습니다.';
+        console.log(result);
+
+        console.log('이름은 %s이고, 나이는 %d세입니다. 이번 수업에서 %d점을 받았습니다.', name, age, score);
+
+        output.innerText = result;
+
+        //ES6
+        // string
+        // - 'string' or "string"
+        
+        //template string
+        // - `stirng`
+        // - ${} : 자바스크립트의 값을 직접 대입
+        // - 엔터, 탭, 스페이스 : 모두 인식된다.
+
+        output.innerText = `홍길동`;
+        console.log(typeof `홍길동`);
+        console.log("홍길동" === `홍길동`);
+        console.log('홍길동' === `홍길동`);
+
+        output.innerText = `안녕하세요. 저는 ${name}입니다. 나이는 ${age}세입니다. 점수는 ${score-5}점입니다. 현재 시각은 ${new Date()}입니다.`;
+
+        console.log(`하나
+        둘
+        셋`);
+
+    </script>
+
+
+
+
+</body>
+</html>

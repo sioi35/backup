@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_collection.html -->
+
+    <form name="form1">
+        <input type="button" name="btn1" value="btn1" onclick="m1();">
+        <input type="text">
+        <input type="checkbox">
+    </form>
+
+    <h1>이미지</h1>
+    <img src="images/catty01.png" name="cat1">
+    <img src="images/catty02.png" name="cat2">
+    <img src="images/catty03.png">
+
+    <h1>링크</h1>
+    <a href="http://naver.com" name="link1">네이버</a>
+    <a href="http://google.com" name="link2">구글</a>
+    <a href="http://naver.com" name="link3">다음</a>
+
+    <h1>앵커</h1>
+    <a name="a1">아이템1</a>
+    <a name="a2">아이템2</a>
+    <a name="a3">아이템3</a>
+
+
+
+
+
+    <script>
+        
+        // window.document.form1.btn1.onclick = m1;
+        // window.document.form1.btn1.onclick = function m1(){
+        //     alert();
+        // };
+
+        // function m1() {
+        //     alert();
+        // }
+
+
+        /*
+            JavaScript Built-in Collection
+            - 브라우저가 HTML 문서를 로딩하는 과정에서 자동으로 만드는 배열
+
+            1. window.document.images
+                - 문서내의 모든 <img> 태그를 담고있는 배열
+            2. window.document.links
+                - 문서내의 모든 <a href=""> 태그 배열
+            3. window.document.ahchors
+                - 문서내의 모든 <a name=""> 태그 배열
+            4. window.document.forms
+                - 문서내의 모든 <form> 태그 배열
+            5. window.document.forms[index].elements
+                - 해당 폼태그의 자식 태그 배열
+            6. window.document.all
+                - 문서내의 모든 name을 가지는 태그 배열(+ name을 가지지 않는 태그, index로 접근) -> 모든 태그.
+                    - 예전: (images + liks + ahchors + forms + elements): 종합 > 이렇게 생각하기!
+                    - 최근: 모든 태그 배열(name을 가지지 않는 태그까지 포함) > .. 접근 불편(index)
+                - 비표준(MS) > 대다수 브라우저에서 지원
+            
+        */
+
+        //이미지
+        // console.log(window.document.cat1);
+        // console.log(window.document.images.length);
+        // console.log(window.document.images[0].name);
+        // console.log(window.document.images['cat1'].name);
+        
+        //링크
+        // console.log(window.document.links.length);
+        // console.log(window.document.link1);  //X undefined
+        // console.log(window.document.links[0]);
+        // console.log(window.document.links['link1']);
+
+        //
+        // console.log(window.document.links.link1);
+        // console.log(window.document.links['link1']);
+        // console.log(window.document.links[0]);
+        
+        //앵커(<a name="">)  
+        // console.log(window.document.anchors.length);
+        // console.log(window.document.anchors[3]);
+
+        //폼
+        // console.log(window.document.forms.length);
+
+        // console.log(window.document.form1); //v
+        // console.log(window.document.forms[0]); //v
+
+        // console.log(window.document.forms['form1']);
+        // console.log(window.document.forms.form1);
+
+        // console.log(window.document.form1.elements.length);
+
+        console.log(window.document.all.cat1);
+        console.log(window.document.all['cat1']);
+        // console.log(window.document.all[23]);
+
+        console.log(window.document.all.link1);
+        console.log(window.document.all['link1']);
+
+        console.log(window.document.all.form1);
+        console.log(window.document.all['form1']);
+
+
+
+
+    </script>
+
+
+</body>
+</html>

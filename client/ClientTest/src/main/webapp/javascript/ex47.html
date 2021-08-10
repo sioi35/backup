@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            width: 700px;
+            margin: 0 auto;
+        }
+        .title ul {
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #444;
+        }
+
+        #box {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        #tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl td, #tbl tr {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- ex47.html(exam19번) -->
+
+    <div class="title">
+		<h1>방향키 + 테이블 행렬 조작하기</h1>
+		<div>숫자키를 누르면 하단의 박스(div)안에 이미지를 생성하시오.</div>
+		<ul>
+			<li>좌우: 열 추가/삭제</li>
+			<li>상하: 행 추가/삭제</li>
+			<li>셀에 숫자를 할당하시오.</li>
+		</ul>
+	</div>
+
+    <div id="box">
+        <table id="tbl">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        var tbl = document.getElementById('tbl');
+
+        var row = 2;
+        var column = 2;
+
+        var num = 1;
+
+
+        window.onkeydown = function(){
+            
+
+            if(event.keyCode == 39){
+                //우클릭 열 추가 (td 추가)
+                column++;
+                generate();
+            }
+            
+            if(event.keyCode == 37){
+                //좌클릭 열삭제
+                column--;
+                generate();
+            }
+            
+            if(event.keyCode == 38){
+                //상클릭 행 삭제
+                row--;
+                generate();
+            }
+            
+            if(event.keyCode == 40){
+                //하 행 추가
+                row++;
+                generate();
+            }
+
+        };
+
+       
+        function generate(){
+
+            tbl.innerHTML = "";
+
+            num = 1;
+            
+            for(var i=0; i<row; i++){
+                var tr = document.createElement('tr'); //행
+                
+                tbl.appendChild(tr);
+                for(var j=0; j<column; j++){
+                    var td = document.createElement('td'); //열
+                    td.innerHTML = num;
+                    num++;
+                    tr.appendChild(td);
+                }
+            }
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

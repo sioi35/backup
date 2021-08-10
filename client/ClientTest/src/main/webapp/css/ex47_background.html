@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/example.css">
+    <style>
+        
+        #box1 {
+            width: 600px;
+
+            /*  
+                backgound
+                1. solid color, 단색
+                2. gradient color, 색의 변화(*)를 시각적으로 표현
+                    a. 선형
+                    b. 원형
+            */
+            /* background: linear-gradient(red, blue); */
+            /* background: linear-gradient(yellow, red); */
+            /* background: linear-gradient(black, white); */
+            /* background: linear-gradient(to right, red, blue); */
+            /* background: linear-gradient(to left, red, blue); */
+            /* background: linear-gradient(to bottom, red, blue); */
+            /* background: linear-gradient(to top, red, blue); */
+            /* background: linear-gradient(45deg, red, blue); */
+            /* background: linear-gradient(to right, red, orange, yellow, green, blue, darkblue, purple); */
+            
+            /* background: linear-gradient(to right, red, yellow, yellow, yellow, yellow, yellow, blue, blue) */
+       
+            /* background: linear-gradient(to right, rgb(255, 0, 0), rgba(255, 0, 0, 0)); */
+       
+
+            /* background: radial-gradient(red, blue, yellow); */
+
+            /* background: radial-gradient(circle, red, blue, yellow); */
+
+
+            /* 
+                background-image
+                - 다중 배경 이미지
+            */
+            /* background-image: url(images/catty01.png), url(images/catty02.png), url(images/catty03.png); */
+
+            /* background-repeat: no-repeat, repeat-x, repeat-y; */
+            /* background-repeat: no-repeat; */
+            /* background-position: left top, right top, left bottom; */
+
+
+            /* 
+                배경 이미지 크기
+            */
+
+            background-image: url(images/wall15.jpg);
+            /* background-size: 600px 400px; */
+            /* background-size: 300px 200px; */
+            /* background-size: 60px 40px; */
+            /* background-size: 600px 200px; */
+            /* background-size: 300px 400px; */
+            /* background-size: 100% 100%; */  /*컨테이너를 기준*/
+            /* background-size: auto auto; */  /*배경 이미지를 기준*/
+
+            /*너비는 상자를 채우고.. 높이는 종횡비 유지하여 계산*/
+            /* case 1.
+            background-size: 100% auto; 
+            background-repeat: no-repeat;
+            background-position: center center; 
+            */
+            /*
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;  */
+
+            /* case 2. 
+            background-size: auto 100%;
+            background-position: center center;  
+            */
+            /* background-size: cover;
+            background-position: center center;   */
+
+
+
+
+        }
+
+        /* #box1:hover{
+            background: linear-gradient(white, black);
+        } */
+
+
+        /* 풀 사이즈 배경 이미지 */
+        html {
+            height: 100%;
+            background-image: url(images/back.jpg);
+            background-repeat: no-repeat;
+            /* background-size: 100% 100%; */
+            background-color: black;
+            background-position: center center;
+            /* background-size: contain; */
+            background-size: cover;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex47_background.html -->
+
+    <!-- <div id="box1" class="box box-large box-border5"></div> -->
+
+    <!-- <img src="images/wall15.jpg" style="width:600px"> -->
+
+
+
+</body>
+</html>

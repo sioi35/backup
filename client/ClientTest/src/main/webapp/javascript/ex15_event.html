@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{ width: 500px; height: 300px; resize: none; font-size: 2.5em; cursor: default;}
+        textarea, input {display: block; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <!-- ex15_event.html -->
+
+    <h1>마우스 관련 이벤트</h1>
+
+    <form name="form1">
+        <textarea name="txt1" onmouseover="m1();"></textarea>
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+    <img src="images/cat01.jpg" name="cat1">
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+
+        /*
+            *** 이벤트 !!! > 어떤 행동을 했을 때 발생하는지!!
+
+            마우스 관련 이벤트
+            - onmouseXXX
+            1. onmouseover: 해당 객체 영역 위에 마우스 커서가 진입하는 순간
+            2. onmouseout: 해당 객체 영역 위에 마우스 커서가 빠져나가는 순간
+            3. onmousedown: 해당 객체 영역 위에서 마우스 버튼을 누르는 순간
+            4. onmouseup: 해당 객체 영역 위에서 마우스 버튼을 떼는 순간
+            5. onmousemove: 해당 객체 영역 위에서 마우스 커서가 움직일때마다 발생
+            6. onclick: 마우스 이벤트가 아니다!!! 키보드를 사용해서 발생 가능하다. 좌표를 얻어내지 못한다.
+        */
+
+        function m1(){
+            // txt1.value = 'mouseover\n' + txt1.value;
+            // window.document.body.bgColor = "tomato";
+        }
+
+        txt1.onmouseout = function(){
+            // txt1.value = 'mouseout\n' + txt1.value;
+            // window.document.body.bgColor = "white";
+        };
+
+        txt1.onmousedown = function(){
+            // txt1.value = 'mousedown\n' + txt1.value;
+
+            //event 객체
+            // - 이벤트가 발생하면 자동으로 제공되는 객체
+
+            //event.buttons
+            // - 마우스의 버튼 종류
+            // - 1 : 왼쪽 버튼
+            // - 2 : 오른쪽 버튼
+
+            // txt1.value = event.buttons + '\n' + txt1.value;
+
+            // if(event.buttons == 2){
+            //     // 브라우저 -> 오른쪽 버튼 클릭 -> Context Menu 호출
+            //     alert('오른쪽 버튼을 사용할 수 없습니다.');
+
+            //     // event.preventDefault();
+            //     // return false;
+            // }
+
+            /*
+            event -> 마우스 커서의 좌표
+            1. x, y
+                - 마우스 좌표값
+                - 기준점: 문서 좌측 상단
+                - 비표준(MS)
+            2. clientX, clientY ******
+                - 기준점: 문서 좌측 상단
+                - 1번과 동일
+                - 표준(정식)
+                - CSS의 absolute과 동일한 좌표계
+            3. screenX, scrennY
+                - 기준점: 모니터 좌측 상단
+            4. offsetX, offsetY ******
+                - 기준점: 이벤트가 걸린 태그의 좌측 상단
+                - CSS의 relative와 동일한 좌표계
+            */
+            // txt1.value = event.x + ',' + event.y +  '\n' + txt1.value;
+            // txt1.value = event.clientX+ ',' + event.clientY +  '\n' + txt1.value;
+            // txt1.value = event.screenX + ',' + event.screenY +  '\n' + txt1.value;
+            // txt1.value = event.offsetX + ',' + event.offsetY +  '\n' + txt1.value;
+        };
+
+        txt1.onmouseup = function(){
+            // txt1.value = 'mouseup\n' + txt1.value;
+        };
+
+        txt1.onmousemove = function(){
+            // txt1.value = 'mousemove\n' + txt1.value;
+
+            //mouse tracking
+            txt1.value = event.offsetX + ',' + event.offsetY +  '\n' + txt1.value;
+        };
+
+        btn1.onmouseover = function(){
+            btn1.value='하하';
+        };
+
+        btn1.onmouseout = function(){
+            btn1.value= '버튼';
+        };
+
+        window.document.all.cat1.onmousedown = function(){
+
+            if(event.offsetX > 100 && event.offsetX < 125 
+                && event.offsetY > 70 && event.offsetY <100 ){
+                    alert('거기는 고양이 코!');
+                }
+        };
+
+        btn1.onclick = function(){
+            btn1.value = 'click';
+        };
+
+    </script>
+
+</body>
+</html>

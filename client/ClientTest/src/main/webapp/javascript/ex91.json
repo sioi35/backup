@@ -1,0 +1,26 @@
+{
+    "name": "자바 개발자 과정",
+    "beginDate": "2021-01-01",
+    "endDate": "2021-06-30",
+    "subject": [ "java", "oracle", "jdbc", "html", "css", "javascript" ],
+    "info": {
+       "classroom": "1강의장",
+       "student": [
+          {
+             "name": "홍길동",
+             "age": 20,
+             "gender": "남자"
+          },
+          {
+             "name": "아무개",
+             "age": 21,
+             "gender": "남자"
+          },
+          {
+             "name": "호호호",
+             "age": 22,
+             "gender": "여자"
+          }
+       ]
+    }
+ }

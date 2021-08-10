@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 5px solid black;
+            width: 200px; height: 200px;
+            background-color: gold;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex53_style.html -->
+    <h1>JavaScript + CSS</h1>
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <div id="box" style="font-size: 2em;">상자</div>
+
+    <script>
+
+        // JavaScript Mode 
+        // - transitional(O): 오류 허용 -> 무시..
+        // - strict(X): 엄격한 문법 준수
+        // - frame(X):
+        
+        //ES6
+        'use strict'
+        
+        //strict 모드 > a is not defined
+        // a = 10;
+        // alert(a);
+
+
+        var btn1 = document.getElementById('btn1');
+        var box = document.getElementById('box');
+
+        btn1.onclick = function(){
+            
+            //JavaScript -> CSS 조작 규칙
+            //1. style 프로퍼티 사용(Collection)
+            //2. 태그.style.CSS속성명 = CSS속성값
+            // - <div id='box' style ='color:red;'>
+            // - box.style.color = 'red';
+            // - 대부분의 속성명은 그대로 사용
+            // - "background-color" > 캐멀 표기법으로 수정 > "backgroundColor"
+            //3. 속성값 > 숫자를 제외하고, 대부분 문자열
+            //4. JavaScript를 통해서 접근한 CSS의 속성상태는 인라인 스타일 시트로 선언한 값만 접근이 가능하다.(임베디드, 외부 > 접근 불가능)
+            
+
+            
+            //box -> CSS 조작
+            // box.style.width = '400px';
+            // box.style.height = '600px';
+            // box.style.backgroundColor = 'cornflowerblue';
+            // box.style['width'] = '600px';
+            // box.style['background-color'] = 'blue';
+
+
+            // alert(box.style.width); //임베디드 선언 -> 접근 못함 > null
+            // alert(box.style.fontSize); //인라인 스타일 시트 -> 접근 가능 > 2em
+
+            // alert(box.style.width);
+            // console.log(parseInt(box.style.width));
+            // console.log(box.style.width * 1.5); //NaN 숫자가 아닌 상태
+
+            // box.style.width = parseInt(box.style.width) * 1.5 + 'px';
+
+            // console.log(window.getComputedStyle(box).width); 임베디드로 선언된 스타일 가져오기
+            
+            //Vanilla JavaScript -> 지금 수업 내용(순수 자바스크립트, JQuery(라이브러리사용) ) 
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/example.css">
+    <style>
+
+        /* 
+            transition, 전환
+            - 객체의 속성(상태값)이 변화되는 과정을 시간 순으로 보여주는 기술
+            - 수치형 속성값에 한해서..(열거형은 불가능)
+        */
+
+        #box {
+            /* transition-property: width, height, font-size; */
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        #box:hover {
+            /* width: 500px; */
+            /* height: 500px; */
+            /* font-size: 5em; */
+            /* opacity: .1; */
+
+            /* font-family: 궁서체; */
+            /* background-color: cornflowerblue; */
+            /* border-width: 30px; */
+            /* padding: 50px; */
+            /* border-radius: 50%; */
+            /* margin-left: 200px; */
+            /* box-shadow: 10px 10px 5px #555; */
+
+            /* transform: translate(100px, 0px); */
+            /* transform: scale(-1, -1); */
+            transform: rotate(30deg);
+        }
+
+
+        #cat > img {
+            transition-property: all;
+            transition-duration: .3s;
+            opacity: .3;
+        }
+
+        #cat > img:hover {
+            transform: translate(0px, -25px);
+            opacity: 1;
+        }
+
+        /* 
+        #cat6 {
+
+        }
+
+        #cat6:hover{
+            transform: translate(500px, 0px);
+        } 
+        */
+        
+        #cat5 + #cat6 {
+            transition: all 1s;
+        }
+
+        #cat5:hover + #cat6{
+            transform: translate(500px, 0px);
+        } 
+
+        #cage {
+            /* border: 10px solid black; */
+            width: 620px;
+        }
+
+        #cat7 {
+            transition: all 1s;
+        }
+        
+        #cage:hover > #cat7 {
+            transform: translate(500px, 0px);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex51_transition.html -->
+
+    <div id="box" class="box box-small box-border1 bgcolor-orange">상자</div>
+
+    <h1>고양이</h1>
+    <div id="cat">
+        <img src="images/catty01.png" alt="">
+        <img src="images/catty02.png" alt="">
+        <img src="images/catty03.png" alt="">
+        <img src="images/catty04.png" alt="">
+        <img src="images/catty05.png" alt="">
+    </div>
+
+    <hr>
+    <img src="images/catty05.png" alt="" id="cat5">
+    <img src="images/catty06.png" alt="" id="cat6">
+
+
+    <hr>
+    <div id="cage">
+        <img src="images/catty07.png" alt="" id="cat7">
+    </div>
+
+
+
+</body>
+</html>

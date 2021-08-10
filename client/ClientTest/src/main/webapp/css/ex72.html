@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #main {
+            width: 500px;
+            margin: 0px auto;
+        }
+
+        h1 {
+            font-variant: small-caps;
+            width: 500px;
+            margin: 30px auto;
+            
+        }
+
+        #main .box {
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            width: 350px;
+        }
+
+        .box input[type=radio] {
+            display: none;
+        }
+
+        .box label {
+            width: 150px;
+            height: 130px;
+            display: block;
+            float: left;
+            text-align: center;
+            font-size: 3em;
+            font-variant: small-caps;
+            background-color: #EEE;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding-top: 20px;
+            position: relative;
+            left: 0;
+            top:0;
+            cursor: pointer;
+
+        }
+
+        .box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #main .box > img {
+            width: 150px;
+            height: 150px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0px 20px;
+            
+        }
+
+        input[type=radio]:checked+label{
+            background-color: tomato;
+            color: white;
+        }
+
+        input[type=radio]:checked+label+img{
+            animation-name: lpkey;
+            animation-duration: 1000s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform-origin: center center;
+        }
+
+        @keyframes lpkey {
+            from { transform: rotate(0deg);}
+            to { transform: rotate(300000deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex71.html -->
+    <h1>Music</h1>
+    <div id="main">
+        <div class="box">
+            <input type="radio" name="rb" id="rb1"><label for="rb1">Play</label><img src="images/lp01.png">
+        </div>
+        <div class="box">
+            <input type="radio" name="rb" id="rb2"><label for="rb2">Play</label><img src="images/lp02.png">
+        </div>
+        <div class="box">
+            <input type="radio" name="rb" id="rb3"><label for="rb3">Play</label><img src="images/lp03.png">
+        </div>
+        <div class="box">
+            <input type="radio" name="rb" id="rb4"><label for="rb4">Play</label><img src="images/lp04.png">
+        </div>
+    </div>
+
+</body>
+</html>

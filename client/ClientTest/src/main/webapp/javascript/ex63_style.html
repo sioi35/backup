@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .drag { position:absolute; }
+
+    </style>
+</head>
+<body>
+    <!-- ex63_style.html -->
+
+    <img src="images/catty01.png" class="drag">
+    <img src="images/catty02.png">
+    <img src="images/catty03.png" class="drag">
+    <input type="text" class="drag">
+    <h1 class="drag">제목입니다.</h1>
+
+
+
+    <script>
+
+        var isDown = false;
+        var x, y;
+        var dragObject; //지금 움직일 객체(Drag)
+        var zIndex = 0;
+
+
+        window.onmousedown = function(){
+            
+            if(event.srcElement.classList.contains('drag')){
+                dragObject = event.srcElement; //클릭한 고양이(***)
+
+                isDown = true;
+                x = event.offsetX;
+                y = event.offsetY;
+
+                dragObject.style.zIndex = zIndex;
+                zIndex++;
+
+            }
+
+        };
+
+        window.onmouseup = function(){
+            isDown = false;
+        };
+
+        window.onmousemove = function(){
+            if(isDown){
+                dragObject.style.left = event.clientX - x + 'px';
+                dragObject.style.top = event.clientY - y + 'px';
+
+                event.preventDefault();
+                return false;
+            }
+        };
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- ex02_selector.html -->
+    <h1>jQuery 함수 + CSS 선택자 -> 태그 검색</h1>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <script>
+
+        //jQuery 함수 *************************
+        // - jQuery()
+        // - CSS 선택자나 기타 요소를 사용해서 태그를 검색 후 반환하는 함수
+        // - 태그 검색 함수(document.all.btn1, document.getElementById)
+        // - jQuery 함수의 결과는 무조건 배열이다.(순수 배열X, 유사 배열O(jQuery Collection))
+        // - jQuery의 대부분의 기능은 자동으로 내부 루프를 처리한다. -> jQuery 반환값은 배열 -> 배열에 직접 메소드를 적용하면 -> 개발자가 따로 루프 처리를 하지 않아도 자동으로 루프를 돌면서 개별요소에게 그 기능이 적용된다.
+        
+        // console.log(jQuery);
+
+        //DOM
+        // var list = document.getElementsByTagName('div');
+
+        // for(var i=0; i<list.length; i++){
+        //     list[i].style.color = 'blue';
+        // }
+        
+        //1. CSS 태그 선택자
+        // var list = jQuery('div'); //집합
+
+        // for(var i=0; i<list.length; i++){
+        //     list[i].style.color = 'gold'; //개별 요소
+        // }
+
+    //    jQuery('div').css('color', 'red'); //집합 -> 조작
+
+        // jQuery('h1').css('color', 'blue');
+
+        //2. 아이디 선택자
+        // jQuery('#box1').css('color', 'blue');
+        
+        //3. 클래스 선택자
+        // jQuery('.box').css('color', 'gold');
+        // jQuery('.box').text('box');
+
+        //4. 나머지
+        // jQuery('.box:nth-child(even').css('color', 'red');
+
+        //JavaScript + CSS 선택자 지원
+        // - document.querySelector: 태그 1개 검색
+        // - document.querySelectorAll: 태그 N개 검색
+
+        //HTMLDivElement
+        // console.log(typeof document.querySelector('.box', document.querySelector('.box').constructor));
+
+        //HTMLDivElement
+        // console.log(typeof document.querySelectorAll('.box'), document.querySelectorAll('.box').constructor);
+
+        // document.querySelector('#box2').style.color = 'gold';
+
+        // document.querySelectorAll('.box').forEach(function(item){
+        //     item.style.color = 'blue';
+        // });
+
+        // jQuery('.box').css('color', 'gold');
+
+        var btn1 = document.getElementById('box1'); //반환값: DOM 객체
+        var btn2 = jQuery('box1'); //반환값: jQuery 객체
+
+        ///**찾은 태그는 동일하지만..자바스크립트에서의 자료형은 다르다.
+        console.log(btn1 == btn2); //false
+
+        //btn1.XXX
+        //btn2.XXX
+
+        // jQuery 찾은 결과를 DOM 조작할 수 없다.!
+        // btn2.innerText = '테스트'; //에러;
+
+        // DOM 객체에 jQuery 메소드를 적용할 수 없다.
+        // btn1.css('color', 'blue');  // 에러
+
+
+        //jQuery vs (Vue vs Angular vs React)
+        // - JavaScript
+        // - 생산성 + 틀(조직)
+
+
+    </script>
+
+</body>
+</html>

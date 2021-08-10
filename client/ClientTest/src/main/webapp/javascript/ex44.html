@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 { 
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center; 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex44.html -->
+
+    <table id="tbl1">
+        <tr>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+        </tr>
+        <tr>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+        </tr>
+        <tr>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+        </tr>
+        <tr>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+        </tr>
+        <tr>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+            <td class="cel1"></td>
+        </tr>
+    </table>
+
+
+
+
+    <script>
+
+        var cel1 =  document.getElementsByClassName('cel1');
+
+        var index = 0;
+        cel1[index].bgColor = 'gold';
+
+        window.addEventListener('keydown', function(){
+
+            clear();
+
+            if(event.keyCode == 37){
+                //왼쪽 방향키
+                index--;
+
+                if(index < 0){
+                    // alert('처음 셀입니다.');
+                    // index=0;
+                    index = cel1.length - 1; //마지막 셀로 이동
+                }
+
+            } else if(event.keyCode == 39){
+                //오른쪽 방향키
+                // cel1[index].bgColor = 'transparent';
+                index++;
+                
+                if(index >= cel1.length){
+                    // alert('마지막 셀입니다.');
+                    // index--;
+                    index = 0; //첫번째 셀로 이동 > 순환
+                }
+
+            }
+            cel1[index].bgColor = 'gold';
+
+        });
+
+        function clear(){
+            //25칸 모두 투명으로
+
+            for(var i=0; i<cel1.length; i++){
+                cel1[i].bgColor = 'transparent';
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            color: #444;
+            
+        }
+
+        h1{
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        h2 {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 10px;
+            padding-bottom: 30px;
+            border-bottom: 1px dotted #222;
+        }
+
+        div {
+            width:500px;
+            margin: 0 auto;
+        }
+        
+        div h3 {
+            margin-top: 50px;
+        }
+
+        fieldset {
+            width: 500px;
+            height: 100px;
+            margin-bottom: 25px;
+        }
+
+        input[type=checkbox]{
+            margin-bottom: 30px;
+        }
+
+        input[type=text] {
+            width: 140px;
+            height: 20px;
+            margin: 7px;
+        }
+    </style>
+</head>
+<body>
+    <!-- q11.html -->
+    
+    <h1>텍스트 박스 복사하기</h1>
+    <h2>주문하시는 분 정보를 받으시는 분으로 복사하시오.</h2>
+
+    <div>
+        <h3>주문하기</h3>
+        <fieldset>
+            <legend>주문하시는 분</legend>
+            이름: <input type="text" name="txtName1"><br>
+            주소: <input type="text" name="txtAddress1"><br>
+        </fieldset>
+
+        <div>
+            <input type="checkbox" name="cb1" id="cb1"> <label for="cb1">주문하시는분과 정보가 동일합니다.</label>
+        </div>
+
+        <fieldset>
+            <legend>받으시는 분</legend>
+            이름: <input type="text" name="txtName2"><br>
+            주소: <input type="text" name="txtAddress2"><br>
+        </fieldset>
+    </div>
+
+    <script>
+
+        var txtName1 = document.all.txtName1;
+        var txtAddress1 = document.all.txtAddress1;
+        
+        var txtName2 = document.all.txtName2;
+        var txtAddress2 = document.all.txtAddress2;
+
+        var cb1 = document.all.cb1;
+
+        cb1.onclick = function(){
+
+            if(cb1.checked){
+                txtName2.value = txtName1.value;
+                txtAddress2.value = txtAddress1.value;
+            }else{
+                txtName2.value = "";
+                txtAddress2.value = "";
+                txtName2.focus();
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex25_link.html -->
+
+    <h1>링크 조작</h1>
+
+    <form name="form1">
+        <a href="http://google.com" name="link1">구글</a>
+        <br>
+        <input type="button" value="확인" name="btn1">
+    </form>
+
+    <script>
+
+        // 새창으로 이동 불가능 > 현재창에서만 이동 가능
+        // location.href = URL; // 현재창에서 이동하기
+        // window.open(URL, name, ''); //새창으로 이동하기
+
+        var link1 = document.links['link1'];
+        var btn1 = document.form1.btn1;
+
+        btn1.onclick = function(){
+
+            //<a> 태그 조작
+            //1. <a> 태그 자체 조작 x
+            //2. <a> 태그 속성 조작 o
+            //3. <a> 태그 PCDATA 조작 o
+            link1.href = "http://amazon.com";
+            link1.target = "_blank";
+            link1.title = "아마존으로 이동합니다.";
+
+            //BOM -> PCDATA 조작 기능 없음
+            //DOM -> PCDATA 조작 기능 있음
+            link1.innerText = "아마존";
+
+            //프로그램이 사용자 대신 클릭을 해줌
+            // - 에뮬레이터 함수
+            // - onclick -> on(X) -> click()
+            link1.click();
+        };
+
+    </script>
+
+</body>
+</html>

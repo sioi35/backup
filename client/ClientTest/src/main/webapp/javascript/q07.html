@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         h2{
+            font-size: 0.9em;
+        }
+        form{
+            width: 800px;
+            margin: 0 auto;
+        }
+       
+</style>
+</head>
+<body>
+    <!-- q07.html -->
+
+    <form name="form1">
+        <h1>고양이 키우기 + 마우스 이벤트</h1>
+        <h2>마우스를 올리면 고양이 사이즈를 증가시키고, 클릭하면 리셋하시오.</h2>
+        <img src="images/catty01.png" name="img" width="128">
+        <img src="images/catty02.png" name="img" width="128">
+        <img src="images/catty03.png" name="img" width="128">
+        <img src="images/catty04.png" name="img" width="128">
+        <img src="images/catty05.png" name="img" width="128">
+    </form>
+
+    <script>
+
+        var txtID = document.form1.txtID;
+        var txt = document.form1.txt;
+        for(var i=0 ; i<img.length; i++){
+        
+            img[i].onmouseover = function(){   
+                event.srcElement.width = event.srcElement.width + 5;
+            }
+        
+            img[i].onclick = function(){   
+                event.srcElement.width = 128;
+            }
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

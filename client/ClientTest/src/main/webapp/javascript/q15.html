@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            color: #444;
+        }
+        
+        div {
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+
+        h2 {
+            font-size: 0.9em;
+            border-bottom: 1px dotted #444;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 550px;
+            height: 180px;
+            margin: 10px;
+        }
+
+        input {
+            display: block;
+            float: left;
+            margin-left: 5px;
+            margin-right:5px;
+            margin-bottom: 5px;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 580px;
+            height: 460px;
+            /* margin: 0 auto; */
+        }
+        
+    
+
+    </style>
+</head>
+<body>
+    <!-- q14.html -->
+    <div>
+        <h1>뉴스 서비스</h1>
+        <h2>타이머를 이용해 텍스트를 복사하시오.</h2>
+    </div>
+    <div class="box">
+        <textarea name="text1"></textarea>
+        <hr>
+        <textarea name="text2">네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+찬바람이 더해지면서 체감상 느껴지는 날씨는 더 쌀쌀합니다.
+꽃샘추위는 내일 절정을 보이겠습니다. 
+        </textarea><br>
+        <input type="button" value="시작" name="startbtn">
+        <input type="button" value="정지" name="stopbtn">
+    </div>
+
+    <script>
+        var text1 = document.all.text1;
+        var text2 = document.all.text2;
+        var startbtn = document.all.startbtn;
+        var stopbtn = document.all.stopbtn;
+
+        var index = 0;
+        var timer = 0;
+
+        startbtn.onclick = function(){
+            
+            if(timer == 0){
+                timer = setInterval(function(){
+                    var result = text2.value.substr(index, 1);
+                    text1.value = text1.value + result ;
+                    index++;
+                }, 100);
+            }
+
+        };
+
+        stopbtn.onclick = function(){
+            clearInterval(timer);
+            timer = 0;
+        };
+
+
+
+    </script>
+
+</body>
+</html>

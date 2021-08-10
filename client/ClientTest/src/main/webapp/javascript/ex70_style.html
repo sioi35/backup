@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1, #box2 {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        #box1 {
+            background-color: gold;
+        }
+
+        #box1:hover {
+            transform: translate(100px, 100px);
+        }
+
+        #box2 {
+            background-color: hotpink;
+            transition: width 1s;
+        }
+
+        #cat > img{
+            opacity: 0.3;
+            transition: opacity .5s;
+        }
+
+        /* #cat  > img:hover{
+            opacity: 1;
+        } */
+
+        #tbl1 {
+            border: 1px solid black;
+            /* border-collapse: collapse; */
+            /* 셀과셀 사이의 거리 */
+            border-spacing: -0;
+            width: 1000px;
+            height: 1000px;
+        }
+
+        #tbl1 td:first-child {
+            /* background-color: dodgerblue; */
+            /* transform: rotate(45deg); */
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex70_style.html -->
+    <h1>Transform</h1>
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="box1"></div>
+
+    <h1>Transition</h1>
+    <input type="button" value="버튼2" id="btn2">
+    <hr>
+    <div id="box2"></div>
+
+
+    <h1>고양이</h1>
+    <div id = 'cat'>
+        <img src="images/cat01.jpg">
+        <img src="images/cat02.jpg">
+        <img src="images/cat03.jpg">
+        <img src="images/cat04.jpg">
+        <img src="images/cat05.jpg">
+
+    </div>
+
+    <h1>테이블</h1>
+    <!-- table#tbl1>tr*10>td*10//emeit -->
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var timer = 0;
+        var degree = 0;
+
+        btn1.onclick = function() {
+            // box1.style.transform = 'translate(100px, 100px)';
+            // box1.style.transform = 'scale(3, 3)';
+            // box1.style.transform = 'rotate(30deg)';
+
+
+            timer = setInterval(function() {
+                box1.style.transform = 'rotate('+ degree +'deg)';
+                degree++;
+            }, 10)
+        }
+
+        box1.onclick = function() {
+            clearInterval(timer);
+        }
+
+        btn2.onclick = function () {
+            if (box2.style.width == '400px') {
+                box2.style.width = '200px';
+            } else {
+                box2.style.width = '400px';
+            }
+        }
+
+        //===============================
+        var cat = document.getElementById('cat');
+        // var img = document.images;
+        for (var i=0; i<cat.children.length; i++){
+            cat.children[i].onclick = function() {
+
+                //이전에 선택된 이미지 > opacity: .3
+                for (var j=0; j<cat.children.length; j++){
+                    cat.children[j].style.opacity = .3;
+                }
+                
+                // cat[2].style...
+                event.srcElement.style.opacity = 1;
+            }
+        }
+
+        var td = document.getElementsByTagName('td');
+        for (var i=0; i<td.length; i++){
+            // td[i].onmouseover = function () {};
+            // td[i].onmouseenter = function () {};
+            
+            // td[i].onmouseover = function () {};
+            // td[i].onmouseleave = function () {};
+
+
+            //<td data-degree='0'> //태그에 사용자 속성 정의
+            //<td data-degree=''>
+            // td[i].dataset['degree'] = 0;
+            td[i].dataset['distanse'] = 0;
+            
+            td[i].onmouseenter = function () {
+                event.srcElement.style.backgroundColor = 'tomato';
+                // event.srcElement.style.transform = 'rotate(360deg)';
+                // event.srcElement.style.transform = 'translate(0px, -30px)';
+                // event.srcElement.style.transform = 'translate(0px, -3000px)';
+
+                // event.srcElement.dataset['degree'] = parseInt(event.srcElement.dataset['degree']) + 10;
+                event.srcElement.dataset['distanse'] = parseInt(event.srcElement.dataset['distanse']) - 50;
+
+                // event.srcElement.style.transform = 'rotate(' + event.srcElement.dataset['degree'] + 'deg)';
+                event.srcElement.style.transform = 'translate(0px, ' + event.srcElement.dataset['distanse'] + 'px)';
+            };
+            td[i].onmouseleave = function () {//이벤트 함수(o)
+                
+                //temp 사용한 방식 -> 클로저(Closure)
+                var temp = event.srcElement; //<td>
+                    
+                    setTimeout(function() {//얘는 이벤트 함수가 아님 -> 타이머 콜백 함수(o)
+                        
+                        // event.srcElement가 안먹음
+                        temp.style.backgroundColor = 'transparent';
+                        // temp.style.transform = 'rotate(0deg)';
+                        // temp.style.transform = 'translate(0px, -0px)';
+                }, 1000)
+
+            };
+        }
+
+        
+    </script>
+</body>
+</html>

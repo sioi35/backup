@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1 {
+            width: 800px;
+            margin: 0 auto;
+            padding-top: 30px;
+            color: #333;
+        }
+        h2{
+            border-bottom: 1px dotted #333;
+            width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            color: #333;
+        }
+
+        #box {
+            /* border:1px solid black; */
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        #left {
+            border:1px solid black;
+            width: 280px;
+            float: left;
+            height: 100%;
+            
+
+        }
+
+        #center{
+            border:1px solid black;
+            width: 230px;
+            float: left;
+            height: 100%;
+            /* padding-top: 100px; */
+        }
+
+        #center input {
+            width: 170px;
+            height: 50px;
+            margin: 15px;
+            display: block;
+            margin-left:30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #444
+        }
+
+        #center input[type=button]:nth-child(1){
+            margin-top: 200px;
+        }
+
+        #right {
+            border:1px solid black;
+            width: 280px;
+            float: left;
+            height: 100%;
+        }
+
+        span{
+            display: block;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #444
+
+        }
+
+        select {
+            width: 200px;
+            height: 400px;
+            margin-left: 40px;
+            /* text-align: ; */
+        }
+
+        select option {
+            padding: 4px;
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #444;
+        }
+
+       
+
+
+    </style>
+</head>
+<body>
+    <!-- q10.html -->
+
+    <h1>셀렉트 박스 항목 관리</h1>
+    <h2>셀렉트 박스의 항목을 좌,우 이동시키시오</h2>
+    <div id="box">
+        <div id="left">
+            <span>차단된 친구</span><br>
+            <select name="sel1" multiple>
+                <option value="1">권예진</option>
+                <option value="2">권준혁</option>
+                <option value="3">김동식</option>
+                <option value="4">김세진</option>
+                <option value="5">김여정</option>
+                <option value="6">노형준</option>
+                <option value="7">박민선</option>
+                <option value="8">백강현</option>
+                <option value="9">변기현</option>
+            </select>
+        </div>
+        <div id="center">
+            <input type="button" value="Add ▷" name="addbtn">
+            <input type="button" value="◁ Remove" name="removebtn">
+            <input type="button" value="Add All ▷▷" name="addAllbtn">
+            <input type="button" value="◁◁ remove All" name="removeAllbtn">
+        </div>
+        <div id="right">
+            <span>허용된 친구</span><br>
+            <select name="sel2" multiple>
+                <option></option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+
+        var sel1 = document.all.sel1;
+        var sel2 = document.all.sel2;
+
+        var addbtn = document.all.addbtn;
+        var removebtn = document.all.removebtn;
+        var addAllbtn = document.all.addAllbtn;
+        var removeAllbtn = document.all.removeAllbtn;
+
+        var i = 1;
+        var index = 0;
+
+        addbtn.onclick = function() {
+
+            if(sel1.selectedIndex >= 0){
+                var select = sel1.selectedIndex;
+                sel2[index] = new Option(); //<option> 태그 생성
+                // sel2[index].value = i; 
+                sel2[index].text = sel1[select].text;
+                // alert(sel2.text);            
+                sel2.options.add(sel2[index]);
+                sel1.options.remove(sel1[select]);
+                index++;
+                i++;
+            }
+        };
+        var count = sel1.options.length;
+
+        addAllbtn.onclick = function(){
+            // index = 0;
+            for(var i=count-1; i>=0; i--){
+                sel2[i] = new Option(); //<option> 태그 생성
+                // sel2[index].value = i; 
+                sel2[i].text = sel1[i].text;
+                // alert(sel2.text);            
+                sel2.options.add(sel2[i]);
+                sel1.options.remove(sel1[i]);
+                i++;
+            }
+
+        };
+
+
+
+        var count = sel1.options.length;
+
+        removeAllbtn.onclick = function() {
+
+            var count = sel1.options.length;
+
+            for(var i = count-1; i>=0; i--){
+                sel1.options.remove(i);
+            }
+
+        };
+
+
+
+    </script>
+</body>
+</html>

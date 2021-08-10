@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex42_DOM.html -->
+    <!-- 태그 조작 -->
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="div1"></div>
+    <hr>
+    <div id="cat">
+        <img src="images/catty01.png">
+        <img src="images/catty02.png">
+        <img src="images/catty03.png">
+        <img src="images/catty04.png">
+        <img src="images/catty05.png">
+    </div>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var div1 = document.getElementById("div1");
+
+
+        //DOM을 사용해서 태그+속성+PCDATA 조작
+        // - 생성
+        // - 제어
+        // - 삭제
+        btn1.onclick = function(){
+
+            //<a href="http://naver.com">네이버</a>
+
+            //BOM -> 불가능(<option>태그만 가능)
+            //DOM -> 가능
+
+            //간단함. 불편함(의미없는 텍스트 조작)
+            // div1.innerHTML = "<a href='http://naver.com'>네이버</a>" // 구문 오류시 발견 어렵다> 그 자체가 텍스트라 오타나도 에러가 안남
+
+            //표준 방법 > 조직화된 방법
+            //<a href="http://naver.com">네이버</a>
+            
+            var a = document.createElement('a'); //<a></a> 생성
+
+            // alert(a.nodeType); // 1
+            // alert(a.nodeName); // A
+
+
+            //href=''
+            var href = document.createAttribute("href");
+        
+            //href='http://naver.com'
+            href.nodeValue = 'http://naver.com';
+            
+            //태그 + 속성
+            //<a href="http://naver.com"></a>
+            // a.setAttribute('name', 'value');
+            a.setAttributeNode(href);
+
+            //PCDATA
+            var text = document.createTextNode("네이버");
+
+            //태그 + 텍스트
+            a.appendChild(text);
+
+            console.log(a);
+
+            //div1의 자식으로 추가. >  화면에 보이게
+            div1.appendChild(a);
+
+        };
+
+        //위의 방법은 너무 복잡. > 좀 더 현실적인 방법
+        btn1.onclick = function(){
+
+            var a = document.createElement('a');
+
+            a.setAttribute('href', 'http://naver.com');
+
+            a.innerHTML = '네이버';
+
+            div1.appendChild(a);
+
+        };
+
+
+        //현실적인 방법으로 상황구현.
+        btn1.onclick = function(){
+            
+            //링크 x 3개
+            var data = [
+                {
+                    name: '네이버',
+                    url: 'http://naver.com'
+                },
+                {
+                    name: '구글',
+                    url: 'http://google.com'
+                },
+                {
+                    name: '다음',
+                    url: 'http://daum.net'
+                }
+            ];
+
+            data.forEach(function(item, index){
+
+                // alert(item.name + "," + item.url);
+
+                //BOM
+                // div1.innerHTML += "<a href='" +item.url+ "'>" + item.name + "</a><br>";
+
+                //DOM
+                var a = document.createElement('a');
+                a.setAttribute('href', item.url);
+                a.innerText = item.name;
+                div1.appendChild(a);
+
+                var br = document.createElement('br');
+                div1.appendChild(br);
+
+            });
+
+        };
+
+        //태그 삭제
+        btn1.onclick = function(){
+
+            //img의 부모 -> #cat
+            var cat = document.getElementById('cat');
+
+            //자식 찾기
+            // for(var i=0; i<cat.children.length; i++){
+                // cat.children[i].width = 50;
+            // }
+
+
+            //DOM > 태그 삭제 > 부모가 한다.
+            // cat.removeChild(cat.firstElementChild);
+            // cat.removeChild(cat.lastElementChild);
+            // cat.removeChild(cat.children[2]);
+
+            //선택된 고양이 삭제.
+            for(var i=0; i<cat.children.length; i++){
+                cat.children[i].onclick = function(){
+                    cat.removeChild(event.srcElement);
+                };
+            }
+
+        };
+
+
+    </script>
+
+</body>
+</html>

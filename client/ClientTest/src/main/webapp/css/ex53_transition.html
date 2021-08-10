@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 128px;
+            height: 128px;
+            border: 10px solid sandybrown;
+            float: left;
+            overflow: hidden;
+        }
+
+        .box:nth-child(even){
+            border-color: brown;
+        }
+
+        .box > img {
+            transition: all 1s;
+            /* transform: translate(0px, -128px); */
+            transform: rotate(0deg) translate(0px, -128px) scale(0, 0);
+            transform-origin: center center;
+        }
+
+        .box:hover > img {
+            /* transform: translate(0px, 0px); */
+            transform: rotate(360deg) translate(0px, 0px) scale(1 ,1);
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex53_transition.html -->
+
+    <div id="box1" class="box"><img src="images/catty01.png" alt=""></div>
+    <div id="box2" class="box"><img src="images/catty02.png" alt=""></div>
+    <div id="box3" class="box"><img src="images/catty03.png" alt=""></div>
+    <div id="box4" class="box"><img src="images/catty04.png" alt=""></div>
+    <div id="box5" class="box"><img src="images/catty05.png" alt=""></div>
+
+
+</body>
+</html>

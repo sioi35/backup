@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- ex03_event.html -->
+
+    <input type="button" value="버튼1" id="btn1" name="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" name="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" name="btn3" class="btn">
+
+    <script>
+
+        // 이벤트
+
+        //1. BOM(정적)
+        // <input onclick = "">
+
+        //2. BOM(동적)
+        // document.all.btn1.onclick = function(){};
+
+        //3. DOM
+        // document.getElementById('btn1').addEventListener('click', function(){});
+
+        //4. jQuery
+        // a. 전용 이벤트 함수
+        //      - 객체.이벤트함수명(함수);
+        // b. 범용 이벤트 함수
+        //      - 객체.bind('이벤트명', 함수)
+        //      - 객체.live('이벤트명', 함수)
+        //      - 객체.on('이벤트명', 함수) (*****)
+
+        // a. 전용 이벤트 함수
+        // jQuery('#btn1').click(function() {
+        //     alert('click');
+        // });
+        
+        // b. 범용 이벤트 함수
+        // jQuery('#btn2').on('click', function(){
+        //     alert('클릭');
+        // });
+
+        
+        // 3개의 버튼에 동시에 클릭 이벤트
+        // const btn = document.getElementsByClassName('btn');
+        
+        // for(let i=0; i<btn.length; i++){
+        //     btn[i].onclick = function(){
+        //         alert(btn[i].id);
+        //     };
+        // }
+
+        // jQuery('.btn').click(function(){
+        //     alert(this.id); //**
+        //     // alert(event.srcElement.id);
+        // });
+
+
+        //***jQuery는 객체를 조작할 때 프로퍼티를 사용하지 않는다.(프로퍼티 지양)
+        // -> 대부분의 기능을 메소드로 제공한다.
+
+        // btn.onclick = function(){}; //자바스크립트
+        // btn.click(function(){}); //jQuery > 메소드.
+
+        // btn.style.color = 'red'; //자바스크립트
+        // btn.css('color', 'red'); //jQuery
+
+        // btn.innerText = '홍길동'; //자바스크립트
+        // btn.text('홍길동'); //jQuery
+
+
+    </script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            border: 1px solid #999;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        fieldset > div {
+            margin: 7px;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-align: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex39_content.html -->
+
+    <h1>테이블</h1>
+
+    <fieldset>
+        <legend>행x열</legend>
+        <div><label>행: <select id="selRow"></select></label></div>
+        <div><label>열: <select id="selColumn"></select></label></div>
+        <div><input type="button" value="생성하기" id="btnCreate"></div>
+    </fieldset>
+
+    <table id="tbl1">
+        <tbody id="tbody1"></tbody>
+    </table>
+
+    <script>
+
+        var selRow = document.getElementById("selRow");
+        var selColumn = document.getElementById("selColumn");
+        var btnCreate = document.getElementById("btnCreate");
+        var tbody1 = document.getElementById("tbody1");
+
+
+        //selRow -> BOM 추가
+        //selColumn -> DOM 추가
+
+        for(var i=1; i<=30; i++){
+            var op = new Option();
+            op.text = i;
+            op.value = i;
+            selRow.options.add(op);
+        }
+
+        selRow.value = 5; //평균 -> 초기값
+
+        for( var i=1; i<=10; i++){
+            selColumn.innerHTML += "<option value='" +i+ "'>" + i + "</option>";
+        }
+
+        selColumn.value = 3;
+        
+        btnCreate.onclick= function(){
+
+            //사용자 선택: 행 x 열 -> 테이블 추가
+
+            // 혹시 기존 내용이 <tbody>에 남아있으면 지우고 다시 시작.
+            tbody1.innerHTML = "";//삭제(초기화)
+
+            for(var i=0; i<selRow.value; i++){
+                //행 -> <tr>
+                var temp = "";
+                temp += "<tr>";
+
+                    for(var j=0; j<selColumn.value; j++){
+                        //열 -> <td>
+                        temp += "<td>";
+                        temp += i + ',' + j; //<td>5,2</td>
+                        temp += "</td>";
+                    }
+
+                temp += "</tr>";
+
+                tbody1.innerHTML += temp; //<tr> 동적 추가
+            }
+
+        };
+
+
+
+    </script>
+
+
+</body>
+</html>

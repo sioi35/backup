@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            border: 1px solid #999;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        fieldset > div {
+            margin: 7px;
+        }
+
+        #tbl1 {
+            margin-top: 15px;
+            border: 1px solid #999;
+            border-collapse: collapse;
+        }
+
+        #tbl1 .header {
+            font-size: 0.5em;
+            text-align: center;
+            font-weight: bold;
+            /* height: 13px; */
+            
+        }
+
+        #tbl1 td {
+            border: 1px solid #999;
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- q18_content.html -->
+
+    <h1>테이블</h1>
+
+    <fieldset>
+        <legend>색상입력</legend>
+        <div><label>색상:<input type="color" id="txtColor"</label></div>
+        <div><label>이름: <input type="text" size="10" id="txt"></label></div>
+        <div><input type="button" value="추가하기" id="btnCreate"></div>
+    </fieldset>
+
+    <table id="tbl1">
+        <thead>
+            <tr class="header">
+                <td width="100">색상명</td>
+                <td width="130">미리보기</td>
+            </tr>
+            <tr>
+                <td>자주색</td>
+                <td bgcolor="#EC45AC">#EC45AC</td>
+            </tr>
+            <tr>
+                <td>풀색</td>
+                <td bgcolor="#ACEF12">#ACEF12</td>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        var txtColor = document.getElementById("txtColor");
+        var txt = document.getElementById("txt");
+        var btnCreate = document.getElementById("btnCreate");
+
+        var tbody1 = document.getElementById("tbody1");
+
+
+        //selRow -> BOM 추가
+        //selColumn -> DOM 추가
+
+
+        btnCreate.onclick= function(){
+
+            var temp = "";
+            temp += "<tr>";
+            temp += "<td>";
+            temp += txt.value;
+            temp += "</td>";
+
+            // temp += "<td>";
+            temp += "<td bgColor='" + txtColor.value +  "'>";
+            temp += txtColor.value ; //<td>5,2</td>
+            temp += "</td>";
+            
+            temp += "</tr>";
+
+            tbody1.innerHTML += temp; //<tr> 동적 추가
+
+        };
+
+
+
+    </script>
+
+
+</body>
+</html>

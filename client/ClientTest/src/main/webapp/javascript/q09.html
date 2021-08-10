@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            width: 700px;
+            margin: 0 auto;
+            color: #333;
+        }
+        h1, h2{
+            margin-top: 20px;
+        }
+        h2{
+            font-size: 0.8em;
+        }
+        table, tr, td{
+            border: 1px solid #888;
+            border-collapse: collapse;
+        }
+        
+        .header{
+            width: 100px;
+            height: 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            background-color: #eee;
+        }
+        
+        .content{
+            width: 380px;
+        }
+
+        #resident, #birth, #gender {
+            padding-left: 10px;
+        }
+
+        #resident input {
+            width: 70px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid #888;
+        }
+
+        #birth input {
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid #888;
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <!-- q04.html -->
+    <form name="form1">
+        <h1>회원가입 + 폼 컨트롤 조작</h1>
+        <h2>주민번호 입력 시 나머지 컨트롤(생년월일, 성별)제어를 하시오.</h2>
+        <table>
+            <tr>
+                <td class="header">주민번호</td>
+                <td class="content" id="resident">
+                    <input type="text" value="" name="rtxt1" class="resident"> -
+                    <input type="text" value="" name="rtxt2" class="resident">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td class="header">생년월일</td>
+                <td id="birth">
+                    <input type="text" value="" name="year" id="year">년
+                    <input type="text" value="" name="month" id="month">월
+                    <input type="text" value="" name="day" id="day">일
+                </td>
+            </tr>
+            <tr>
+                <td class="header">성별</td>
+                <td id="gender">
+                    <label><input type="radio" name="rb" value="man">남자</label>
+                    <label><input type="radio" name="rb" value="woman">여자</label><br>
+                </td>
+                
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var rtxt1 = document.form1.rtxt1;
+        var rtxt2 = document.form1.rtxt2;
+        
+        var year = document.form1.year;
+        var month = document.form1.month;
+        var day = document.form1.day;
+
+        var rb = document.form1.rb;
+        
+        rtxt1.onkeyup = function(){
+            if(event.keyCode >= 48 && event.keyCode <= 57){
+                if(rtxt1.value.length == 6){
+                    rtxt2.focus();
+                    year.value=19 + rtxt1.value.substr(0,2);
+                    month.value=rtxt1.value.substr(2,2);
+                    day.value=rtxt1.value.substr(4,2);
+                }
+            }
+        };
+
+        rtxt2.onkeyup = function(){
+
+            if(rtxt2.value.length == 1){
+                if(parseInt(rtxt2.value) % 2 == 1){
+                    rb[0].checked = true;
+                }else{
+                    rb[1].checked=true;
+
+                }
+            }
+        };
+
+
+    </script>
+
+</body>
+</html>

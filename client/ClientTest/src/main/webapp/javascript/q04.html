@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            width: 700px;
+            margin: 0 auto;
+        }
+        h1, h2{
+            margin-top: 20px;
+        }
+        h2{
+            font-size: 0.8em;
+        }
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .header{
+            width: 80px;
+            height: 20px;
+            text-align: center;
+            font-weight: bold;
+            background-color: #eee;
+        }
+        
+        .content{
+            width: 380px;
+        }
+
+        #txt1 {
+            width: 50px;
+            margin-left: 10px;
+            height: 20px;
+            border-radius: 3px;
+            border: 1px solid #333;
+        }
+
+        #btn1 {
+            border: 1px solid #333;
+            vertical-align: middle;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        #txt2, #txt3{
+            width: 350px;
+            margin-left: 10px;
+            height: 20px;
+            
+            border: 1px solid #333;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- q04.html -->
+    <form name="form1">
+        <h1>우편 번호 검색</h1>
+        <h2>새창을 띄운 뒤 우편 번호 검색을 하시오.</h2>
+        <table>
+            <tr>
+                <td class="header">우편번호</td>
+                <td class="content"><input type="text" value="" name="txt1" id="txt1">
+                    <input type="button" value="우편번호검사하기" name="btn1" id="btn1">
+                </td>
+            </tr>
+            <tr>
+                <td class="header">주소</td>
+                <td><input type="text" value="" name="txt2" id="txt2"></td>
+            </tr>
+            <tr>
+                <td class="header">상세주소</td>
+                <td><input type="text" value="" name="txt3" id="txt3"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var btn1 = document.form1.btn1;
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+        var txt3 = document.form1.txt3;
+
+        btn1.onclick = function(){
+            var child = window.open('q04_child.html', 'child', 'width=300, height=300, left=0, top=0');
+        };
+
+
+    </script>
+
+</body>
+</html>

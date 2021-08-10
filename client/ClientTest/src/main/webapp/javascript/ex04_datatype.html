@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex04_datatype.html -->
+
+    <script>
+        /*
+            자바스크립트 자료형
+
+            1. Number
+                - 숫자형(정수 + 실수)
+                - 리터럴(다른 언어와 동일)
+
+
+            변수
+            - 자바스크립트는 동적(<->정적) 할당 언어이다. > 변수를 선언할 때 자료형이 정해지지 않는다.
+            - 자바는 정적 할당 언어이다. > 변수를 선얼할 때 자료형이 정해진다.(int a)
+            - var 키워드 사용
+
+            2. String
+                - 문자열(문자)
+                - 리터럴
+                    - "문자열"
+                    - '문자열'
+
+            3. Boolean
+                - 논리형
+                - 리터럴
+                    - true
+                    - false
+            
+            4. Object
+                - 객체형
+                - ES6 이전에는 Class 개념이 없었다. > 생성자 함수를 통해서 객체 생성
+                - ES6 이후에는 Class 개념이 생겼다.(진정한 Class가 아니라 Class를 흉내)
+                - 배열, 날짜시간, 수학 등..
+
+            5. 기타
+                - null
+                - undefined
+                - NaN
+
+            
+            연산자
+            - 자바와 동일
+
+            제어문
+            - 자바와 동일
+
+            문자 이스케이프
+            - 자바와 동일
+            - \n, \r, \t ..
+            
+        */
+
+        var a = 10;  //Number
+        var b = 3.14;  //Number
+        var c = '홍길동';
+        var d = true;
+        var e = new Date();
+
+        console.log(a);
+        console.log(typeof a);  //number, Number
+        console.log(typeof 100);
+
+        var str1 = "홍길동";
+        var str2 = '아무개';
+
+        console.log(str1, typeof str1);
+        console.log(str2, typeof str2);
+
+        console.log(true, typeof true);
+
+        console.log(new Date()); //클래스 사용 + 객체 사용
+        console.log(new Date().toString());
+
+        console.log(typeof new Date()); //Date 자료형X, Object 자료형O
+
+    </script>
+</body>
+</html>

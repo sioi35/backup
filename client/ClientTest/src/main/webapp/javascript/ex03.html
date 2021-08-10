@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex03.html -->
+    <!--  
+
+        JavaScript 디버그 시 값을 확인하는 방법
+
+        1. alert(값);
+            - 디버그 전용 함수X
+            - 구문 간단
+            - 블럭이 걸린다.(break)
+        
+        2. document.write(값);
+            - 디버그 전용 함수X
+            - 페이지에 직접 출력
+            - 사용X
+        
+        3. HTML 사용
+            - 사용X
+            - 추가 비용 발생
+        
+        4. console.log(값);
+            - 디버그 전용 함수O
+            - FM
+            - 적극 추천
+            - 개발자 콘솔창에 출력 + 사용자에게 출력 X
+            - Node 환경에서도 출력
+
+
+    -->
+    <script>
+        // alert(new Date());
+        // alert(100);
+
+        // document.write(new Date());
+
+        console.log(100);
+        console.log(100, 200, 300);
+        console.log('점수', 100);
+        console.error(300);
+        console.info('확인');
+        console.info(100);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {margin-bottom: 200px;}
+        textarea{width: 500px; height: 300px; resize: none;}
+
+    </style>
+</head>
+<body>
+    <!-- ex16_event_key.html -->
+    <!--  
+        키 이벤트
+        - 키보드의 키와 관련된 이벤트
+        - onkeyXXX
+        - 주로 폼 관련 태그에게 적용한다.(포커스를 가지지 않으면 발생하지 않기 때문에)
+
+        가이드
+        - 우선 onkeydown을 기본으로 사용한다.
+        - 지금 입력값 자체가 업무에 사용된다. -> onkeyup을 사용한다.
+
+        1. onkeydown(*****)
+            - 키를 눌렀을 때 발생
+            - 물리적 키에 반응하는 이벤트
+            - 현재 어떤 글자를 눌렀는지 중요하지 않음!! 어떤 물리키를 눌렀는지가 중요함!!!
+            - 중요: 현재 입력값과 상관없는 일을 할 때 keydown을 사용
+
+        2. onkeyup(*****)
+            - 키를 뗐을 떄 발생
+            - 중요: 현재 입력한 값이 관계된 일이라면.. keyup을 사용
+
+        ----------------------------------------------------------
+        3. onkeypress(X)
+            - 키를 눌렀을 때 발생
+            - 문자키에 반응하는 이벤트(ASCII문자 - 영어 + 숫자 + 특수문자)
+    -->
+
+    <h1>키 이벤트</h1>
+
+    <form name="form1">
+
+        <textarea name="txt1"></textarea>
+
+        <!-- 
+            <img src="images/catty01.png" 
+                onkeydown="//alert('img');" 
+                onclick="//alert('img');" 
+                onmousedown="//alert('img');">
+            <input type="text" 
+                onkeydown="//alert('text');" 
+                onclick="//alert('img');" 
+                onmousedown="//alert('img');"> 
+        -->
+
+        <fieldset>
+            <legend>키 이벤트</legend>
+            <!--  
+                텍스트박스: txtName
+                체크박스: cbName
+                라디오버튼: rbName
+                셀렉트박스: selName
+            -->
+            <div>
+                <input type="text" name="txtOrigin" size="50">
+            </div>
+            <div>
+                <input type="text" name="txtCopy" size="50">
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+
+        var txt1 = window.document.form1.txt1;
+        var txtOrigin = window.document.form1.txtOrigin;
+        var txtCopy = window.document.form1.txtCopy;
+
+        // txtOrigin.value = "test";
+
+        txt1.onkeydown = function(){
+            // alert();
+            // console.log('keydown');
+
+            //event 객체
+            //- 이벤트가 발생할 때만 참조할 수 있는 객체
+            // console.log(event.keyCode); //누른 키의 문자 코드값
+            console.log(txt1.value);
+
+        };
+
+        txt1.onkeyup = function(){
+            //console.log('keyup');
+        };
+        
+        txt1.onkeypress = function(){
+            // console.log('keypress');
+            // console.log(event.keyCode);
+        };
+
+        txtOrigin.onkeydown = function(){
+            // txtCopy.value = txtOrigin.value;
+        };
+
+        txtOrigin.onkeyup = function(){
+            txtCopy.value = txtOrigin.value;
+        };
+
+    </script>
+
+
+</body>
+</html>

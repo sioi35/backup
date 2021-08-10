@@ -1,0 +1,511 @@
+
+JSP, Java Server Pages
+- 자바를 사용해서 서버에 페이지를 만드는 기술
+- 클라이언트의 요청에 따라 서버에서 페이지를 동적으로 만드는 기술
+- Servlet 기술의 다음 버전
+
+Servlet 장점
+- Java를 사용한다.
+
+
+Servlet 단점
+- HTML, CSS, JavaScript 작성이 힘들다. > 모두 문자열 취급
+- Java 베이스 + 클라이언트 코드
+- Java 베이스 > 웹 요청 불가능 > 가상 주소 매핑(*.do)
+
+
+JSP 장점
+- HTML, CSS, JavaScript 작성이 쉽다.
+- HTML 베이스 + Java 코드 > 개발자 작업 편의성 높다.
+- HTML 베이스 > 웹 요청 가능 > 가상 주소 매핑 불필요.
+
+JSP 단점
+- HTML 베이스 > Java 작업 불편
+
+
+작업 파일
+1. src/main/java
+	- [소스 폴더]
+	- 모든 패키지
+	- 모든 *.java
+
+2. src/main/webapp
+	- [루트 폴더] or [웹 루트 폴더] or [콘텐츠 루트 폴더]
+	- 모든 리소스(*.html, *css, *js, 이미지, 동영상 등..)
+	- JSP 페이지(*jsp)
+
+
+
+JSP 기본 요소
+1. JSP 지시자(지시어), JSP Directive
+2. 스크립트 요소, Scripting Elements
+3. 액션 태그, Action Tags
+
+Servlet/JSP 컨테이너(실행기)
+- Servlet과 JSP를 해석하고 실행하는 프로그램
+- Tomcat
+- WAS(Web Application Server): 서버에서 특정 언어(Java)를 처리하고 웹 사이트를 만드는 일을 하는 프로그램
+- Web Application == Web site
+
+
+
+1. JSP 지시자(지시어), JSP Directive
+- <%@ XXX %>
+- JSP 페이지를 실행하기 위해 JSP 컨테이너(실행기, Tomcat)에게 해당 JSP 페이지를 처리하기 위한 여러가지 환경 설정을 한다.
+a. page 지시자
+b. include 지시자
+c. taglib 지시자
+
+
+
+2. 스크립트 요소, Scripting Elements
+- <% %>
+- 자바를 사용할 수 있게 한다.
+- 서블릿과 유사한 작업 환경을 만들어 준다.
+a. 스크립틀릿, Scriptlet
+b. 익스프레션, Expression
+c. 선언부, Declaration
+
+2.5 내장객체
+
+3. 액션 태그, Action Tags
+- <jsp:XXX>, <c:XXX>
+- JSP에서 만들어낸 태그
+- HTML 태그: 정적, 표현 목적
+- JSP 태그: 동적, 프로그래밍 기능 목적 
+- ex) <c:if>, <c:for>
+a. JSP 기본 액션 태그
+b. JSTL 확장 액션 태그
+c. 사용자 정의 액션 태그
+
+
+
+
+1. JSP 지시자(지시어), JSP Directive
+
+a. page 지시자
+- <%@ page XXXX %>
+- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	1. language
+		- JSP 페이지에서 사용할 프로그래밍 언어 지정
+		
+	2. contentType
+		- 현재 페이지의 콘텐츠에 대한 기술
+		- text/html, text/plain, image/jpeg, image/gif, application/json, text/xml: MIME
+		- contentType="text/html; charset=UTF-8"
+		- UTF-8: 톰캣에게 현재 JSP 페이지가 UTF-8 인코딩으로 되어있다라고 알려줌(*****)
+	
+	3. pageEncoding
+		- UTF-8: 브라우저에게 돌려줄 페이지의 인코딩을 지정(*****)
+	
+	4. import
+		- 패키지 or 클래스 참조
+		- 자바의 import와 동일한 역할
+
+	5. errorPage
+		- 에러 페이지로 사용할 페이지의 URL을 지정
+
+
+상태 코드, Status Code
+- 브라우저 <- 요청(응답) -> 웹서버
+- 콘텐츠 전달 + 상태 코드 전달
+- 브라우저와 웹서버간의 현재 상태를 식별하기 위한 코드
+1. 1XX
+2. 2XX
+	a. 200 OK
+		- 성공했습니다.
+3. 3XX
+	- 리다이렉트
+--------------------------- 화면 출력X
+
+--------------------------- 화면 출력O
+4. 4XX
+	- 클라이언트 오류(브라우저 실수)
+	a. 401 Unauthorized: 인증 오류
+	b. 403 Forbidden: 서버가 요청 거부(권한)
+	c. 404 Not Found: 요청한 리소스가 없다.(URL 틀림)
+	d. 405 Method Not Allowed: 요청 방식과 응답 방식이 서로 다를 때(GET, POST)
+	e. 408 Request Timeout: 요청 시간 만료
+	
+5. 5XX
+	- 서버 오류(개발자 실수)
+	a. 500 Internal Server Error: 서버 작업 중 오류 발생(자바, 오라클 에러 등..)
+	
+	
+
+b. include 지시자
+- <%@ include file="URL" %>
+- 특정 JSP/HTML 페이지를 현재 JSP 페이지의 일부 영역에 삽입
+- <iframe> 유사
+- 페이지의 일부로 삽입되기 때문에, 부모 페이지와 중첩되면 안되는 코드가 있는지 항상 확인한다!!!(<html>, <body>..)
+
+
+
+c. taglib 지시자
+- 액션 태그와 관련된 요소
+
+
+
+
+2. 스크립트 요소, Scripting Elements
+a. 스크립틀릿, Scriptlet
+- Script + Applet(웹 페이지에 삽입되는 프로그램, ActiveX, Flash)
+- <% %>
+- 이 영역은 자바 영역이다.(*.java 파일이라고 생각하고 코딩하면 된다.)
+- 역할: 비즈니스 코드 작업
+	a. 데이터 처리
+	b. 동적 HTML(CSS, JavaScript) 처리
+- 사용 빈도 높음
+
+b. 익스프레션, Expression
+- <%= 값 %>
+- 값: 상수, 변수, 메소드 반환값 등..
+- System.out.print() 와 비슷한 역할
+- 출력 목적: 화면에 무언가를 보이게 하기 위해서(X)
+- 출력 목적: HTML 소스의 일부를 작성하기 위해서(***************)
+
+c. 선언부, Declaration
+- <%! %>
+- 현재 JSP 페이지에서 사용할 멤버 변수와 멤버 메소드를 선언하는 영역
+- 잘 사용 안함 > 대신 사용하는 방법이 따로 있음
+
+
+
+JSP 내장 객체, JSP Implicit Object
+- 개발자가 직접 생성하지 않아도, JSP가 미리 만들어서 제공하는 객체
+- 예약어를 사용해서 얻어온다.
+- JSP 내장 객체는 Servlet에도 동일하게 있다. 단 Servlet에서는 직접 만들어서 사용한다.(내장 객체라는 형식이 존재하지 않아서)
+- request, response, session, pageContext, out, application, config, page, exception..
+- request, response, session, pageContext >> out, application >> config, page, exception
+
+
+
+JSP 내장 객체 저장소
+- request, session, pageContext, application
+- 내부에 사용자 데이터를 저장할 수 있는 Map을 가지고 있다.(******)
+- setAttribute(key, value), getAttribute(key)
+
+a. request
+	a.1 클라이언트(브라우저)가 서버에게 전송한 데이터를 받아오는 기능(***************)
+	- 데이터 저장
+	- ex06_form.jsp
+	- ex06_ok.jsp
+	
+	a.2 클라이언트(브라우저)가 서버에게 전송한 데이터의 인코딩 처리
+	
+	a.3 클라이언트(브라우저)가 서버에게 페이지 요청시 관련된 정보 가져오기
+	- ex08_request.jsp
+	
+b. response
+	b.1 돌려줄 웹 페이지 제작 > response.getWriter() > PrintWriter
+	b.2 돌려줄 웹 페이지 인코딩 > response.setCharacterEncoding("UTF-8")
+	b.3 돌려줄 내용의 MIME 지정(text/html)
+	b.4 페이지 이동하기
+	- ex09_response_one.jsp
+	- ex09_response_two.jsp
+
+c. pageContext
+	- 페이지 실행에 필요한 컨텍스트 정보를 저장한 객체
+	- 페이지간의 데이터를 전달할 때 사용
+	
+	- ex10_pagecontext_one.jsp
+	- ex10_pagecontext_two.jsp
+
+d. out
+	- 응답 페이지 전송을 위한 출력 스트림 객체
+	- 서블릿의 PrintWriter와 유사한 역할
+	- HTML 소스에 값을 출력하는 역할
+	- *** JSP에서 <%= %>을 사용하면 불가항력으로 스파게티 코드가 자주 발생한다. > 가독성 저하
+		> 차라리 옛날 서블릿 방식을로 돌아가자 > 가독성 향상
+	
+	- ex11_out.jsp
+	
+e. session
+	- *******************
+	- 데이터 저장
+	- 인증 상태를 저장하는 용도로 사용(**********)
+	
+	- ex12_session.jsp
+	
+	- ex13_one.jsp
+	- ex13_two.jsp
+
+f. application
+	- 데이터 저장
+	
+	
+내장 객체의 생명 주기
+- pageContext, request(response) ***, session ***, application
+- 사용자 데이터를 저장하는 동일한 기능을 가지지만, 생명 주기가 다르기 때문에 저장할 데이터의 쓰임새에 따라서 내장 객체 선택해서 사용
+1. pageContext: 한페이지 요청 -> 응답할때까지
+2. request(response): 한페이지 요청 -> 응답할때까지. 단, forward로 이동할 때는 응답전까지 계속 살아 있음.
+3. session: 유저 접속 -> 해제할때까지
+4. application: 첫 유저 접속 -> 마지막 유저 해제할때까지
+
+
+
+
+
+3. 액션 태그, Action Tags
+
+a. JSP 기본 액션 태그
+- 프로그래밍 기능 일부를 태그 형태로 구현
+- 추가 설치 과정없이 바로 사용 가능
+- ex14_one.jsp
+- ex14_two.jsp
+
+b. JSTL 확장 액션 태그
+- JSP 기본 액션 태그의 버전업
+- 추가 설치가 필요
+
+- ex15_el.jsp
+- ex16_jtsl.jsp
+
+c. 사용자 정의 액션 태그
+- JSP 기본 액션 태그 or JSTL 확장 액션 태그 > 부족하면 직접 설계 구현
+
+
+파일 업로드/다운로드
+
+업로드
+- 클라이언트측 자원 -> 서버측 전송(=파일 복사)
+
+다운로드
+- 서버측 자원 -> 클라이언트측 전송(=파일 복사)
+
+JDK(JRE)
+- 파일 업로드 기능 부재
+
+파일 업로드 라이브러리
+- COS(http://www.servlets.com)
+
+파일 업로드
+- ex17_file_form.jsp
+- ex17_file_ok.jsp
+- webapp > "files" 폴더 생성(사용자가 업로드한 파일들을 저장할 서버측 폴더)
+
+
+이미지 파일 업로드
+- ex18_file_form.jsp //이미지 등록 페이지
+- ex18_file_ok.jsp //업로드 처리 페이지
+- ex18_view.jsp //이미지 목록 페이지
+- ex18_file_delete.jsp //이미지 삭제 페이지
+
+
+
+JSP에서 코드를 작성하는 패턴
+1. JSP Model 1
+	- 지금까지 수업한 방식
+	- HTML + CSS + JavaScript + Java + JSP = *.jsp
+	- <% %>, <%= %> 사용
+
+2. JSP Model 2
+	- MVC Model 디자인 패턴
+	- Servlet + JSP = MVC
+
+JSP MVC
+- Servlet
+	a. 자바 기반 + 웹 추가
+	b. 자바 작업이 수월하다.
+	c. 웹 작업이 불편하다.
+
+-JSP
+	a. 웹 기반 + 자바 추가
+	b. 웹 작업이 수월하다.
+	c. 자바 작업이 불편하다.
+	
+- Servlet + JSP
+	a. 자바 코드 -> Servlet 담당
+	b. 웹 코드 -> JSP 담당
+	
+
+웹 페이지를 만드는 알바생
+1. Servlet
+	- 1개의 Servlet -> 1장의 웹페이지 생성
+2. JSP
+	- 1개의 JSP -> 1장의 웹페이지 생성
+
+
+
+JSP Model2 -> Hello 만들기
+- 알바생 2명 -> 협력 -> 1장의 웹페이지 생성 //*****
+1. Servlet
+	- com.test.mvc > Hello.java
+
+2. JSP
+	- webapp > mvc > hello.jsp
+
+- 알바생 2명의 업무 순서가 이미 정해져있다.(억지로 바꿀 순 있는데.. 절대 안바꿈 == 공식)
+	a. 브라우저가 페이지를 달라고 서버에 먼저 요청한다.
+		-> Servlet에게 페이지를 달라고 요청한다.
+	b. Servlet이 먼저 일을 한다.
+		-> 할일 완료
+		-> JSP를 호출한다.
+	c. JSP가 Servlet을 이어서 나머지 일을 한다.
+		-> 할일 완료
+		-> 웹 페이지 완성
+	d. 완성된 페이지를 브라우저에게 돌려준다.
+
+
+주소록 MVC 버전
+1. 주소록 목록보기(R)
+2. 주소록 추가하기(C)
+--------------------
+3. 주소록 수정하기(U)
+4. 주소록 삭제하기(D)
+
+파일 생성
+- com.test.mvc
+	- List.java
+	- Add.java
+	- AddOk.java
+	- Edit.java
+	- EditOk.java
+	- Del.java
+	- DelOk.java
+
+- WEB-INF > views > "address" 폴더 생성
+	- list.jsp
+	- add.jsp
+	- addok.jsp
+	- edit.jsp
+	- editok.jsp
+	- del.jsp
+	- delok.jsp
+
+
+
+인증 + MVC Model
+
+웹 보안
+1. 인증, Authentication
+- 현재 접속자가 해당 사이트의 구성원인지를 확인하는 작업
+- 로그인, 로그아웃
+- 목적: 인증 과정을 거친 사용자를 인증 과정을 거치지 않은 사용자와 구분할 수 있다.(*********)
+- 일종의 보안카드 > 인증 정보 > 인증 티켓(***): 다른 사용자의 인증 티켓은 열람(조작)이 불가능하다. 모든 페이지에서 유효해야 한다.
+	-> 세션(session)에 인증 정보를 저장한다. 
+
+2. 허가, Authorization
+- 어떤 업무에 대해서 현재 접속자가 권한이 있는지 확인하는 작업
+
+com.test.auth > Index.java
+			  > Login.java
+			  > LoginOk.java
+			  > LogoutOk.java
+			  > Member.java
+			  > Admin.java
+
+view > auth > index.jsp
+			> login.jsp
+			> loginok.jsp
+			> logout.jsp
+			> member.jsp
+			> admin.jsp
+			
+MVC Model
+- Model
+	- DTO(DAO)
+	- 계층(서블릿, DAO, JSP 등)과 계층(서블릿, DAO, JSP 등)사이에 데이터 전송하는 역할
+- View
+	- JSP
+	- 모든 화면 출력 업무를 담당하는 역할
+- Controller
+	- Servlet
+	- 모든 업무를 중앙에서 통제하는 역할
+
+
+
+현대 프로그래밍 방식
+1. 객체 내부에서 일어나는 일
+	- 중요하지 않다.
+	- 블랙박스(정보은닉화)
+	
+2. 객체 외부에서 일어나는 일
+	- 중요하다.
+	- 지속적으로 관리 필요
+	- 명확하고 간단해야 함
+
+
+
+
+파일생성
+- com.test.card
+	- List.java
+	- Add.java
+	- AddOk.java
+	- CardDAO
+	- CardDTO
+	
+- views > card
+	- list.jsp
+	- add.jsp
+
+
+-------------------------------
+패키지 com을 왜써요?
+
+패키지 이름? 전 세계에서 절대로 나말곤 사용하지 않을것 같은 이름으로 짓는다!!
+-> 도메인 주소(비용 지불 -> 독점)
+
+http://naver.com
+http://yahoo.co.kr
+
+
+프로젝트 패키지명 -> "com.naver"
+				 -> "kr.co.yahoo"
+
+"com.test.xxx" -> test.com
+-------------------------------
+
+
+쿠키, Cookie
+- 브라우저가 관리하는 데이터 저장 파일(저장소)
+- 텍스트 파일
+- 특정 사이트에 현재 접속한 브라우저(사용자)에 대한 개인 정보를 저장하는 공간
+- 웹서버가 사용자에 정보를 저장하는 용도 사용
+- 쿠키에 대한 접근, JavaScript, Servlet(JSP)
+
+회원 + 카페
+- 각 사용자의 정보를 관리
+- 접속 횟수, 마지막 로그인 시각, 하루 평균 이용 시간.. > 지속적으로 유지/관리
+1. DB(Oracle)
+	- 각 사용자별로 데이터를 저장
+	- 장점: 전문적이다.
+	- 단점: 비싸다.(비용, 노동력 등)
+	
+2. session(Servlet/JSP)
+	- 개인 정보 저장 객체
+	- 서버 메모리 위치
+	- 장점: 가볍고 빠르다. 추가 설치 비용X
+	- 단점: 대용량 데이터 저장X, 접속 종료되면 소멸(****)
+
+3. cookie
+	- 개인 정보 저장 파일
+	- 클라이언트 보조 기억장치 위치
+	- 장점: 가볍고 빠르다. 추가 설치 비용X, 접속 종료되도 유지(***)
+	- 단점: 대용량 데이터 저장X(최대 4KB)
+
+로그인 > 인증 티켓 발급
+1. sssion
+	- 개인 공간
+	- 전역 공간(사이트내의 페이지를 이동해서 계속 유지)
+2. cookie
+	- 개인 공간
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

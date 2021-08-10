@@ -216,33 +216,19 @@ from hr.employees e
 -- 47. employees, departments. locations. 
 -- 각 도시(city)에 있는 모든 부서 사원들의 평균급여가 가장 낮은 도시부터 도시명(city)과 평균연봉, 해당 도시의 사원수를 가져오시오. 
 -- 단, 도시에 근 무하는 사원이 10명 이상인 곳은 제외하고 가져오시오.
---X
+--O
 select * from employees;
 select * from departments;
 select * from locations;
 
-select
-    *
-from employees e
-    inner join departments d
-        on e.department_id = d.department_id
-            inner join locations l
-                on d.location_id = l.location_id;
-                    
-                    
 
-select department_id, round(avg(salary)) from employees  group by department_id order by avg(salary) asc;
-
-
-select 
-    department_id, round(avg(salary))
-from employees 
-    group by department_id order by avg(salary) asc;
-
-
-
-
-
+select l.city, round(avg(e.salary),1), count(*) from hr.employees e inner join hr.departments d
+on e.department_id =d.department_id
+inner join hr.locations l
+on d.location_id =l.location_id
+group by l.city
+having count(*) <10
+order by round(avg(e.salary),1);
 
 
 
@@ -384,20 +370,15 @@ from employees e
 
 -- 57. employees, departments. 부서별로 가장 적은 급여를 받고 있는 사원의 이름, 부서이름, 급여를 가져오시오. 
 -- 이름은 last_name만 가져오고, 부서이름으로 오름차순 정렬하고, 부서가 같은 경우 이름을 기준 으로 오름차순 정렬하여 가져오시오. 
---XXX??
-select 
-    *
-from employees e
-    inner join departments d
-        on e.department_id = d.department_id;
+--O
 
 select 
-    e.last_name, e.salary,
-    d.department_name
-from employees e
-    inner join departments d
+    e.last_name, d.department_name, e.salary
+from employees e 
+    inner join departments d 
         on e.department_id = d.department_id
-    where (e.salary, e.department_id) in (select min(salary), e.department_id as salary from employees group by department_id) order by d.department_name, e.last_name;
+        where (e.department_id, e.salary) in (select department_id, min(salary) from employees group by department_id) order by d.department_name, e.last_name;;
+
 
 select e.last_name, d.department_name, e.salary
 from hr.employees e left outer join hr.departments d
@@ -406,6 +387,9 @@ where (e.department_id, e.salary) in (select e.department_id,min(e.salary) from 
 on e.department_id = d.department_id
 group by e.department_id)
 order by d.department_name, e.last_name;
+
+
+
 
 -- 58. employees, departments, locations. 사원의 부서가 속한 도시(city)가 ‘Seattle’인 사원의 이름, 해당 사원의 매니저 이름, 사원 의 부서이름을 가져오시오. 
 -- 이때 사원의 매니저가 없을 경우 ‘없음’이라고 가져오시오. 이름은 last_name만 가져오고, 사원의 이름을 오름차순으로 정렬하시오.

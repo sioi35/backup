@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex41_attribute.html -->
+
+    <h1>속성 제어</h1>
+
+    <a href="http://google.com" id="link1">구글</a>
+    <hr>
+    <input type="button" value="버튼" id="btn1">
+
+    <script>
+
+        var link1 = document.getElementById("link1");
+        var btn1 = document.getElementById("btn1");
+
+        btn1.onclick = function(){
+
+            //속성 제어
+            //1. BOM
+            // - HTML의 속성을 Javascript에서 프로퍼티로 제공한다.
+            // link1.href = "http://w3.org";
+            // link1.target = "_blank";
+            // link1.innerText = "w3C";
+
+            //2. DOM
+            // - setter(), getter() 제공
+            // link1.setAttribute('href', 'http://daum.net');
+            // alert(link1.getAttribute('href'));
+            // link1.setAttribute('target', '_blank');
+            // link1.textContent = '다음';
+
+            // alert(link1.attributes.length);
+            // for (var i=0; i<link1.attributes.length; i++){
+            //     alert(link1.attributes[i].nodeName);
+            //     alert(link1.attributes[i].nodeType); //태그(1), 속성(2), PCDATA(3)
+            //     alert(link1.attributes[i].nodeValue);
+            // }
+            
+
+            // link1.attributes
+            // link1.setAttribute
+            // link1.getAttribute
+            // 속성 제거(removeAttribute)
+            // link1.removeAttribute("href");
+            // 속성 토글 (없애기 -> 다시 나타내기)
+            // link1.toggleAttribute('href');
+
+        };
+
+    </script>
+
+</body>
+</html>

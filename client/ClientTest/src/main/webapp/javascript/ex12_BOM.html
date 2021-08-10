@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex12_BOM.html -->
+    <!--  
+        BOM, Browser Object Model
+        - HTML 문서의 내용을 읽어들여 트리구조로 만들어 놓은 모델
+        - 정적 구조: HTML 코드에 상관없이 구조가 고정
+        - BOM 트리에 존재하는 태그는 매핑되는데, 트리에 존재하지 않는 태그는 매핑 불가
+            -> BOM 트리에 없는 태그는 조작이 불가능하다.!!
+        - 태그를 접근할 때 접근 가능 태그 or 접근 불가능 태그
+            - 접근 가능 태그 -> BOM 트리 참조
+            - 태그 접근 시 사용하는 식별자 -> name 사용(****)
+
+    -->
+    <h1>BOM</h1>
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="확인" name="btn1">
+    </form>
+
+    <script>
+
+        //*** JavaScript로 찾은 태그의 참조 객체는 여러 프로퍼티를 제공 -> 상당수는 html 태그가 가지던 속성의 이름과 동일하게 제공된다.(해당 속성을 조작 가능한 프로퍼티로 제공된다.)
+
+        //예약어
+        // - window
+        // - document
+
+        // window.document.form1.txt1 - 태그 검색(****)
+        // window.document.form1.txt1.value - 속성 접근(****)
+        // window.document.form1.txt1.value = '홍길동'; - 속성 조작(****)
+        window.document.form1.txt1.value = '홍길동';
+
+        window.document.form1.txt1.value = (new Date()).toLocaleDateString();
+
+    </script>
+
+</body>
+</html>

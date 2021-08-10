@@ -107,14 +107,14 @@ public class Sgame  {
 			
 			//키보드가 안 눌리면 화살표를 회색으로 그리기 위한 부분
 			if(click==0){   													//click을 체크할 변수	
-				g2d.drawImage(leftD1.getImage(),25,525,120,120, this);
-				g2d.drawImage(rightD1.getImage(),455,530,120,120, this);
+				g2d.drawImage(leftD1.getImage(),25,555,120,120, this);
+				g2d.drawImage(rightD1.getImage(),455,555,120,120, this);
 			}else if(click==1){  												//클릭한 화살표 노란색으로 바뀜
-				g2d.drawImage(leftD1.getImage(),25,525,120,120, this);
-				g2d.drawImage(rightD2.getImage(),455,530,120,120, this);		//오른쪽화살표 노란색으로
+				g2d.drawImage(leftD1.getImage(),25,555,120,120, this);
+				g2d.drawImage(rightD2.getImage(),455,555,120,120, this);		//오른쪽화살표 노란색으로
 			}else{
-				g2d.drawImage(rightD1.getImage(),455,530,120,120, this);
-				g2d.drawImage(leftD2.getImage(),25,525,120,120, this);			//왼쪽화살표 노란색으로
+				g2d.drawImage(leftD2.getImage(),25,555,120,120, this);			//왼쪽화살표 노란색으로
+				g2d.drawImage(rightD1.getImage(),455,555,120,120, this);
 			}
 			
 			int i=0;
@@ -130,7 +130,7 @@ public class Sgame  {
 				if((catchs.size()-j-1)*100+y>500){//네모상자안에들어오면 키보드누르기
 					gp.setVisible(false);  
 					Smain end=new Smain();
-					Smain.frame.setVisible(false);
+					Smain.frame.setVisible(true);
 					timer.stop();   
 					
 					end.go();
