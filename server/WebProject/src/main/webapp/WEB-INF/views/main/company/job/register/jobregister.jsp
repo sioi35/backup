@@ -11,19 +11,20 @@
 
 <style>
 .register-box {
-	border: 1px solid #476072;
-	width: 70%;
+	border: 1px solid #e1e2e3;
+	width: 60%;
 	margin: 80px auto;
 	height: auto;
 	background-color: #fff;
 }
 
 .register-box .register-content .title {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #e1e2e3;
 	padding: 20px;
 	font-size: 25px;
 	font-weight: bold;
-	color: #548CA8;
+	background-color: #548CA8;
+	color: white;
 }
 
 .register-tbl {
@@ -33,25 +34,21 @@
 	padding: 10px;
 }
 
-.register-tbl tr th {
-	width: 130px;
-	padding: 12px;
-	padding-left: 30px;
-}
 
 .register-tbl tr td {
 	padding: 12px;
+	padding-left: 65px;
 }
 
 .register-tbl td input {
-	border: 1px solid #ccc;
+	border: 1px solid #e1e2e3;
 	width: 320px;
 	height: 50px;
 	padding: 5px;
 }
 
 .register-tbl td select {
-	border: 1px solid #ccc;
+	border: 1px solid #e1e2e3;
 	width: 230px;
 	height: 50px;
 	padding: 5px;
@@ -79,7 +76,7 @@
 }
 
 .postContent {
-	border: 1px solid #ccc;
+	border: 1px solid #e1e2e3;
 	width: 500px;
 	height: 400px;
 	font-size: 20px;
@@ -100,8 +97,10 @@
 }
 
 .register-tbl .registerBtn {
-	background-color: #548CA8;
-	color: white;
+	background-color: #fff;
+	border: 1px solid #548CA8;
+	color: #548CA8;
+	border-radius: 100px;
 	width: 150px;
 }
 </style>
@@ -122,18 +121,15 @@
 					enctype="multipart/form-data">
 					<table class="register-tbl">
 						<tr>
-							<th>공고명</th>
-							<td><input type="text" name="postName" required></td>
+							<td>공고명</br><input type="text" name="postName" required></td>
 						</tr>
 						<tr>
-							<th>채용 날짜</th>
-							<td class="date"><input type="date" name="startDate"
+							<td class="date">공고날짜</br><input type="date" name="startDate"
 								required> <span>-</span> <input type="date"
 								name="endDate" required></td>
 						</tr>
 						<tr>
-							<th>직군</th>
-							<td><select name="jobGroup" required>
+							<td>직군</br><select name="jobGroup" required>
 									<option value="서버 개발자">서버 개발자</option>
 									<option value="웹 개발자">웹 개발자</option>
 									<option value="프론트엔드 개발자">프론트엔드 개발자</option>
@@ -146,8 +142,7 @@
 							</select></td>
 						</tr>
 						<tr>
-							<th>경력</th>
-							<td><select name="career" required>
+							<td>경력</br><select name="career" required>
 									<option value="신입·경력">신입·경력</option>
 									<option value="신입">신입</option>
 									<option value="1년이상">경력(1년이상)</option>
@@ -156,8 +151,7 @@
 							</select></td>
 						</tr>
 						<tr>
-							<th>학력</th>
-							<td><select name="educationLevel" class="filtermargin"
+							<td>학력</br><select name="educationLevel" class="filtermargin"
 								required>
 									<option value="학력무관">학력무관</option>
 									<option value="대졸">대학졸업</option>
@@ -165,46 +159,39 @@
 							</select></td>
 						</tr>
 						<tr>
-							<th>근무형태</th>
-							<td><select name="jobType" required>
+							<td>근무형태</br><select name="jobType" required>
 									<option value="정규직, 계약직">정규직, 계약직</option>
 									<option value="정규직">정규직</option>
 									<option value="계약직">계약직</option>
 							</select></td>
 						</tr>
 						<tr>
-							<th>연봉</th>
-							<td><select name="salary" id="salary" required>
+							<td>연봉</br><select name="salary" id="salary" required>
 									<option value="회사내규에 따름">회사내규에 따름</option>
 							</select></td>
 						</tr>
 						<tr>
-							<th>공고 내용</th>
-							<td><textarea name="postContent" class="postContent"
+							<td>공고 내용</br><textarea name="postContent" class="postContent"
 									required></textarea></td>
 						</tr>
 						<tr>
-							<th>첨부 파일</th>
-							<td><input type="file" name="attachedFile"
+							<td>첨부 파일</br><input type="file" name="attachedFile"
 								class="attachedFile" required></td>
 						</tr>
 
 						<tr>
-							<th>주소</th>
-							<td id="address"><input type="text" name="city" required
+							<td id="address">주소</br><input type="text" name="city" required
 								placeholder="(도)시"> <input type="text" name="gu"
 								required placeholder="구"> <input type="text" name="dong"
 								required placeholder="동"></td>
 						</tr>
 						<tr>
-							<th>상세 주소</th>
-							<td id="detail-address"><input type="text" name="address"
+							<td id="detail-address">상세 주소</br><input type="text" name="address"
 								class="address" required placeholder="ex) **빌딩 8층"> <input
 								type="button" value="검색" id="search" required></td>
 						</tr>
 						<tr>
-							<th>지도(좌표)</th>
-							<td id="map-box">
+							<td id="map-box">지도(좌표)</br>
 								<div id="map"
 									style="width: 100%; height: 350px; margin-bottom: 10px; display: none;"></div>
 								<input type="text" id="latitude" name="latitude" required

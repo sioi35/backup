@@ -12,12 +12,15 @@
 <style>
 .seeker-box {
 	border-radius: 0px;
-	width: 70%;
+	width: 100%;
 	margin: 80px auto;
 	height: auto;
+	background-color: #fff;
+	border: 1px solid #e1e2e3;
 }
 
 .seeker-box .title {
+	margin-top: 30px;
 	text-align: center;
 	font-size: 25px;
 	font-weight: bold;
@@ -26,14 +29,13 @@
 }
 
 .seeker-info {
-	width: 100%;
+	width: 80%;
 	margin: 0 auto;
+	margin-bottom: 50px;
 }
 
-.seeker-info
-
-	.seeker-info tr th:nth-child(1) {
-	width: auto;
+.seeker-info tr th:nth-child(1) {
+	width: 80px;
 }
 
 .seeker-info tr th:nth-child(2) {
@@ -57,9 +59,9 @@
 }
 
 .seeker-info tr td {
-	height: 50px
+	height: 50px;
 }
-;
+
 </style>
 
 </head>

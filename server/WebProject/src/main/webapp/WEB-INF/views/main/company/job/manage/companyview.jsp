@@ -292,7 +292,8 @@
       	    chart: {
       	        plotBackgroundColor: null,
       	        plotBorderWidth: 0,
-      	        plotShadow: false
+      	        plotShadow: false,
+      	      backgroundColor: '#F8F8FA'
       	    },
       	    title: {
       	        text: '성별 현황',
@@ -341,7 +342,8 @@
       	Highcharts.chart('container2', {
       	    chart: {
       	    	plotBackgroundColor: null,
-      	        type: 'column'
+      	        type: 'column',
+      	      backgroundColor: '#F8F8FA'
       	    },
       	    title: {
       	        text: '경력별 현황'

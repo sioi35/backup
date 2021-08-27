@@ -1,0 +1,44 @@
+1. 새 프로젝트 새생성
+- "SpringWebAOPTest" > "com.test.spring"
+- 게시판 업무(일부)
+
+2. pom.xml
+- 자바 버전, 스프링 버전 수정
+- jar x 3개(***)
+
+3. web.xml
+- 확장자
+
+4. root-context.xml
+- MyBatis(X)
+- log4j(X)
+
+5. servlet-context.xml
+- tiles(X)
+- AOP(O) (***)
+
+6. 파일 생성
+- AOPController.java	//컨트롤러
+- Service.java			//주업무 객체
+- DAO.java
+- DTO.java
+- Cross.java			//보조업무 객체
+- result.jsp			//뷰
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

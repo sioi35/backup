@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	Mapper 파일
+	- SQL을 작성하는 파일
+ -->
+<mapper namespace="main">
+
+	<select id="signin" parameterType="String" resultType="String">
+		select id from tblMember where id = 'hong' and pw = #{pw}
+	</select>
+	
+ 
+</mapper>

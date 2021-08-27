@@ -11,20 +11,22 @@
 <style>
    
    .register-box{
-	border: 1px solid #476072;
-   	width: 70%;
+	border: 1px solid #e1e2e3;
+   	width: 55%;
    	margin: 80px auto;
    	height: auto;
-   	background-color: #FAFBFC;
+   	background-color: #fff;
 	
    }
    
    .register-box .register-content .title{
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e1e2e3;
    	padding: 20px;
-   	font-size: 25px;
+   	font-size: 20px;
    	font-weight: bold;
-   	color: #548CA8;
+   	background-color: #548CA8;
+   	text-align: center;
+   	color: #fff;
    }
    
    .register-tbl{
@@ -34,24 +36,23 @@
 	padding: 10px;
    }
    
-   .register-tbl tr th{
-	   	width: 130px;
-	   	padding: 12px;
-	   	padding-left: 30px;
-   }
    
     .register-tbl tr td{
     	padding: 12px;
+    	padding-left: 90px;
     }
    
    .register-tbl td input {
-   	border: 1px solid #ccc;
-   	width: 320px;
+   	border: 1px solid #e1e2e3;
+   	border-radius: 5px;
+   	width: 250px;
    	height: 50px;
    	padding: 5px;
+   	margin-left: 17px;
+   
    }
    .register-tbl td select {
-   	border: 1px solid #ccc;
+   	border: 1px solid #e1e2e3;
    	width: 230px;
    	height: 50px;
    	padding: 5px;
@@ -65,11 +66,7 @@
    .register-tbl .date span{
    	margin: 5px;
    }
-   
-   .register-tbl #address input{
-   	width: 150px;
-   	text-align: right;
-   }
+ 
    
    #detail-address #search{
    	width: 60px;
@@ -79,7 +76,7 @@
    }
    
    .postContent {
-    border: 1px solid #ccc;
+    border: 1px solid #e1e2e3;
    	width: 500px;
    	height: 400px;
    	font-size: 20px;
@@ -87,7 +84,9 @@
    	}
    	
    	.register-tbl .attachedFile{
-   		width: 250px;
+   		width: 300px;
+   		margin-left: 0px;
+   		margint-top: 5px;
    	}
    	
    	.register-tbl #map-box input{
@@ -100,9 +99,12 @@
    }
    
    .register-tbl .registerBtn{
-   	background-color: #548CA8;
-   	color: white;
-   	width: 150px;   	
+   	border: 1px solid #548CA8;
+   	background-color: #fff;
+   	color: #548CA8;
+   	width: 150px;   
+   	border-radius: 100px;	
+   	font-weight: bold;
    }
    
    
@@ -117,46 +119,37 @@
       
       <div class="register-box">
       	<div class="register-content">
-      		<div class="title">${dto.name} 지원하기</div>
+      		<div class="title">${dto.name}_${dto.postName}</div>
       		
       	<form method="POST" action="/webproject/main/member/job/jobenrollok.do?jobPostSeq=${dto.jobPostSeq}" enctype="multipart/form-data">
       		<table class="register-tbl">
+      			
+      			
       			<tr>
-      				<th>공고명</th>
-      				<td><input type="text" value="${dto.postName}" readonly></td>
+      				<td>이름<input type="text" value="${name}" readonly></td>
       			</tr>
       			<tr>
-      				<th>이름</th>
-      				<td><input type="text" value="${name}" readonly></td>
-      			</tr>
-      			<tr>
-      				<th>날짜</th>
       				<td class="date">
-      					<input type="date" id="today" readonly>
+      					날짜<input type="date" id="today" readonly>
       				</td>
       			</tr>
       			<tr>
-      				<th>직군</th>
-      				<td><input type="text" value="${dto.jobGroup}" readonly></td>
+      				<td>직군<input type="text" value="${dto.jobGroup}" readonly></td>
       			</tr>
       			<tr>
-      				<th>학력</th>
-      				<td><input type="text" value="${dto.educationLevel }" readonly></td>
+      				<td>학력<input type="text" value="${dto.educationLevel }" readonly></td>
       			</tr>
       			<tr>
-      				<th>경력</th>
-      				<td><input type="text" value="${dto.career}" readonly></td>
+      				<td>경력<input type="text" value="${dto.career}" readonly></td>
       			</tr>
       			
       			<tr>
-      				<th>첨부 파일</th>
       				<td>
-      					<input type="file" name ="attachedFile" class="attachedFile" required>
+      					첨부파일<br><input type="file" name ="attachedFile" class="attachedFile" required>
       				</td>
       			</tr>      			
       			<tr>
-      				<td colspan="2" class="coltd">
-	      				
+      				<td style="padding-left: 150px;">
 						<input type="submit" value="등록" class="registerBtn">
 					</td>
       			</tr>

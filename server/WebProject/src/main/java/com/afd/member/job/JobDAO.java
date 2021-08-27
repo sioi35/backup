@@ -12,9 +12,8 @@ import org.apache.catalina.core.ApplicationMappingImpl;
 import com.afd.DBUtil;
 
 /**
- * DB연결
- * 채용공고 리스트의 목록을 보여주는 클래스
- * 각종 검색&필터들의 조건을 확인하여 원하는 리스트의 목록을 불러옴
+ * DB연결 채용공고 리스트의 목록을 보여주는 클래스 각종 검색&필터들의 조건을 확인하여 원하는 리스트의 목록을 불러옴
+ * 
  * @author 3조
  *
  */
@@ -35,12 +34,10 @@ public class JobDAO {
 		}
 
 	}
-	
-	
-	
+
 	/**
-	 * 조건 여부를 검사하는 메소드를 통해 모든 조건들을 문자열 sql 변수에 담아 연결된
-	 * DB에서 실행을 하여 결과값을 반환해주는 메소드
+	 * 조건 여부를 검사하는 메소드를 통해 모든 조건들을 문자열 sql 변수에 담아 연결된 DB에서 실행을 하여 결과값을 반환해주는 메소드
+	 * 
 	 * @param map 검색 조건들이 담겨있는 HashMap을 받아옴
 	 * @return 결과값을 ArrayList 배열로 담아 넘겨줌
 	 */
@@ -50,28 +47,23 @@ public class JobDAO {
 			String sql = "";
 			String where = "";
 			String order = "";
-			
-			where = findJobGroup(map, where);
-			System.out.println("jobGroup: " + where);
 
+			where = findJobGroup(map, where);
 			where = findCity(map, where);
-			System.out.println("city: " + where);
 			where = findCareer(map, where);
-			System.out.println("career: " + where);
 			where = findEducationLevel(map, where);
-			System.out.println("edu: " + where);
-			
+
 			if (map.get("isFilter").equals("1")) {
 				order = "order by endDate";
-			}else {
+			} else {
 				order = "order by regdate";
 			}
 
-			
-			  sql = String.format("select s.* from (select v.*, rownum as unum from (select * from vwJobPost %s %s) v ) s where s.unum between %s and %s"
-					  ,where, order, map.get("begin"), map.get("end"));
-			 System.out.println(sql);
-		
+			sql = String.format(
+					"select s.* from (select v.*, rownum as unum from (select * from vwJobPost %s %s) v ) s where s.unum between %s and %s",
+					where, order, map.get("begin"), map.get("end"));
+			System.out.println(sql);
+
 			pstat = conn.prepareStatement(sql);
 
 			rs = pstat.executeQuery();
@@ -106,7 +98,6 @@ public class JobDAO {
 		return null;
 	}
 
-	
 	/**
 	 * 
 	 * @param map 조건에 만족하는 공고의 총 갯수를 알아내기 위하여 매개변수로 조건들을 담은 HashMap을 받아옴
@@ -118,7 +109,6 @@ public class JobDAO {
 
 			String where = "";
 
-			
 			where = findJobGroup(map, where);
 			System.out.println("jobGroup: " + where);
 
@@ -149,7 +139,6 @@ public class JobDAO {
 
 	}// getTotalCount
 
-	
 	/**
 	 * 
 	 * @param map 조건을 담은 HashMap
@@ -157,16 +146,16 @@ public class JobDAO {
 	 * @return 조건에 맞는 where 변수를 넘겨준다.
 	 */
 	private String findJobGroup(HashMap<String, String> map, String where) {
-		
+
 		if (map.get("jobGroup") != null && !map.get("jobGroup").equals("all") && !map.get("jobGroup").equals("")) {
 			if (where.contains("where")) {
 				where = String.format("and jobGroup = '%s' ", map.get("jobGroup"));
-			}else {
+			} else {
 				where = String.format("where jobGroup = '%s' ", map.get("jobGroup"));
 			}
 		}
 		return where;
-		
+
 	}
 
 	private String findCity(HashMap<String, String> map, String where) {
@@ -218,7 +207,5 @@ public class JobDAO {
 		}
 		return where;
 	}// educationlevel 조건
-
-	
 
 }

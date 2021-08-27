@@ -134,7 +134,7 @@ public class JobList extends HttpServlet {
 		int nowPage = 0;		//현재 페이지 번호
 		int totalCount = 0;		//총 게시물 수
 		int totalPage = 0;		//총 페이지 수
-		int pageSize = 9;		//한 페이지당 출력할 게시물 수
+		int pageSize = 6;		//한 페이지당 출력할 게시물 수
 		int begin = 0;			//가져올 게시물 시작 위치
 		int end = 0;			//가져올 게시물 끝 위치
 		int n = 0;				//페이지바 제작
@@ -195,7 +195,6 @@ public class JobList extends HttpServlet {
 		}else{
 			pagebar += String.format(" <li><a href='/webproject/main/member/job/joblist.do?page=%d&jobGroup=%s&city=%s&gu=%s&career=%s&educationLevel=%s&filter=%s' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li> ", n-1, map.get("jobGroup"), map.get("city"), map.get("gu"), map.get("career"), map.get("educationLevel"), map.get("filter"));
 		}
-		//http://localhost:8090/webproject/main/member/job/joblist.do?page=2
 		if(totalPage == 0) {
 			pagebar += "<li class='active'><a href='#!'>1</a></li>";
 		}

@@ -1,0 +1,52 @@
+
+MyBatis(=iBatis)
+- 응용 프로그램 계층(자바) <-> 퍼시스턴스 계층(중간 계층, JDBC) <-> 데이터베이스 계층(오라클)
+- 중간 계층 기술 중 하나(JDBC, MyBatis, JPA, Hibernate, Spring JDBC)
+
+
+Log4j
+- 데이터베이스 작업 중 관련된 로그를 출력하는 기능
+
+
+- Spring MVC Project
+
+1. 새 프로젝트 생성
+- "SpringMyBatisTest" > "com.test.mybatis"
+
+2. 스프링 버전 바꾸기
+
+3. 라이브러리
+	- pom.xml
+	- ojdbc6.jar
+	- mybatis x n개
+	- log4j
+
+4. web.xml
+	- 확장자 변경
+	- 필터 추가
+
+5. root-context.xml
+	- MyBatis 설정
+	- Log4j 설정
+
+6. servlet-context.xml
+	- 설정 없음
+
+7. 파일 생성
+	- com.test.mybatis > "MyBatisController.java"
+					   > "MyBatisDAO.java"
+					   > "MyBatisDTO.java"
+	- views > "result.jsp"
+	- webapp > inc :복사
+	- webapp > resources > css, js, fonts: 복사
+
+
+
+
+
+
+
+
+
+
+

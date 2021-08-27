@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- ajax.xml -->
+
+<!-- 모든 마크업언어(HTML, XML ...)는 반드시 루트 엘리먼트가 유일하게 존재해야 한다. -->
+
+<!-- <mapper> 루트 태그 -->
+<mapper namespace="ajax">
+
+	<select id="getUserCount" resultType="Integer">
+		select count(*) from tblAjaxUser
+	</select>
+
+	<select id="getUserName" resultType="String">
+		select name from tblAjaxUser where seq = 1
+	</select>
+	
+	<select id="getUser" resultType="com.test.ajax.UserDTO">
+		select * from tblAjaxUser where seq = 1
+	</select>
+	
+	<select id="getList" resultType="com.test.ajax.UserDTO">
+		select * from tblAjaxUser order by seq asc
+	</select>
+
+	<delete id="removeUser" parameterType="String">
+		delete from tblAjaxUser where seq = #{seq}
+	</delete>
+	
+	<select id="getSeqUser" resultType="com.test.ajax.UserDTO" parameterType="String">
+		select * from tblAjaxUser where seq = #{seq}
+	</select>
+	
+	<insert id="add" parameterType="com.test.ajax.UserDTO">
+		insert into tblAjaxUser (seq, name, age, address, birthday) 
+			values (seqAjaxUser.nextVal, #{name}, #{age}, #{address}, #{birthday} )
+	</insert>
+	
+	<select id="idcheck" parameterType="String" resultType="Integer">
+		select count(*) from tblUser1 where id = #{id}
+	</select>
+	
+	
+	<!-- CRUD -->	
+	<select id="list" resultType="com.test.ajax.UserDTO">
+		select * from tblAjaxUser order by name asc
+	</select>
+	
+	<select id="get" resultType="com.test.ajax.UserDTO" parameterType="String">
+		select * from tblAjaxUser where seq = #{seq}
+	</select>
+	
+	<update id="edit" parameterType="com.test.ajax.UserDTO">
+		update tblAjaxUser set 
+			name = #{name}, 
+			age= #{age}, 
+			address=#{address}, 
+			birthday=#{birthday} 
+		where seq = #{seq}
+	</update>
+	
+	<delete id="del" parameterType="String">
+		delete from tblAjaxUser where seq = #{seq}
+	</delete>
+	
+	<select id="search" parameterType="String" resultType="com.test.ajax.UserDTO">
+		select * from tblAjaxUser 
+			where address like '%' || #{word} || '%'
+				order by name asc
+	</select>
+	
+	<select id="getSeq" resultType="String">
+		select max(seq) from tblAjaxUser 
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

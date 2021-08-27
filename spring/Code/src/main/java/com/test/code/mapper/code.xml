@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- code.xml -->
+
+<mapper namespace="code">
+	
+	<!-- 로그인 -->
+	<select id="signin" parameterType="String" resultType="String">
+		select id from tblCodeUser where id = 'hong' and pw = #{pw}
+	</select>
+	
+	<!-- 게시물 -->
+	<select id="list" resultType="dto" parameterType="String">
+		
+		<!-- select * from tblCode order by seq desc -->
+		
+		select * from tblCode c
+			<if test="_parameter"> <!-- MyBatis 동적 쿼리 -->
+		    inner join tblCodeLanguageLink cll
+		        on c.seq = cll.cseq
+		            where cll.lseq = #{lseq}
+			</if>
+				order by c.seq desc
+		
+	</select>
+	
+	<!-- 특정 게시물에 관련된 언어 목록 -->
+	<select id="llist" parameterType="String" resultType="ldto">
+		select * from tblCodeLanguage cl
+    		left outer join (select * from tblCodeLanguageLink where cseq = #{seq}) cll
+        		on cl.seq = cll.lseq
+        			order by cl.seq asc
+	</select>
+	
+	<!-- 모든 언어 -->
+	<select id="llistAll" resultType="ldto">
+		select * from tblCodeLanguage 
+   			order by seq asc		
+	</select>
+	
+	<!-- 글쓰기 -->
+	<insert id="add" parameterType="dto">
+		insert into tblCode (seq, subject, content, code, regdate) 
+			values (seqCode.nextVal, #{subject}, #{content}, #{code}, default)
+	</insert>
+	
+	<!-- 방금 쓴글의 번호 -->
+	<select id="getSeq" resultType="String">
+		select max(seq) from tblCode
+	</select>
+	
+	<!-- 방금 쓴글과 연결된 언어 추가 -->
+	<insert id="addLink" parameterType="cldto">
+		insert into tblCodeLanguageLink (seq, cseq, lseq)
+			values (seqCodeLanguageLink.nextVal, #{cseq}, #{lseq})
+	</insert>
+	
+	<!-- 선택된 글번호의 내용 가져오기 -->
+	<select id="get" parameterType="String" resultType="dto">
+		select * from tblCode where seq = #{seq}
+	</select>	
+	
+	<!-- 댓글 쓰기 -->
+	<insert id="addcomment" parameterType="cdto">
+		insert into tblCodeComment (seq, content, beginline, endline, regdate, cseq)
+			values (seqCodeComment.nextVal, #{content}, #{beginline}, #{endline}, default, #{cseq})
+	</insert>	
+
+	<!-- 댓글 목록 -->
+	<select id="clist" parameterType="String" resultType="cdto">
+		select * from tblCodeComment where cseq = #{seq} order by beginline asc
+	</select>	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

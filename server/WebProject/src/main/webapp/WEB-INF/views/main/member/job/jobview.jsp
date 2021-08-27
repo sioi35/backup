@@ -18,6 +18,7 @@
 
 <style>
 	.jobpost-view {
+		margin-top: 50px;
 		width: 68%;
 		display: float;
 		float: left;
@@ -268,8 +269,9 @@
 		        </c:when>         
 		        <c:otherwise>
 		           <figure class="highcharts-figure">
-	    			<div id="container"></div>
+	    			<div id="container" style="height:300px; padding: 0px;"></div>
 					</figure>
+					<br>
 					<figure class="highcharts-figure">
 	    			<div id="container2"></div>
 				</figure>
@@ -331,7 +333,9 @@
       	    chart: {
       	        plotBackgroundColor: null,
       	        plotBorderWidth: 0,
-      	        plotShadow: false
+      	        plotShadow: false,
+      	      backgroundColor: '#F8F8FA'
+
       	    },
       	    title: {
       	        text: '성별 현황',
@@ -379,7 +383,8 @@
      // Create the chart
       	Highcharts.chart('container2', {
       	    chart: {
-      	        type: 'column'
+      	        type: 'column',
+      	      backgroundColor: '#F8F8FA'
       	    },
       	    title: {
       	        text: '경력별 현황'

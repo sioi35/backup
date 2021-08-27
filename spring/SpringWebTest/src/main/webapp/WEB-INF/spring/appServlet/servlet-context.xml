@@ -25,4 +25,21 @@
 	
 	
 	
+	<!-- 
+		<bean> 선언
+	-->
+	
+	<beans:bean class="com.test.spring.HelloController" name="/hello.action"></beans:bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </beans:beans>

@@ -1,0 +1,187 @@
+
+STS -> Spring Project의 구조와 파일
+
+1. src > main > webapp > resources
+	- 클라이언트 작업을 위한 리소스 폴더
+	- CSS, JavaScript, Font, 이미지 등이 위치한다.
+	
+2. WEB-INF > spring
+	- 스프링 전반에 걸친 여러가지 설정 파일들이 위치한다.
+	
+3. WEB-INF > spring > root-context.xml
+	- 스프링 전반에 걸친 설정을 하는 XML
+	
+4. WEB-INF > spring > appServlet > servlet-context.xml
+	- 클라이언트의 요청과 응답에 관련된 스프링 설정을 하는 XML 
+	
+5. pom.xml
+	- Project Object Model
+	- 메이븐(Maven) 설정 파일
+	- 프로젝트 필요한 라이브러리(*.jar)를 관리하는 용도
+	
+스프링 프로젝트를 우리가 원하는 버전으로 설정!!
+- 프로젝트를 만들 때마다 설정
+1. pom.xml
+- 자바 버전 변경
+- 스프링 버전 변경
+
+
+Servlet/JSP MVC -> 버전업(훌륭하게) -> Spring MVC
+
+
+Hello World!!
+- Controller: Servlet > Controller
+- View: JSP
+- Model: Class(DTO)
+
+
+롬복(Lombok)
+- 파일 다운(*.jar) -> 참조
+
+
+
+
+Maven(jar파일을 관리해주는 애)
+
+
+Hello 다시 한번~
+
+1. URL 요청
+	- http://localhost:8090/spring/hi.action
+
+2. DispatcherServlet 응답(호출)
+	- web.xml
+	- *.action -> hi.action
+	- Front Controller
+	- 건물에 1층 입구에 있는 안내 데스크 직원
+
+3. 해당 Controller 호출
+	- hi.action
+	- HiController.java를 호출
+	
+4. 요청 메소드 호출
+	- @RequestMapping(value="/hi.action")
+
+5. JSP 호출
+	- return "hi"; ??
+	- ViewResolver 호출 -> "/WEB-INF/views/" + "hi" + ".jsp" -> "/WEB-INF/views/hi.jsp"
+
+6. JSP 페이지
+	- 전에 사용하던 Servlet/JSP에서의 JSP와 완벽하게 동일한 JSP 페이지를 사용한다.
+
+
+
+게시판 만들기[Servlet/JSP]
+1. list
+
+2. add
+3. edit
+4. del
+5. view
+
+게시판 만들기[Spring]
+- Controller.java
+1. list > list.jsp
+2. add > add.jsp, addok.jsp
+3. edit > 
+4. del
+5. view
+
+
+
+데이터 전송 + 데이터 수신
+
+- "DataController.java"
+- "DataDAO.java"
+- "DataDTO.java"
+
+- views > "data" > "add.jsp"
+				 > "addok.jsp"
+
+
+
+의존 주입 테스트
+- com.test.spring > "DIController.java"
+				  > "Work.java"
+- views > "di" > "di.jsp"
+
+
+
+메모장
+- Spring MVC Project
+
+1. 새 프로젝트 생성
+Spring Legacy Project -> "SpringMemo" + Spring MVC Project
+
+2. 스프링 버전 바꾸기
+- pom.xml
+	-<org.springframework-version>4.3.8.RELEASE</org.springframework-version>
+	-<org.aspectj-version>1.6.10</org.aspectj-version>
+
+    <configuration>
+        -<source>1.11</source>
+        -<target>1.11</target>
+
+- 프로젝트(우클릭) -> Properties > Project Facets > Java 버전 11로 바꾸기
+
+
+3. pom.xml(Maven)
+- 프로젝트에 필요한 라이브러리 다운로드
+- lombok.jar
+- ojdbc6.jar
+
+4. web.xml
+- 스프링 요청 주소 확장자 변경: *.memo
+- 인코딩 필터 추가
+
+5. root-context.xml
+- 아직 할게 없음
+
+6. servlet-context.xmo
+- 아직 할게 없음
+
+7. Bootstrap + jQuery 설치
+- webapp > resources > 복사(설치)
+- webapp > inc > 복사(설치)
+
+8. SQL
+- SpringMemo > "db.sql"
+
+9. 파일 생성
+- com.test.sprin
+	> "MemoController.java"
+	> "MemoDAO.java"
+	> "MemoDTO.java"
+	> "DBUtil.java"
+
+- views
+	> "list.jsp"
+	> "add.jsp"
+	> "addok.jsp"
+	> "delok.jsp"
+	> "template.jsp"
+
+- webapp > resources > css
+	> "main.css"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

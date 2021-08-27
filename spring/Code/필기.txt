@@ -1,0 +1,71 @@
+스프링 게시판
+- Spring MVC Project + MyBatis + log4j + AOP + tiles == 최종 프로젝트 설정하고 동일
+- 게시판(+ 소스 코드 첨부) > 코드 게시판
+- 클라이언트 코드 미리 작성 -> HTML + CSS + JavaScript
+
+1. pom.xml
+- 자바 버전, 스프링 버전
+- jar
+	- lombok x 1
+	- jdbc x 1 > 직접 복사(lib)
+	- mybatis x 4
+	- log4j x 1 
+	- tiles x 5
+
+2. web.xml
+- 확장자
+- 인코딩 필터
+
+3. root-context.xml
+- mybatis 설정
+	- mapper 설정(code.xml)
+	- 환경 설정 XML(myBatis.xml)
+- log4j 설정
+	- <bean> x 1
+	- log4j.xml 수정
+
+4. servlet-context.xml
+- tiles 설정(tiles.xml)
+- AOP 설정
+
+--------------------------------------- 업무와 무관한 설정 마침
+
+
+--------------------------------------- 업무와 상관있는 설정 시작
+
+5. 파일 생성
+- com.test.code
+	- CodeController.java			//컨트롤러
+	- CodeDAO.java					//DAO
+	- CodeDTO.java					//DTO(tblCode) 게시판
+	- CodeLanguageDTO.java			//DTO(tblCodeLanguage) 카테고리
+	- CodeLanguageLinkDTO.java		//DTO(tblCodeLanguageLink) 게시판 <-> 카테고리
+	- CodeCommentDTO.java			//DTO(tblCodeComment) 댓글
+
+6. 타일즈 적용
+- view > "layout" > template.jsp
+- <definition>
+- 조각 페이지
+--------------------------------------설정 완료(개인 업무 페이지는 개인이 생성해서 작업)
+
+- 주업무 페이지
+--------------------------------------설정 완료(개인 업무 페이지도 팀작업으로 생성해서 작업)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

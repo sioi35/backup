@@ -10,7 +10,9 @@
 
 <style>
    
-
+.main-section{
+	height: 500px;
+}
    
 </style>
 

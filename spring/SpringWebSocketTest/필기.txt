@@ -1,0 +1,6 @@
+SpringWebSocketTest > com.test.spring
+- web.xml(확장자, 필터)
+- pom.xml(JSON)
+
+WebSocket, 웹소켓
+- Socket: 네트워크상에서 동작하는 프로그램 간 통신의 종착점

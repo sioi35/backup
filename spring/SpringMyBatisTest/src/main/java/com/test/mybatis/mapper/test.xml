@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- test.xml -->
+
+<!--  
+	Mapper 파일
+	- SQL을 작성하는 파일
+-->
+<mapper namespace="test">
+	
+	<!--  
+		<insert id=""></insert>
+		<update id=""></update>
+		<delete id=""></delete>
+		<select id=""></select>
+	-->
+	
+	<insert id="m1">
+		insert into tblMemo (seq, name, memo, regdate, category)
+			values (seqMemo.nextVal, '홍길동', 'MyBatis 테스트', default, 'mybatis')
+	</insert>
+	
+	<delete id="m2" parameterType="Integer">
+		delete from tblMemo where seq = #{seq}
+	</delete>
+	
+	<update id="m3" parameterType="dto">
+		update tblMemo set
+			name = #{name},
+			memo = #{memo},
+			category = #{category} 
+		where seq = #{seq}
+	</update>
+	
+	<update id="m4" parameterType="java.util.HashMap">
+		update tblMemo set
+			category = #{newcategory}
+		where category = #{category}
+	</update>
+	
+	<select id="m5" resultType="Integer">
+		select count(*) from tblMemo 
+	</select>
+	
+	<select id="m6" resultType="String" parameterType="String">
+		select memo from tblMemo where seq = #{seq}
+	</select>
+	
+	<select id="m7" parameterType="String" resultType="dto">
+		select * from tblMemo where seq = #{seq}
+	</select>
+	
+	
+	<!-- 결과셋이 다중 레코드라도.. 1개의 레코드를 담을 수 있는 자료형만 resultType에 적는다. -->
+	<select id="m8" resultType="dto">
+		select * from tblMemo order by seq desc
+	</select>
+	
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
