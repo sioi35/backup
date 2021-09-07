@@ -14,18 +14,14 @@
 
 	<section class="main-section">
 
-
 		<div class="repo-container">
 
 			<div class="profile-container">
-
-				<div class="profile-img"></div>
-
+				<div class="profile-img" ><img src="/spring/resources/img/${member.image}"></div>
 				<div class="profile-name">
-					<div class="name">홍길동</div>
+					<div class="name">${member.name}</div>
 					<input type="button" value="Edit profile" class="profile">
 				</div>
-
 			</div>
 
 			<div class="repolist-container">
@@ -36,7 +32,6 @@
 				</div>
 				
 				<hr>
-
 
 				<button type="button" class="addbtn" id="addbtn">New</button>
 
@@ -75,16 +70,13 @@
 							<td><input type="text" id="description" name="description"></td>
 						</tr>
 						<tr>
-							<td>public <input type="radio" name="lockflag" value="y"
-								checked></td>
+							<td>public <input type="radio" name="lockflag" value="y" checked></td>
 							<td>private <input type="radio" name="lockflag" value="n"></td>
 						</tr>
 					</table>
-					<input type="hidden" value="${id}" id="id" name="id"> <input
-						type="submit" id="repoAdd" class="repoAdd" value="추가">
+					<input type="hidden" value="${id}" id="id" name="id"> <input type="submit" id="repoAdd" class="repoAdd" value="추가">
 				</form>
 			</div>
-
 		</div>
 
 	</section>
@@ -110,7 +102,6 @@
 				if(result==1){
 					$('#addModal').hide();
 					$('.repolist').append('<div class="repo"><div class="title">'+ $('#name').val() +'</div><div class="sub">'+$('#description').val()+'</div></div>');					
-					
 				}else{
 					alert('문제가 발생하였습니다. 다시 시도해주세요');
 				}

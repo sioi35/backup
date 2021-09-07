@@ -75,6 +75,27 @@
 	<select id="getSeq" resultType="String">
 		select max(seq) from tblAjaxUser 
 	</select>
+	
+	<insert id="addMemo" parameterType="com.test.ajax.MemoDTO">
+		insert into tblAjaxMemo (seq, id, memo, regdate, left, top, background, zindex)
+			values(seqAjaxMemo.nextVal, #{id}, null, default, #{left}, #{top}, #{background}, default)
+	</insert>
+
+	<select id="getMaxNo" resultType="Integer">
+		select nvl(substr(max(id), 2), 0) from tblAjaxMemo
+	</select>
+
+	<select id="getMaxBack" resultType="Integer">
+		select nvl(substr(max(background), 2), 0) from tblAjaxMemo where id = (select max(id) from tblAjaxMemo)
+	</select>
+
+	<select id="getMaxZIndex" resultType="Integer">
+		select nvl(max(zindex),0) from tblAjaxMemo
+	</select>
+	
+	<select id="listMemo" resultType="com.test.ajax.MemoDTO">
+		select * from tblAjaxMemo
+	</select>
 
 </mapper>
 

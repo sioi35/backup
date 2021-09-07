@@ -9,7 +9,7 @@
 <mapper namespace="main">
 
 	<select id="signin" parameterType="String" resultType="String">
-		select id from tblMember where id = 'hong' and pw = #{pw}
+		select id from tblMember where id = #{loginId}
 	</select>
 	
  

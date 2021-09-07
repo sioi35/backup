@@ -28,6 +28,17 @@
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"></beans:property>
 	</beans:bean>
 	
-	<context:component-scan base-package="com.project.spring" />
+	<!-- interceptor 설정 (로그인 체크) -->
+	<beans:bean id="SessionInterceptor" class="com.project.spring.SessionInterceptor" />
+	<interceptors>
+		<interceptor>
+			<mapping path="/*/*" />
+			<beans:ref bean="SessionInterceptor" />
+		</interceptor>
+	</interceptors>
 	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	
+	<context:component-scan base-package="com.project.spring" />
+
 </beans:beans>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- rest.xml -->
+
+<!-- 모든 마크업언어(HTML, XML ...)는 반드시 루트 엘리먼트가 유일하게 존재해야 한다. -->
+
+<!-- <mapper> 루트 태그 -->
+<mapper namespace="rest">
+
+	<select resultType="com.test.rest.ColorDTO" id="list">
+		select * from tblColor order by seq asc 
+	</select>
+
+	<select resultType="com.test.rest.ColorDTO" id="get" parameterType="String">
+		select * from tblColor where seq = #{seq} 
+	</select>
+
+	<insert id="add" parameterType="com.test.rest.ColorDTO">
+		insert into tblColor (seq, name, rgb, example)
+		values (seqColor.nextVal, #{name}, #{rgb}, #{example})
+	</insert>
+
+	<update id="edit" parameterType="com.test.rest.ColorDTO">
+		update tblColor set 
+			name =#{name},
+			rgb = #{rgb},
+			example = #{example}
+				where seq = #{seq} 
+	</update>
+	
+	<delete id="del" parameterType="String">
+		delete from tblColor where seq = #{seq}
+	</delete>
+	
+	
+	<!-- 스프링 트랜잭션 -->
+	<update id="addPoint">
+		update tblSpringMember set
+			point = point + 100
+				where id = 'hong'
+	</update>
+	
+	<insert id="addBoard" parameterType="String">
+		insert into tblSpringBoard (subject, id)
+			values (#{subject}, 'hong')
+	</insert>
+
+
+</mapper>
+
+
+
+
+
+
+
+

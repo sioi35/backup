@@ -12,9 +12,9 @@ public class MemberDAO {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	public String signin(String pw) {
+	public String signin(String loginId) {
 		
-		return template.selectOne("main.signin", pw);
+		return template.selectOne("main.signin", loginId);
 	}
       
 }

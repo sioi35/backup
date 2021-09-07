@@ -61,4 +61,30 @@ select * from tblAjaxUser where address like '%검색어%';
 commit;
 
 
+----------------------------
+
+drop table tblAjaxMemo;
+drop sequence seqAjaxMemo;
+
+create table tblAjaxMemo(
+    seq number primary key,                     --번호
+    id varchar2(10) not null,                   --아이디
+    memo varchar2(1000) null,                   --메모
+    regdate date default sysdate not null,      --작성시간
+    left number default 0 not null,             --좌표(X)
+    top number default 0 not null,              --좌표(Y)
+    background varchar2(2) not null,            --배경
+    zindex number default 0 not null            --zindex
+);
+
+create sequence seqAjaxMemo;
+
+select * from tblAjaxMemo;
+
+delete from tblAjaxMemo where seq = 1;
+
+select background from tblAjaxMemo where id = (select max(id) from tblAjaxMemo);
+
+commit;
+
 

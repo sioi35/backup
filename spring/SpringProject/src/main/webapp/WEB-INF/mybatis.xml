@@ -7,8 +7,15 @@
 	<typeAliases>
 		
 		<!-- DTO 별칭 -->
-		<!-- <typeAlias type="com.test.code.CodeDTO" alias="dto" /> -->
-
+		<typeAlias type="com.project.spring.study.StudyDTO" alias="stdto" />
+		<typeAlias type="com.project.spring.study.ApplyListDTO" alias="adto" /> 
+		<typeAlias type="com.project.spring.FieldDTO" alias="fdto" />
+		<typeAlias type="com.project.spring.MemberDTO" alias="mdto" />
+		
+		<typeAlias type="com.project.spring.skill.LicenseDTO" alias="ldto" />
+		<typeAlias type="com.project.spring.skill.SubjectDTO" alias="sdto" />
+		<typeAlias type="com.project.spring.skill.ProblemDTO" alias="pdto" />
+		
 	</typeAliases>
 	
 </configuration>

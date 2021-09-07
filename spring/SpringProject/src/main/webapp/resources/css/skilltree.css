@@ -1,0 +1,54 @@
+/* skilltree.css */
+
+.container {
+	margin-top: 30px;
+}
+
+.fields {
+	margin-bottom: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+.field-btn {
+	width: 90px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.fields > .field-btn {
+	color: white;
+	background-color:#174587;
+	background-image: none;
+}
+
+.fields > .field-btn:disabled {
+	color: white;
+	background-color: #2A78E4;
+}
+
+.skilltree {
+	width: 100%;
+	text-align: left;
+}
+
+.skilltree > img {
+	width: 80%;
+	height: auto;
+}
+
+.skilltree > .side-content {
+	margin-left: 30px;
+	width: auto;
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+}
+
+#skillcheck {
+	margin: 50px 0;
+}
+
+.license-list > h3 {
+	margin-bottom: 20px;
+}

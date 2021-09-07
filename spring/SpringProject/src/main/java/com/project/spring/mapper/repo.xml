@@ -2,19 +2,54 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 
-	Mapper 파일
-	- SQL을 작성하는 파일
- -->
+<!-- Mapper 파일 - SQL을 작성하는 파일 -->
 <mapper namespace="repo">
 
 	<select id="repolist" parameterType="String" resultType="com.project.spring.repo.RepoDTO">
 		select * from tblRepository where id = #{id}
 	</select>
- 
- 	<insert id="repoAdd" parameterType="com.project.spring.repo.RepoDTO">
- 		insert into tblRepository (repoSeq, id, name, description, lockflag,regdate) 
- 			values(seqRepository.nextVal, #{id}, #{name}, #{description}, #{lockflag} ,default)
- 	</insert>
- 
+
+	<insert id="repoAdd" parameterType="com.project.spring.repo.RepoDTO">
+		insert into tblRepository (repoSeq, id, name, description, lockflag,regdate)
+		values(seqRepository.nextVal, #{id}, #{name}, #{description},
+		#{lockflag} ,default)
+	</insert>
+
+	<select id="fileview" parameterType="String" resultType="com.project.spring.repo.FileDTO">
+		select * from tblFile where repoSeq = #{repoSeq}
+	</select>
+
+	<select id="codeview" parameterType="String" resultType="com.project.spring.repo.FileDTO">
+		select 
+		    r.name,
+		    f.fileseq,
+		    f.repoSeq,
+		    f.regdate,
+		    f.beforedate,
+		    f.fileName
+		from tblRepository r
+		    inner join tblFile f
+		        on r.reposeq = f.reposeq
+       				where f.fileseq = #{fileSeq}
+	</select>
+	
+	<insert id="codeadd" parameterType="com.project.spring.repo.FileDTO">
+		insert into tblFile (fileSeq, repoSeq, regdate, content, beforedate, fileName) 
+   			values (seqFile.nextval, #{repoSeq}, default, #{content}, null, #{fileName})
+	</insert>
+	
+	<select id="minfo" parameterType="String" resultType="com.project.spring.MemberDTO">
+		select * from tblMember where id = #{id}
+	</select>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+

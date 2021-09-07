@@ -70,6 +70,10 @@ CRUD
 - views > "crud" > "index.jsp"
 
 
+jQuery UI(JavaScript API) + Ajax
+- com.test.ajax > "MemoDTO.java"
+- views> "memo" > index.jsp"
+
 
 
 

@@ -16,4 +16,6 @@ public class MemberDTO {
 	private String languageSeq;
 	private String filedSeq;
 	
+	private String languagename; //사용언어 이름
+	
 }

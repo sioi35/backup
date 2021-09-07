@@ -31,13 +31,13 @@
 					onclick="location.href='/spring/skill/skilltree.action';">스킬트리</li>
 				<li class="mainbtn" title="code" id="/spring/code/codelist.action"
 					onclick="location.href='/spring/code/codelist.action';" >코드리뷰</li>
-
 			</ul>
 
 		</nav>
 		<div class="auth">
 
 			<c:if test="${not empty id}">
+			${id}&nbsp;&nbsp;
 
 				<div class="btn-auth" title="로그아웃"
 				onclick="location.href='/spring/signout.action';"> 로그아웃</div>

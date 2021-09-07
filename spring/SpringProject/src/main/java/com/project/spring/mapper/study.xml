@@ -8,6 +8,129 @@
  -->
 <mapper namespace="study">
 
+	<select id="studyList" parameterType="hashmap" resultType="stdto">
+ 		select * from (
+	 		select 
+	 			rownum as rnum, a.* 
+	 		from(
+				select 
+					s.*,
+					f.name as fieldName
+				from tblStudy s 
+				inner join tblField f
+					on s.fieldSeq = f.fieldSeq
+				where s.enddate >= sysdate
+				and s.limitNumber > (select 
+										count(*) 
+									from tblApplyList 
+									where studySeq = s.studySeq 
+									and field = 'Y'
+									)
+				<if test="sword != null and sword != ''">
+				and (
+					   s.id			like '%' || #{sword} || '%'
+					or s.name		like '%' || #{sword} || '%'
+					or s.content	like '%' || #{sword} || '%'
+					or s.area		like '%' || #{sword} || '%'
+				)
+				</if>
+				<if test="sfield != null and sfield != ''">
+				and s.fieldSeq = #{sfield}
+				</if>
+				order by s.studySeq desc
+				) a
+			)
+			where rnum between #{begin} and #{end}
+	</select>
 	
- 
+	<select id="getStudyTotal" parameterType="hashmap" resultType="Integer">
+	
+		select 
+			count(*)
+		from tblStudy s 
+		inner join tblField f
+			on s.fieldSeq = f.fieldSeq
+		where s.enddate >= sysdate
+		and s.limitNumber > (select 
+								count(*) 
+							from tblApplyList 
+							where studySeq = s.studySeq 
+							and field = 'Y'
+							)
+		<if test="sword != null and sword != ''">
+		and (
+			   s.id			like '%' || #{sword} || '%'
+			or s.name		like '%' || #{sword} || '%'
+			or s.content	like '%' || #{sword} || '%'
+			or s.area		like '%' || #{sword} || '%'
+		)
+		</if>
+		<if test="sfield != null and sfield != ''">
+		and s.fieldSeq = #{sfield}
+		</if>
+		
+	</select>
+	
+	<select id="applylist" parameterType="String" resultType="adto">
+		select a.applyseq, a.studySeq, m.id, m.name, l.name as languagename, m.phone, a.regdate, a.field from tblApplyList a
+    		inner join tblMember m 
+    			on a.id = m.id
+       			 	inner join tblLanguage l 
+       			 		on l.languageseq = m.languageseq
+       			 			where a.studySeq = #{seq}
+       			 				order by a.applySeq
+	</select>
+	
+	<select id="get" parameterType="String" resultType="mdto">
+		select m.image, m.name, m.phone, m.gender, m.birth, m.email, l.name as languagename
+			 from tblMember m 
+			 	inner join tblLanguage l
+			 		ON m.languageSeq = l.languageSeq
+						 where m.id = #{id} 
+	</select>
+	
+	<select id="getDetail" parameterType="adto" resultType="stdto">
+ 		select 
+ 			s.*,
+ 			f.name as fieldName,
+ 			a.applySeq,
+ 			(select count(*) from tblApplyList where studySeq = #{studySeq}) as cnt,
+    		(select count(*) from tblApplyList where studySeq = #{studySeq} and field = 'Y') as passcnt
+		from tblStudy s
+		inner join tblField f
+			on s.fieldSeq = f.fieldSeq
+		left outer join tblApplyList a
+			on s.studySeq = a.studySeq
+			and a.id = #{id}
+		where s.studySeq = #{studySeq}
+ 	</select>
+ 	
+ 	<insert id="studyRegist" parameterType="adto">
+ 		insert into tblApplyList(applySeq, studySeq, id, field, regdate)
+ 		values (seqApplyList.nextVal, #{studySeq}, #{id}, null, sysdate)
+ 	</insert>
+ 	
+ 	<delete id="studyCancel"  parameterType="adto">
+ 		delete 
+ 		from tblApplyList
+ 		where studySeq = #{studySeq}
+ 		and id = #{id}
+ 	</delete>
+ 	
+ 	<select id="getFieldList" resultType="fdto">
+ 		select 
+ 			*
+ 		from tblField
+ 		order by fieldSeq
+ 	</select>
+ 	
+ 	<insert id="addStudy" parameterType="stdto">
+ 		insert into tblStudy(studySeq, id, name, content, limitNumber, area, 
+ 				startDate, endDate, regdate, book, fieldSeq)
+ 		values (seqStudy.nextVal, #{id}, #{name}, #{content}, #{limitNumber}, #{area},
+ 				#{startDate}, #{endDate}, sysdate, #{book}, #{fieldSeq})
+ 	</insert>
+ 	
 </mapper>
+
+

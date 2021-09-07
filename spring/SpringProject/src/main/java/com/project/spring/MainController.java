@@ -30,10 +30,10 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/signin.action", method = { RequestMethod.GET })
-	public void signin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String pw) {
+	public void signin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String loginId) {
 		
 		//로그인 성공 -> 회원의 정보 반환
-		String id = dao.signin(pw);
+		String id = dao.signin(loginId);
 		
 		if (id != null) {
 			

@@ -8,6 +8,34 @@
  -->
 <mapper namespace="skill">
 
+	<!-- 분야 리스트 -->
+	<select id="flist" resultType="fdto">
+		select * from vwField order by fieldSeq asc
+	</select>
+ 
+ 	<!-- 사용자 관심분야 -->
+	<select id="getUserField" parameterType="String" resultType="fdto">
+		select * from vwField where fieldSeq = (select fieldSeq from tblMember where id = #{id})
+	</select>
 	
+	<!-- 관심분야 자격증 리스트 -->
+	<select id="llist" parameterType="String" resultType="ldto">
+		select * from tblLicense where fieldSeq = #{fieldSeq} order by licenseSeq asc
+	</select>
+	
+	<!-- 분야 -->
+	<select id="getField" parameterType="String" resultType="fdto">
+		select * from vwField where fieldSeq = #{seq}
+	</select>
+	
+	<!-- 과목 리스트 -->
+	<select id="slist" parameterType="String" resultType="sdto">
+		select * from tblSubject where fieldSeq = #{seq} order by subjectSeq
+	</select>
+	
+	<!-- 문제 리스트 -->
+	<select id="plist" parameterType="String" resultType="pdto">
+		select * from tblProblem where subjectSeq = #{seq} order by problemSeq
+	</select>
  
 </mapper>
